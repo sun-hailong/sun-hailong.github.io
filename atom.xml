@@ -6,7 +6,7 @@
   <link href="http://hailong-sun.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://hailong-sun.gitee.io/"/>
-  <updated>2021-10-27T11:56:03.956Z</updated>
+  <updated>2021-10-29T05:06:14.353Z</updated>
   <id>http://hailong-sun.gitee.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gitee密钥SSH出错</title>
+    <link href="http://hailong-sun.gitee.io/2021/10/29/gitee-de-mi-yao-cuo-wu/"/>
+    <id>http://hailong-sun.gitee.io/2021/10/29/gitee-de-mi-yao-cuo-wu/</id>
+    <published>2021-10-29T04:50:04.557Z</published>
+    <updated>2021-10-29T05:06:14.353Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近笔者想更新博客的时候，使用hexo三连始终无法上传，然后发现是SSH与Gitee没连上</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125356539.png" alt="image-20211029125356539"></p><p>使用了百度的各种方法以后，尝试了删除原先的密钥，重新添加SSH，一顿操作后仍然无效，然后我就发现了github是可以正常连接上，而gitee无法连接上。</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125537006.png" alt="image-20211029125537006"></p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125548204.png" alt="image-20211029125548204"></p><p>关于如何判断SSH是否连接上的方法如下：</p><pre><code>ssh -T git@github.comssh -T git@gitee.com</code></pre><hr><p>然后我就尝试打印错误信息：</p><pre><code>ssh -T -v git@gitee.com</code></pre><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125933941.png" alt="image-20211029125933941">  </p><p>根据知乎大神的回答，才发现是SSH算法出错， 将 rsa改为ed25519 就解决了。</p><p>（这个错误真的莫名其妙！！！！疯狂dissGitee平台！！！！）</p><ol><li><p>重新生成密钥</p><pre><code>ssh-keygen -t ed25519 -C"XXX@XXX.com"</code></pre><p>输入以上命令以后，连续三次回车即可</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130155982.png" alt="image-20211029130155982"></p></li><li><p>用记事本打开 C:\Users\电脑用户名\ .ssh\id_ed25519.pub</p><p>将里面内容全选并复制</p></li><li><p>打开Gitee—&gt;点击设置—&gt;选择SSH公钥—&gt;添加公钥，将上述复制的内容添加即可</p></li><li><p>大功告成</p></li></ol><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130609909.png" alt="image-20211029130609909"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近笔者想更新博客的时候，使用hexo三连始终无法上传，然后发现是SSH与Gitee没连上&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125</summary>
+      
+    
+    
+    
+    <category term="Problems" scheme="http://hailong-sun.gitee.io/categories/Problems/"/>
+    
+    
+    <category term="SSH" scheme="http://hailong-sun.gitee.io/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title>AcWing之Linux基础课</title>
