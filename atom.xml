@@ -6,7 +6,7 @@
   <link href="http://hailong-sun.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://hailong-sun.gitee.io/"/>
-  <updated>2021-10-29T05:17:06.725Z</updated>
+  <updated>2021-10-29T05:21:12.730Z</updated>
   <id>http://hailong-sun.gitee.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://hailong-sun.gitee.io/2021/10/29/gitee-ssh-cuo-wu/"/>
     <id>http://hailong-sun.gitee.io/2021/10/29/gitee-ssh-cuo-wu/</id>
     <published>2021-10-29T04:50:04.557Z</published>
-    <updated>2021-10-29T05:17:06.725Z</updated>
+    <updated>2021-10-29T05:21:12.730Z</updated>
     
-    <content type="html"><![CDATA[<p>最近笔者想更新博客的时候，使用hexo三连始终无法上传，然后发现是SSH与Gitee没连上</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125356539.png" alt="image-20211029125356539"></p><p>使用了百度的各种方法以后，尝试了删除原先的密钥，重新添加SSH，一顿操作后仍然无效，然后我就发现了github是可以正常连接上，而gitee无法连接上。</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029131234179.png" alt="image-20211029131234179"></p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125548204.png" alt="image-20211029125548204"></p><p>关于如何判断SSH是否连接上的方法如下：</p><pre class=" language-html"><code class="language-html">ssh -T git@github.comssh -T git@gitee.com</code></pre><hr><p>然后我就尝试打印错误信息：</p><pre class=" language-html"><code class="language-html">ssh -T -v git@gitee.com</code></pre><p>由于我本地当时没有截图这个部分，所有这个地方就使用了知乎原帖的图片</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125933941.png" alt="image-20211029125933941">  </p><p>根据知乎大神的回答，才发现是<strong>SSH算法出错</strong>， 将 rsa改为ed25519 就解决了。</p><p>（这个错误真的莫名其妙！！！！<strong>疯狂diss</strong>Gitee平台！！！！）</p><ol><li><p>重新生成密钥</p><pre class=" language-html"><code class="language-html">ssh-keygen -t ed25519 -C"XXX@XXX.com"</code></pre><p>输入以上命令以后，连续三次回车即可</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130155982.png" alt="image-20211029130155982"></p></li><li><p>用记事本打开 C:\Users\电脑用户名\ .ssh\id_ed25519.pub</p><p>将里面内容全选并复制</p></li><li><p>打开Gitee—&gt;点击设置—&gt;选择SSH公钥—&gt;添加公钥，将上述复制的内容添加即可</p></li><li><p>大功告成</p></li></ol><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130609909.png" alt="image-20211029130609909"></p>]]></content>
+    <content type="html"><![CDATA[<p>最近笔者想更新博客的时候，使用hexo三连始终无法上传，然后发现是SSH与Gitee没连上</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125356539.png"></p><p>使用了百度的各种方法以后，尝试了删除原先的密钥，重新添加SSH，一顿操作后仍然无效，然后我就发现了github是可以正常连接上，而gitee无法连接上。</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029131234179.png"></p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125548204.png"></p><p>关于如何判断SSH是否连接上的方法如下：</p><pre class=" language-html"><code class="language-html">ssh -T git@github.comssh -T git@gitee.com</code></pre><hr><p>然后我就尝试打印错误信息：</p><pre class=" language-html"><code class="language-html">ssh -T -v git@gitee.com</code></pre><p>由于我本地当时没有截图这个部分，所有这个地方就使用了知乎原帖的图片</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125933941.png">  </p><p>根据知乎大神的回答，才发现是<strong>SSH算法出错</strong>， 将 rsa改为ed25519 就解决了。</p><p>（这个错误真的莫名其妙！！！！<strong>疯狂diss</strong>Gitee平台！！！！）</p><ol><li><p>重新生成密钥</p><pre class=" language-html"><code class="language-html">ssh-keygen -t ed25519 -C"XXX@XXX.com"</code></pre><p>输入以上命令以后，连续三次回车即可</p><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130155982.png"></p></li><li><p>用记事本打开 C:\Users\电脑用户名\ .ssh\id_ed25519.pub</p><p>将里面内容全选并复制</p></li><li><p>打开Gitee—&gt;点击设置—&gt;选择SSH公钥—&gt;添加公钥，将上述复制的内容添加即可</p></li><li><p>大功告成</p></li></ol><p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130609909.png"></p>]]></content>
     
     
       
