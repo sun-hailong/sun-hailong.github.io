@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hailong-sun.gitee.io/2021/11/09/ji-qi-xue-xi-da-zuo-ye/</loc>
+    
+    <lastmod>2021-11-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hailong-sun.gitee.io/2021/10/27/acwing-zhi-linux-ji-chu-ke/</loc>
     
     <lastmod>2021-11-06</lastmod>
@@ -88,36 +95,43 @@
 
   <url>
     <loc>http://hailong-sun.gitee.io/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://hailong-sun.gitee.io/tags/SSH/</loc>
-    <lastmod>2021-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://hailong-sun.gitee.io/tags/Linux/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://hailong-sun.gitee.io/tags/Tennis/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <loc>http://hailong-sun.gitee.io/tags/SSH/</loc>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hailong-sun.gitee.io/tags/Markdown/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hailong-sun.gitee.io/tags/ML/</loc>
+    <lastmod>2021-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hailong-sun.gitee.io/tags/Tennis/</loc>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -125,22 +139,29 @@
 
   
   <url>
-    <loc>http://hailong-sun.gitee.io/categories/Problems/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <loc>http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <loc>http://hailong-sun.gitee.io/categories/Problems/</loc>
+    <lastmod>2021-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hailong-sun.gitee.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hailong-sun.gitee.io/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
