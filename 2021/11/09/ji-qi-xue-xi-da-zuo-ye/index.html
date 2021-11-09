@@ -462,16 +462,16 @@ dataset<span class="token punctuation">.</span>columns <span class="token operat
 <p>首先进行导入相关库的操作</p>
 <p>将数据以分隔符为<code>;</code>的方式读入。同时由于该文件命名规则不符合python的命名规则，所以我调用了函数将空格替换成了下划线<code>_</code></p>
 <p>效果如下：</p>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109150315575.png" alt="image-20211109150315575"></p>
+<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109150315575.png"></p>
 <h4 id="查看数据集的信息"><a href="#查看数据集的信息" class="headerlink" title="查看数据集的信息"></a>查看数据集的信息</h4><pre class=" language-python"><code class="language-python">dataset<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109150459825.png" alt="image-20211109150459825" style="zoom: 50%;">
+<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109150459825.png" style="zoom:50%;">
 
 <h4 id="判断是否具有缺失值"><a href="#判断是否具有缺失值" class="headerlink" title="判断是否具有缺失值"></a>判断是否具有缺失值</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查看数据是否存在缺失值</span>
 dataset<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
 </code></pre>
 <p>根据此操作，可以预测是否需要进行缺失值处理，通过数据分析后，效果并没有让我们失望，无一例缺失值！</p>
-<img src="C:\Users\forever\AppData\Roaming\Typora\typora-user-images\image-20211109150754346.png" alt="image-20211109150754346" style="zoom:50%;">
+<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109162228847.png" style="zoom:50%;">
 
 <p>最终由于Quality 类别太细，等级分为0-10，分布太广，故采取二分类的方式：</p>
 <p>将等级分为<strong>两个等级</strong>，劣质(&lt;=5)，优质(&gt;=5)</p>
@@ -483,8 +483,7 @@ dataset<span class="token punctuation">.</span>loc<span class="token punctuation
 <p><strong>分析发现各类属性的取值范围差别较大，同时分布也不一致，需要进行归一化处理</strong></p>
 <pre class=" language-python"><code class="language-python">dataset<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<img src="C:\Users\forever\AppData\Roaming\Typora\typora-user-images\image-20211109151425178.png" alt="image-20211109151425178" style="zoom: 50%;">
-
+<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109162140129.png"></p>
 <h4 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化"></a>数据归一化</h4><p>利用公式：$x^*=\frac {x-min}{max-min}$对数据进行归一化处理</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将数据转成numpy</span>
 red <span class="token operator">=</span> dataset<span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1043,6 +1042,13 @@ accuracy <span class="token operator">=</span> mlp_model<span class="token punct
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
