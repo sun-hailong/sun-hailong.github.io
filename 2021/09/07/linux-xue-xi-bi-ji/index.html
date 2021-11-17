@@ -33,9 +33,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml">
-
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -460,7 +460,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h4><ul>
+<h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><ul>
 <li><code>ls</code>(list  files): 列出目录及文件名</li>
 <li><code>cd</code>(change directory): 切换目录</li>
 <li><code>pwd</code>(print word directory): 显示目前的目录</li>
@@ -472,7 +472,7 @@
 </ul>
 <p>偷偷告诉你ヽ(ー_ー)ノ 可以用<code>man</code>命令来查看各个命令的使用文档哦~ 例如<code>man ls</code></p>
 <hr>
-<h4 id="文件内容查看的常用命令"><a href="#文件内容查看的常用命令" class="headerlink" title="文件内容查看的常用命令"></a>文件内容查看的常用命令</h4><ul>
+<h3 id="文件内容查看的常用命令"><a href="#文件内容查看的常用命令" class="headerlink" title="文件内容查看的常用命令"></a>文件内容查看的常用命令</h3><ul>
 <li><code>cat</code>  从第一行显示内容</li>
 <li><code>tac</code>  从最后一行显示内容(其实就是cat倒着写ಥ_ಥ)</li>
 <li><code>nl</code>  带着行号显示内容</li>
@@ -485,7 +485,7 @@
 <h2 id="Linux磁盘管理"><a href="#Linux磁盘管理" class="headerlink" title="Linux磁盘管理"></a>Linux磁盘管理</h2><p>Linux磁盘管理的好坏直接关系到整个系统的性能问题。</p>
 <p>常用的三个命令为<code>df</code>、<code>du</code>、<code>fdisk</code>。</p>
 <hr>
-<h4 id="df"><a href="#df" class="headerlink" title="df"></a>df</h4><p>英文全称：disk full。列出文件系统的整体磁盘使用量</p>
+<h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p>英文全称：disk full。列出文件系统的整体磁盘使用量</p>
 <p>可以利用该命令来<strong>获取硬盘</strong>被占用了多少空间，目前还剩下多少空间等信息。</p>
 <p>语法：</p>
 <pre class=" language-html"><code class="language-html">df [-ahikHTm] [目录或文件名]
@@ -529,7 +529,7 @@ tmpfs           2.0G     0  2.0G    0% /sys/fs/cgroup
 /dev/sda5        20G   13G  6.0G   68% /
 </code></pre>
 <hr>
-<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><p><code>du</code>命令也是查看使用空间的，与 <code>df </code>命令不同的是<code>du</code>命令是对<strong>文件和目录磁盘</strong>使用的空间的查看</p>
+<h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><p><code>du</code>命令也是查看使用空间的，与 <code>df </code>命令不同的是<code>du</code>命令是对<strong>文件和目录磁盘</strong>使用的空间的查看</p>
 <p>语法：</p>
 <pre class=" language-html"><code class="language-html">du [-ahskm] 文件或目录名称
 </code></pre>
@@ -554,7 +554,7 @@ tmpfs           2.0G     0  2.0G    0% /sys/fs/cgroup
 </code></pre>
 <p>其他命令与<code>df</code>类似，这里就不赘述了。</p>
 <hr>
-<h4 id="fdisk"><a href="#fdisk" class="headerlink" title="fdisk"></a>fdisk</h4><p>fdisk 是 Linux 的磁盘分区表操作工具。</p>
+<h3 id="fdisk"><a href="#fdisk" class="headerlink" title="fdisk"></a>fdisk</h3><p>fdisk 是 Linux 的磁盘分区表操作工具。</p>
 <p>语法：</p>
 <pre class=" language-html"><code class="language-html">fdisk [-l] 装置名称
 </code></pre>
@@ -569,8 +569,8 @@ fdisk: 打不开 /dev/loop0: 权限不够
 fdisk: 打不开 /dev/loop1: 权限不够
 </code></pre>
 <hr>
-<h2 id="Linux-vi-vim"><a href="#Linux-vi-vim" class="headerlink" title="Linux vi/vim"></a>Linux vi/vim</h2><h4 id="什么是vim？"><a href="#什么是vim？" class="headerlink" title="什么是vim？"></a>什么是vim？</h4><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
-<h4 id="vi-vim-的使用"><a href="#vi-vim-的使用" class="headerlink" title="vi/vim 的使用"></a>vi/vim 的使用</h4><p>共分为三种模式：<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和**底线命令模式（Last line mode） ** </p>
+<h2 id="Linux-vi-vim"><a href="#Linux-vi-vim" class="headerlink" title="Linux vi/vim"></a>Linux vi/vim</h2><h3 id="什么是vim？"><a href="#什么是vim？" class="headerlink" title="什么是vim？"></a>什么是vim？</h3><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
+<h3 id="vi-vim-的使用"><a href="#vi-vim-的使用" class="headerlink" title="vi/vim 的使用"></a>vi/vim 的使用</h3><p>共分为三种模式：<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和**底线命令模式（Last line mode） ** </p>
 <p><strong>命令模式：</strong></p>
 <p>用户刚刚启动 vi/vim，便进入了命令模式。</p>
 <p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下<code>i</code>，并不会输入一个字符，<code>i</code>被当作了一个命令。</p>
@@ -610,7 +610,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
 <p>常用命令：<code>ESC</code>、<code>:wq</code>、<code>vim</code>、<code>i</code>、<code>ctrl + f</code>(向下翻页)、<code>ctrl + b</code>(向上翻页)、<code>/word</code>(寻找名称为word的字符串)、<code>:%s/word1/word2/g</code>(将word1替换为word2)。  </p>
 <h2 id="Linux-yum-命令"><a href="#Linux-yum-命令" class="headerlink" title="Linux yum 命令"></a>Linux yum 命令</h2><p>yum（ Yellow dog Updater, Modified）是一个在 Fedora 和 RedHat 以及 SUSE 中的 Shell 前端软件包管理器。</p>
 <p>yum 提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
-<h4 id="yum-语法"><a href="#yum-语法" class="headerlink" title="yum 语法"></a>yum 语法</h4><pre class=" language-html"><code class="language-html">yum [options] [command] [package ...]
+<h3 id="yum-语法"><a href="#yum-语法" class="headerlink" title="yum 语法"></a>yum 语法</h3><pre class=" language-html"><code class="language-html">yum [options] [command] [package ...]
 </code></pre>
 <ul>
 <li><strong>options：</strong>可选，选项包括-h（帮助），-y（当安装过程提示选择全部为 “yes”），-q（不显示安装的过程）等等。</li>
@@ -618,7 +618,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
 <li><strong>package：</strong>安装的包名。   </li>
 </ul>
 <hr>
-<h4 id="yum常用命令"><a href="#yum常用命令" class="headerlink" title="yum常用命令"></a>yum常用命令</h4><ul>
+<h3 id="yum常用命令"><a href="#yum常用命令" class="headerlink" title="yum常用命令"></a>yum常用命令</h3><ul>
 <li><ol>
 <li>列出所有可更新的软件清单命令：<strong>yum check-update</strong></li>
 </ol>
@@ -661,14 +661,14 @@ fdisk: 打不开 /dev/loop1: 权限不够
 <h2 id="Linux-apt-命令"><a href="#Linux-apt-命令" class="headerlink" title="Linux apt 命令"></a>Linux apt 命令</h2><p>apt（Advanced Packaging Tool）是一个在 <strong>Debian</strong> 和 <strong>Ubuntu</strong>(划重点~~) 中的 Shell 前端软件包管理器。</p>
 <p>apt 命令提供了查找、安装、升级、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
 <p>apt 命令执行需要超级管理员权限(root)。</p>
-<h4 id="apt-语法"><a href="#apt-语法" class="headerlink" title="apt 语法"></a>apt 语法</h4><pre class=" language-html"><code class="language-html"> apt [options] [command] [package ...]
+<h3 id="apt-语法"><a href="#apt-语法" class="headerlink" title="apt 语法"></a>apt 语法</h3><pre class=" language-html"><code class="language-html"> apt [options] [command] [package ...]
 </code></pre>
 <ul>
 <li><strong>options：</strong>可选，选项包括 -h（帮助），-y（当安装过程提示选择全部为”yes”），-q（不显示安装的过程）等等。</li>
 <li><strong>command：</strong>要进行的操作。</li>
 <li><strong>package</strong>：安装的包名。</li>
 </ul>
-<h4 id="apt-常用命令"><a href="#apt-常用命令" class="headerlink" title="apt 常用命令"></a>apt 常用命令</h4><ul>
+<h3 id="apt-常用命令"><a href="#apt-常用命令" class="headerlink" title="apt 常用命令"></a>apt 常用命令</h3><ul>
 <li><p>列出所有可更新的软件清单命令：<strong>sudo apt update</strong></p>
 </li>
 <li><p>升级软件包：<strong>sudo apt upgrade</strong></p>
@@ -936,7 +936,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/13/xiao-gan-xiang/">
+                <a href="/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/">
                     <div class="card-image">
                         
                         
@@ -985,7 +985,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/30/markdown/">
+                <a href="/2021/08/30/markdown-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
@@ -1223,7 +1223,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.6k</span>
+                        class="white-color">9.1k</span>
             
             
             
