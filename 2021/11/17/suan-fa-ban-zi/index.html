@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.4k
+                    6.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    34 分
+                    35 分
                 </div>
                 
 
@@ -450,7 +450,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基础算法"><a href="#基础算法" class="headerlink" title="基础算法"></a>基础算法</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> q<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
+                <p><strong>数据范围：</strong></p>
+<p>一般ACM或者笔试题的时间限制是1秒或2秒。</p>
+<p>在这种情况下，C++代码中的操作次数控制在 $10^7 \sim 10^8$ 为最佳。</p>
+<p>下面给出在不同数据范围下，代码的时间复杂度和算法该如何选择：</p>
+<ol>
+<li>$n \le 30$, 指数级别, dfs+剪枝，状态压缩dp</li>
+<li>$n \le 100$ =&gt; $O(n^3)$，floyd，dp，高斯消元</li>
+<li>$n \le 1000$ =&gt; $O(n^2)$，$O(n^2logn)$，dp，二分，朴素版Dijkstra、朴素版Prim、Bellman-Ford</li>
+<li>$n \le 10000$ =&gt; $O(n * \sqrt n)$，块状链表、分块、莫队</li>
+<li>$n \le 100000$ =&gt; $O(nlogn)$ =&gt; 各种sort，线段树、树状数组、set/map、heap、拓扑排5序、dijkstra+heap、prim+heap、spfa、求凸包、求半平面交、二分、CDQ分治、整体二分</li>
+<li>$n \le 1000000$ =&gt; $O(n)$, 以及常数较小的 $O(nlogn)$ 算法 =&gt; 单调队列、 hash、双指针扫描、并查集，kmp、AC自动机，常数比较小的 $O(nlogn)$ 的做法：sort、树状数组、heap、dijkstra、spfa</li>
+<li>$n \le 10000000$ =&gt; $O(n)$，双指针扫描、kmp、AC自动机、线性筛素数</li>
+<li>$n \le 10^9$ =&gt; $O(\sqrt n)$，判断质数</li>
+<li>$n \le 10^{18}$ =&gt; $O(logn)$，最大公约数，快速幂</li>
+<li>$n \le 10^{1000}$ =&gt; $O((logn)^2)$，高精度加减乘除</li>
+<li>$n \le 10^{100000}$ =&gt; $O(logk \times loglogk)，k表示位数$，高精度加减、FFT/NTT</li>
+</ol>
+<h2 id="基础算法"><a href="#基础算法" class="headerlink" title="基础算法"></a>基础算法</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> q<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>l <span class="token operator">>=</span> r<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
 
@@ -2361,7 +2378,7 @@ n <span class="token operator">=</span> cnt<span class="token punctuation">;</sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.1k</span>
+                        class="white-color">17.1k</span>
             
             
             
