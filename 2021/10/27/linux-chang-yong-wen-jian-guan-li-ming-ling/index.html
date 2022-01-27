@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Linux学习笔记, ML, github, gitee">
+    <meta name="keywords" content="Linux-常用文件管理命令, ML, github, gitee">
     <meta name="description" content="Welcome to Allen&#39;Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux学习笔记 | Allen Sun&#39;Blog</title>
+    <title>Linux-常用文件管理命令 | Allen Sun&#39;Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -273,12 +273,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux学习笔记</h1>
+                    <h1 class="description center-align post-title">Linux-常用文件管理命令</h1>
                 </div>
             </div>
         </div>
@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-07
+                    2021-10-27
                 </div>
                 
 
@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    311
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    1 分
                 </div>
                 
 
@@ -450,251 +450,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近笔者在学习<strong>Linux</strong>的相关知识，所以打算以此文来记录自己的学习过程。  </p>
-<h2 id="文件及目录管理"><a href="#文件及目录管理" class="headerlink" title="文件及目录管理"></a>文件及目录管理</h2><ul>
-<li><p>绝对路径</p>
-<p>路径的写法，由根目录 <code>/</code> 写起，例如： /usr/share/doc 这个目录。</p>
-</li>
-<li><p>相对路径</p>
-<p>路径的写法，不是由 <code>/</code> 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成： <code>cd ../man</code>就是相对路径的写法</p>
-</li>
-</ul>
-<hr>
-<h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><ul>
-<li><code>ls</code>(list  files): 列出目录及文件名</li>
-<li><code>cd</code>(change directory): 切换目录</li>
-<li><code>pwd</code>(print word directory): 显示目前的目录</li>
-<li><code>mkdir</code>(make directory): 创建一个新目录</li>
-<li><code>rmdir</code>(remove directory): 删除一个<strong>空目录</strong></li>
-<li><code>cp</code>(copy file): 复制文件或目录</li>
-<li><code>rm</code>(remove): 删除文件或目录</li>
-<li><code>mv</code>(move files): 移动文件与目录，或修改文件与目录的名称   </li>
-</ul>
-<p>偷偷告诉你ヽ(ー_ー)ノ 可以用<code>man</code>命令来查看各个命令的使用文档哦~ 例如<code>man ls</code></p>
-<hr>
-<h3 id="文件内容查看的常用命令"><a href="#文件内容查看的常用命令" class="headerlink" title="文件内容查看的常用命令"></a>文件内容查看的常用命令</h3><ul>
-<li><code>cat</code>  从第一行显示内容</li>
-<li><code>tac</code>  从最后一行显示内容(其实就是cat倒着写ಥ_ಥ)</li>
-<li><code>nl</code>  带着行号显示内容</li>
-<li><code>more</code>  一页一页显示内容</li>
-<li><code>less</code>  与more相似，但是他可以往前翻(✧◡✧)</li>
-<li><code>head</code>  只看头几行</li>
-<li><code>tail</code>  只看尾几行</li>
-</ul>
-<p>每条命令都带参数与选项，这里就不展开描述了   </p>
-<h2 id="Linux磁盘管理"><a href="#Linux磁盘管理" class="headerlink" title="Linux磁盘管理"></a>Linux磁盘管理</h2><p>Linux磁盘管理的好坏直接关系到整个系统的性能问题。</p>
-<p>常用的三个命令为<code>df</code>、<code>du</code>、<code>fdisk</code>。</p>
-<hr>
-<h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p>英文全称：disk full。列出文件系统的整体磁盘使用量</p>
-<p>可以利用该命令来<strong>获取硬盘</strong>被占用了多少空间，目前还剩下多少空间等信息。</p>
-<p>语法：</p>
-<pre class=" language-html"><code class="language-html">df [-ahikHTm] [目录或文件名]
+                <p>鉴于此次学习目的是<strong>实用</strong>，并不会涉及很多<del><strong>八股文</strong></del>概念，主要注重平时用得较多的操作</p>
+<h2 id="常用文件管理命令"><a href="#常用文件管理命令" class="headerlink" title="常用文件管理命令"></a>常用文件管理命令</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>1<span class="token punctuation">)</span> ctrl c: 取消命令，并且换行
+<span class="token punctuation">(</span>2<span class="token punctuation">)</span> ctrl u: 清空本行命令
+<span class="token punctuation">(</span>3<span class="token punctuation">)</span> tab键：可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项
+<span class="token punctuation">(</span>4<span class="token punctuation">)</span> ls: 列出当前目录下所有文件，蓝色的是文件夹，白色的是普通文件，绿色的是可执行文件
+<span class="token punctuation">(</span>5<span class="token punctuation">)</span> pwd: 显示当前路径
+<span class="token punctuation">(</span>6<span class="token punctuation">)</span> <span class="token function">cd</span> XXX: 进入XXX目录下, <span class="token function">cd</span> <span class="token punctuation">..</span> 返回上层目录
+<span class="token punctuation">(</span>7<span class="token punctuation">)</span> <span class="token function">cp</span> XXX YYY: 将XXX文件复制成YYY，XXX和YYY可以是一个路径，比如<span class="token punctuation">..</span>/dir_c/a.txt，表示上层目录下的dir_c文件夹下的文件a.txt
+<span class="token punctuation">(</span>8<span class="token punctuation">)</span> <span class="token function">mkdir</span> XXX: 创建目录XXX
+<span class="token punctuation">(</span>9<span class="token punctuation">)</span> <span class="token function">rm</span> XXX: 删除普通文件<span class="token punctuation">;</span>  <span class="token function">rm</span> XXX -r: 删除文件夹
+<span class="token punctuation">(</span>10<span class="token punctuation">)</span> <span class="token function">mv</span> XXX YYY: 将XXX文件移动到YYY，和cp命令一样，XXX和YYY可以是一个路径；重命名也是用这个命令
+<span class="token punctuation">(</span>11<span class="token punctuation">)</span> <span class="token function">touch</span> XXX: 创建一个文件
+<span class="token punctuation">(</span>12<span class="token punctuation">)</span> <span class="token function">cat</span> XXX: 展示文件XXX中的内容
+<span class="token punctuation">(</span>13<span class="token punctuation">)</span> 复制文本
+    windows/Linux下：Ctrl + insert，Mac下：command + c
+<span class="token punctuation">(</span>14<span class="token punctuation">)</span> 粘贴文本
+    windows/Linux下：Shift + insert，Mac下：command + <span class="token function">v</span>
 </code></pre>
-<p>选项与参数：</p>
-<ul>
-<li>-a ：列出所有的文件系统，包括系统特有的 /proc 等文件系统；</li>
-<li>-k ：以 KBytes 的容量显示各文件系统；</li>
-<li>-m ：以 MBytes 的容量显示各文件系统；</li>
-<li>-h ：以人们较易阅读的 GBytes, MBytes, KBytes 等格式自行显示；</li>
-<li>-H ：以 M=1000K 取代 M=1024K 的进位方式；</li>
-<li>-T ：显示文件系统类型, 连同该 partition 的 filesystem 名称 (例如 ext3) 也列出；</li>
-<li>-i ：不用硬盘容量，而以 inode 的数量来显示</li>
-</ul>
-<p><strong>实例1</strong></p>
-<p>将系统内所有的文件系统列出来！(默认是1Kbytes)</p>
-<pre class=" language-html"><code class="language-html">long@ubuntu:~$ df
-文件系统          1K-块     已用    可用 已用% 挂载点
-udev            1967924        0 1967924    0% /dev
-tmpfs            399508     1804  397704    1% /run
-/dev/sda5      19992176 12718192 6235392   68% /
-tmpfs           1997540        0 1997540    0% /dev/shm
-tmpfs              5120        4    5116    1% /run/lock
-tmpfs           1997540        0 1997540    0% /sys/fs/cgroup
-</code></pre>
-<p><strong>实例2</strong></p>
-<p>将容量结果<strong>以易读的容量格式</strong>显示出来</p>
-<pre class=" language-html"><code class="language-html">long@ubuntu:~$ df -h
-文件系统        容量  已用  可用 已用% 挂载点
-udev            1.9G     0  1.9G    0% /dev
-tmpfs           391M  1.8M  389M    1% /run
-/dev/sda5        20G   13G  6.0G   68% /
-tmpfs           2.0G     0  2.0G    0% /dev/shm
-tmpfs           5.0M  4.0K  5.0M    1% /run/lock
-tmpfs           2.0G     0  2.0G    0% /sys/fs/cgroup
-</code></pre>
-<p><strong>实例3</strong></p>
-<p>将 /etc底下的可用的磁盘容量以易读的容量格式显示</p>
-<pre class=" language-html"><code class="language-html">long@ubuntu:~$ df -h /etc
-文件系统        容量  已用  可用 已用% 挂载点
-/dev/sda5        20G   13G  6.0G   68% /
-</code></pre>
-<hr>
-<h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><p><code>du</code>命令也是查看使用空间的，与 <code>df </code>命令不同的是<code>du</code>命令是对<strong>文件和目录磁盘</strong>使用的空间的查看</p>
-<p>语法：</p>
-<pre class=" language-html"><code class="language-html">du [-ahskm] 文件或目录名称
-</code></pre>
-<p>选项与参数：</p>
-<ul>
-<li>-a ：列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。</li>
-<li>-h ：以人们较易读的容量格式 (G/M) 显示；</li>
-<li>-s ：列出总量而已，而不列出每个各别的目录占用容量；</li>
-<li>-S ：不包括子目录下的总计，与 -s 有点差别。</li>
-<li>-k ：以 KBytes 列出容量显示；</li>
-<li>-m ：以 MBytes 列出容量显示；</li>
-</ul>
-<p><strong>实例1</strong></p>
-<pre class=" language-html"><code class="language-html">long@ubuntu:~$ du -h
-···省略···
-8.0K    ./.config/gnome-control-center/backgrounds
-12K    ./.config/gnome-control-center
-4.0K    ./.config/gnome-session/saved-session
-8.0K    ./.config/gnome-session
-200K    ./.config    &lt;==包括隐藏文件的目录
-3.9G    .            &lt;==这个目录(.)所占用的总量
-</code></pre>
-<p>其他命令与<code>df</code>类似，这里就不赘述了。</p>
-<hr>
-<h3 id="fdisk"><a href="#fdisk" class="headerlink" title="fdisk"></a>fdisk</h3><p>fdisk 是 Linux 的磁盘分区表操作工具。</p>
-<p>语法：</p>
-<pre class=" language-html"><code class="language-html">fdisk [-l] 装置名称
-</code></pre>
-<p>选项与参数：</p>
-<ul>
-<li>-l ：输出后面接的装置所有的分区内容。若仅有 <code>fdisk -l </code>时， 则系统将会把整个系统内能够搜寻到的装置的分区均列出来。</li>
-</ul>
-<p><strong>实例1</strong></p>
-<pre class=" language-html"><code class="language-html">目前不知道为什么是这个鬼样子(╥╯^╰╥)
-long@ubuntu:~$ fdisk -l
-fdisk: 打不开 /dev/loop0: 权限不够
-fdisk: 打不开 /dev/loop1: 权限不够
-</code></pre>
-<hr>
-<h2 id="Linux-vi-vim"><a href="#Linux-vi-vim" class="headerlink" title="Linux vi/vim"></a>Linux vi/vim</h2><h3 id="什么是vim？"><a href="#什么是vim？" class="headerlink" title="什么是vim？"></a>什么是vim？</h3><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
-<h3 id="vi-vim-的使用"><a href="#vi-vim-的使用" class="headerlink" title="vi/vim 的使用"></a>vi/vim 的使用</h3><p>共分为三种模式：<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和**底线命令模式（Last line mode） ** </p>
-<p><strong>命令模式：</strong></p>
-<p>用户刚刚启动 vi/vim，便进入了命令模式。</p>
-<p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下<code>i</code>，并不会输入一个字符，<code>i</code>被当作了一个命令。</p>
-<p>以下是常用的几个命令：</p>
-<ul>
-<li><code>i</code>切换到输入模式，以输入字符。</li>
-<li><code>x</code> 删除当前光标所在处的字符。</li>
-<li><code>:</code> 切换到底线命令模式，以在最底一行输入命令。</li>
-</ul>
-<p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。</p>
-<p>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
-<hr>
-<p><strong>输入模式</strong></p>
-<p>在命令模式下按下<code>i</code>就进入了输入模式。</p>
-<p>在输入模式中，可以使用以下按键：</p>
-<ul>
-<li><strong>字符按键以及Shift组合</strong>，输入字符</li>
-<li><strong>ENTER</strong>，回车键，换行</li>
-<li><strong>BACK SPACE</strong>，退格键，删除光标前一个字符</li>
-<li><strong>DEL</strong>，删除键，删除光标后一个字符</li>
-<li><strong>方向键</strong>，在文本中移动光标</li>
-<li><strong>HOME</strong>/<strong>END</strong>，移动光标到行首/行尾</li>
-<li><strong>Page Up</strong>/<strong>Page Down</strong>，上/下翻页</li>
-<li><strong>Insert</strong>，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
-<li><strong>ESC</strong>，退出输入模式，切换到命令模式</li>
-</ul>
-<hr>
-<p><strong>底线命令模式</strong></p>
-<p>在命令模式下按下:（英文冒号）就进入了底线命令模式。</p>
-<p>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
-<p>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
-<ul>
-<li><code>q</code> 退出程序</li>
-<li><code>w</code> 保存文件</li>
-</ul>
-<p>按<code>ESC</code>键可随时退出底线命令模式。</p>
-<p>常用命令：<code>ESC</code>、<code>:wq</code>、<code>vim</code>、<code>i</code>、<code>ctrl + f</code>(向下翻页)、<code>ctrl + b</code>(向上翻页)、<code>/word</code>(寻找名称为word的字符串)、<code>:%s/word1/word2/g</code>(将word1替换为word2)。  </p>
-<h2 id="Linux-yum-命令"><a href="#Linux-yum-命令" class="headerlink" title="Linux yum 命令"></a>Linux yum 命令</h2><p>yum（ Yellow dog Updater, Modified）是一个在 Fedora 和 RedHat 以及 SUSE 中的 Shell 前端软件包管理器。</p>
-<p>yum 提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
-<h3 id="yum-语法"><a href="#yum-语法" class="headerlink" title="yum 语法"></a>yum 语法</h3><pre class=" language-html"><code class="language-html">yum [options] [command] [package ...]
-</code></pre>
-<ul>
-<li><strong>options：</strong>可选，选项包括-h（帮助），-y（当安装过程提示选择全部为 “yes”），-q（不显示安装的过程）等等。</li>
-<li><strong>command：</strong>要进行的操作。</li>
-<li><strong>package：</strong>安装的包名。   </li>
-</ul>
-<hr>
-<h3 id="yum常用命令"><a href="#yum常用命令" class="headerlink" title="yum常用命令"></a>yum常用命令</h3><ul>
-<li><ol>
-<li>列出所有可更新的软件清单命令：<strong>yum check-update</strong></li>
-</ol>
-</li>
-<li><ol start="2">
-<li>更新所有软件命令：<strong>yum update</strong></li>
-</ol>
-</li>
-<li><ol start="3">
-<li>仅安装指定的软件命令：<strong>yum install <package_name></package_name></strong></li>
-</ol>
-</li>
-<li><ol start="4">
-<li>仅更新指定的软件命令：<strong>yum update <package_name></package_name></strong></li>
-</ol>
-</li>
-<li><ol start="5">
-<li>列出所有可安裝的软件清单命令：<strong>yum list</strong></li>
-</ol>
-</li>
-<li><ol start="6">
-<li>删除软件包命令：<strong>yum remove <package_name></package_name></strong></li>
-</ol>
-</li>
-<li><ol start="7">
-<li>查找软件包命令：<strong>yum search <keyword></keyword></strong></li>
-</ol>
-</li>
-<li><ol start="8">
-<li>清除缓存命令:</li>
-</ol>
-<ul>
-<li><strong>yum clean packages</strong>: 清除缓存目录下的软件包</li>
-<li><strong>yum clean headers</strong>: 清除缓存目录下的 headers</li>
-<li><strong>yum clean oldheaders</strong>: 清除缓存目录下旧的 headers</li>
-<li><strong>yum clean, yum clean all (= yum clean packages; yum clean oldheaders)</strong> :清除缓存目录下的软件包及旧的 headers</li>
-</ul>
-</li>
-</ul>
-<h2 id="Linux-apt-命令"><a href="#Linux-apt-命令" class="headerlink" title="Linux apt 命令"></a>Linux apt 命令</h2><p>apt（Advanced Packaging Tool）是一个在 <strong>Debian</strong> 和 <strong>Ubuntu</strong>(划重点~~) 中的 Shell 前端软件包管理器。</p>
-<p>apt 命令提供了查找、安装、升级、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
-<p>apt 命令执行需要超级管理员权限(root)。</p>
-<h3 id="apt-语法"><a href="#apt-语法" class="headerlink" title="apt 语法"></a>apt 语法</h3><pre class=" language-html"><code class="language-html"> apt [options] [command] [package ...]
-</code></pre>
-<ul>
-<li><strong>options：</strong>可选，选项包括 -h（帮助），-y（当安装过程提示选择全部为”yes”），-q（不显示安装的过程）等等。</li>
-<li><strong>command：</strong>要进行的操作。</li>
-<li><strong>package</strong>：安装的包名。</li>
-</ul>
-<h3 id="apt-常用命令"><a href="#apt-常用命令" class="headerlink" title="apt 常用命令"></a>apt 常用命令</h3><ul>
-<li><p>列出所有可更新的软件清单命令：<strong>sudo apt update</strong></p>
-</li>
-<li><p>升级软件包：<strong>sudo apt upgrade</strong></p>
-<p>列出可更新的软件包及版本信息：<strong>apt list –upgradeable</strong></p>
-<p>升级软件包，升级前先删除需要更新软件包：<strong>sudo apt full-upgrade</strong></p>
-</li>
-<li><p>安装指定的软件命令：<strong>sudo apt install <package_name></package_name></strong></p>
-<p>安装多个软件包：<strong>sudo apt install <package_1> <package_2> <package_3></package_3></package_2></package_1></strong></p>
-</li>
-<li><p>更新指定的软件命令：<strong>sudo apt update <package_name></package_name></strong></p>
-</li>
-<li><p>显示软件包具体信息,例如：版本号，安装大小，依赖关系等等：<strong>sudo apt show <package_name></package_name></strong></p>
-</li>
-<li><p>删除软件包命令：<strong>sudo apt remove <package_name></package_name></strong></p>
-</li>
-<li><p>清理不再使用的依赖和库文件: <strong>sudo apt autoremove</strong></p>
-</li>
-<li><p>移除软件包及配置文件: <strong>sudo apt purge <package_name></package_name></strong></p>
-</li>
-<li><p>查找软件包命令： <strong>sudo apt search <keyword></keyword></strong></p>
-</li>
-<li><p>列出所有已安装的包：<strong>apt list –installed</strong></p>
-</li>
-<li><p>列出所有已安装的包的版本信息：<strong>apt list –all-versions</strong></p>
-</li>
-</ul>
 
                 
             </div>
@@ -721,7 +494,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hailong-sun.gitee.io/2021/09/07/linux-xue-xi-bi-ji/">http://hailong-sun.gitee.io/2021/09/07/linux-xue-xi-bi-ji/</a>
+                    <a href="http://hailong-sun.gitee.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/">http://hailong-sun.gitee.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -936,6 +709,55 @@ fdisk: 打不开 /dev/loop1: 权限不够
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/10/29/gitee-ssh-cuo-wu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Gitee密钥SSH出错">
+                        
+                        <span class="card-title">Gitee密钥SSH出错</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            最近莫名其妙Gitee的SSH出问题，百度大部分方法都没用，结果是ssh自身算法出错（无语！！）
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Problems/" class="post-category">
+                                    Problems
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SSH/">
+                        <span class="chip bg-color">SSH</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/">
                     <div class="card-image">
                         
@@ -952,9 +774,9 @@ fdisk: 打不开 /dev/loop1: 权限不够
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -972,55 +794,6 @@ fdisk: 打不开 /dev/loop1: 权限不够
                     
                     <a href="/tags/Tennis/">
                         <span class="chip bg-color">Tennis</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/30/markdown-xue-xi-bi-ji/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Markdown学习笔记">
-                        
-                        <span class="card-title">Markdown学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            最近Markdown语法的一些学习笔记
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -1223,7 +996,7 @@ fdisk: 打不开 /dev/loop1: 权限不够
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.1k</span>
+                        class="white-color">16.9k</span>
             
             
             
