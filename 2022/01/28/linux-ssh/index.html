@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Linux-常用文件管理命令, ML, github, gitee">
+    <meta name="keywords" content="Linux-ssh, ML, github, gitee">
     <meta name="description" content="Welcome to Allen&#39;Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux-常用文件管理命令 | Allen Sun&#39;Blog</title>
+    <title>Linux-ssh | Allen Sun&#39;Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -273,12 +273,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux-常用文件管理命令</h1>
+                    <h1 class="description center-align post-title">Linux-ssh</h1>
                 </div>
             </div>
         </div>
@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-27
+                    2022-01-28
                 </div>
                 
 
@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    311
+                    546
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -450,23 +450,90 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>鉴于此次学习目的是<strong>实用</strong>，并不会涉及很多<del><strong>八股文</strong></del>概念，主要注重平时用得较多的操作</p>
-<h2 id="常用文件管理命令"><a href="#常用文件管理命令" class="headerlink" title="常用文件管理命令"></a>常用文件管理命令</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>1<span class="token punctuation">)</span> ctrl c: 取消命令，并且换行
-<span class="token punctuation">(</span>2<span class="token punctuation">)</span> ctrl u: 清空本行命令
-<span class="token punctuation">(</span>3<span class="token punctuation">)</span> tab键：可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项
-<span class="token punctuation">(</span>4<span class="token punctuation">)</span> ls: 列出当前目录下所有文件，蓝色的是文件夹，白色的是普通文件，绿色的是可执行文件
-<span class="token punctuation">(</span>5<span class="token punctuation">)</span> pwd: 显示当前路径
-<span class="token punctuation">(</span>6<span class="token punctuation">)</span> <span class="token function">cd</span> XXX: 进入XXX目录下, <span class="token function">cd</span> <span class="token punctuation">..</span> 返回上层目录
-<span class="token punctuation">(</span>7<span class="token punctuation">)</span> <span class="token function">cp</span> XXX YYY: 将XXX文件复制成YYY，XXX和YYY可以是一个路径，比如<span class="token punctuation">..</span>/dir_c/a.txt，表示上层目录下的dir_c文件夹下的文件a.txt
-<span class="token punctuation">(</span>8<span class="token punctuation">)</span> <span class="token function">mkdir</span> XXX: 创建目录XXX
-<span class="token punctuation">(</span>9<span class="token punctuation">)</span> <span class="token function">rm</span> XXX: 删除普通文件<span class="token punctuation">;</span>  <span class="token function">rm</span> XXX -r: 删除文件夹
-<span class="token punctuation">(</span>10<span class="token punctuation">)</span> <span class="token function">mv</span> XXX YYY: 将XXX文件移动到YYY，和cp命令一样，XXX和YYY可以是一个路径；重命名也是用这个命令
-<span class="token punctuation">(</span>11<span class="token punctuation">)</span> <span class="token function">touch</span> XXX: 创建一个文件
-<span class="token punctuation">(</span>12<span class="token punctuation">)</span> <span class="token function">cat</span> XXX: 展示文件XXX中的内容
-<span class="token punctuation">(</span>13<span class="token punctuation">)</span> 复制文本
-    windows/Linux下：Ctrl + insert，Mac下：command + c
-<span class="token punctuation">(</span>14<span class="token punctuation">)</span> 粘贴文本
-    windows/Linux下：Shift + insert，Mac下：command + <span class="token function">v</span>
+                <p>[toc]</p>
+<h3 id="ssh登录"><a href="#ssh登录" class="headerlink" title="ssh登录"></a>ssh登录</h3><p><strong>基本用法</strong><br>远程登录服务器：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname
+</code></pre>
+<ul>
+<li><code>user</code>: 用户名</li>
+<li><code>hostname</code>: IP地址或域名</li>
+</ul>
+<p>第一次登录时会提示：</p>
+<pre class=" language-bash"><code class="language-bash">The authenticity of host <span class="token string">'123.57.47.211 (123.57.47.211)'</span> can't be established.
+ECDSA key fingerprint is SHA256:iy237yysfCe013/l+kpDGfEG9xxHxm0dnxnAbJTPpG8.
+Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes/no/<span class="token punctuation">[</span>fingerprint<span class="token punctuation">]</span><span class="token punctuation">)</span>?
+</code></pre>
+<p>输入<code>yes</code>，然后回车即可。<br>这样会将该服务器的信息记录在<code>~/.ssh/known_hosts</code>文件中。</p>
+<p>然后输入密码即可登录到远程服务器中。</p>
+<hr>
+<p><strong>配置文件</strong><br>创建文件 <code>~/.ssh/config</code>。</p>
+<p>然后在文件中输入：</p>
+<pre class=" language-bash"><code class="language-bash">Host myserver1
+    HostName IP地址或域名
+    User 用户名
+
+Host myserver2
+    HostName IP地址或域名
+    User 用户名
+</code></pre>
+<p>之后再使用服务器时，可以直接使用别名<code>myserver1</code>、<code>myserver2</code>。</p>
+<hr>
+<p><strong>密钥登录</strong><br>创建密钥：</p>
+<p><code>ssh-keygen</code></p>
+<p>然后一直回车即可。</p>
+<p>执行结束后，<code>~/.ssh/</code>目录下会多两个文件：</p>
+<ul>
+<li><code>id_rsa</code>：私钥</li>
+<li><code>id_rsa.pub</code>：公钥</li>
+</ul>
+<hr>
+<p>之后想免密码登录哪个服务器，就将公钥传给哪个服务器即可。</p>
+<p>例如，想免密登录<code>myserver</code>服务器。则将公钥中的内容，复制到<code>myserver</code>中的<code>~/.ssh/authorized_keys</code>文件里即可。</p>
+<p>也可以使用如下命令一键添加公钥：</p>
+<pre class=" language-bash"><code class="language-bash">ssh-copy-id myserver
+</code></pre>
+<hr>
+<p><strong>执行命令</strong><br>命令格式：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">command</span>
+</code></pre>
+<p>例如：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">ls</span> -a
+</code></pre>
+<p>或者</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 单引号中的$i可以求值</span>
+<span class="token function">ssh</span> myserver <span class="token string">'for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done'</span>
+</code></pre>
+<p>或者</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 双引号中的$i不可以求值</span>
+<span class="token function">ssh</span> myserver <span class="token string">"for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done"</span>
+</code></pre>
+<h3 id="scp传文件"><a href="#scp传文件" class="headerlink" title="scp传文件"></a>scp传文件</h3><p><strong>基本用法</strong><br>命令格式：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token function">source</span> destination
+</code></pre>
+<p>将<code>source</code>路径下的文件复制到<code>destination</code>中</p>
+<hr>
+<p><strong>一次复制多个文件：</strong></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> source1 source2 destination
+</code></pre>
+<hr>
+<p><strong>复制文件夹：</strong></p>
+<p>将本地家目录中的<code>tmp</code>文件夹复制到<code>myserver</code>服务器中的<code>/home/acs/</code>目录下。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:/home/acs/
+</code></pre>
+<p>将本地家目录中的<code>tmp</code>文件夹复制到<code>myserver</code>服务器中的<code>~/homework/</code>目录下。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:homework/
+</code></pre>
+<p>将<code>myserver</code>服务器中的<code>~/homework/</code>文件夹复制到本地的当前路径下。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r myserver:homework <span class="token keyword">.</span>
+</code></pre>
+<hr>
+<p>指定服务器的端口号：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -P 22 source1 source2 destination
+</code></pre>
+<p>注意： <code>scp</code>的<code>-r -P</code>等参数尽量加在<code>source</code>和<code>destination</code>之前。</p>
+<hr>
+<p>使用<code>scp</code>配置其他服务器的<code>vim</code>和<code>tmux</code></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> ~/.vimrc ~/.tmux.conf myserver:
 </code></pre>
 
                 
@@ -494,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hailong-sun.gitee.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/">http://hailong-sun.gitee.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/</a>
+                    <a href="http://hailong-sun.gitee.io/2022/01/28/linux-ssh/">http://hailong-sun.gitee.io/2022/01/28/linux-ssh/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -709,31 +776,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/29/gitee-ssh-cuo-wu/">
+                <a href="/2022/02/02/linux-git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Gitee密钥SSH出错">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux-git">
                         
-                        <span class="card-title">Gitee密钥SSH出错</span>
+                        <span class="card-title">Linux-git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近莫名其妙Gitee的SSH出问题，百度大部分方法都没用，结果是ssh自身算法出错（无语！！）
+                            git教程
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Problems/" class="post-category">
-                                    Problems
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -743,8 +810,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSH/">
-                        <span class="chip bg-color">SSH</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -758,31 +825,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/">
+                <a href="/2022/01/27/linux-shell-yu-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="德约痛失年度大满贯">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux-shell语法">
                         
-                        <span class="card-title">德约痛失年度大满贯</span>
+                        <span class="card-title">Linux-shell语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            往往最接近成功就最恐惧失败
+                            shell语法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -792,8 +859,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tennis/">
-                        <span class="chip bg-color">Tennis</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

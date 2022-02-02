@@ -6,7 +6,7 @@
   <link href="http://hailong-sun.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://hailong-sun.gitee.io/"/>
-  <updated>2022-01-27T08:20:03.264Z</updated>
+  <updated>2022-02-02T06:11:58.536Z</updated>
   <id>http://hailong-sun.gitee.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux-git</title>
+    <link href="http://hailong-sun.gitee.io/2022/02/02/linux-git/"/>
+    <id>http://hailong-sun.gitee.io/2022/02/02/linux-git/</id>
+    <published>2022-02-02T06:04:44.135Z</published>
+    <updated>2022-02-02T06:11:58.536Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="git基本概念"><a href="#git基本概念" class="headerlink" title="git基本概念"></a>git基本概念</h4><ul><li>工作区：仓库的目录。工作区是独立于各个分支的。</li><li>暂存区：数据暂时存放的区域，类似于工作区写入版本库前的缓存区。暂存区是独立于各个分支的。</li><li>版本库：存放所有已经提交到本地仓库的代码版本</li><li>版本结构：树结构，树中每个节点代表一个代码版本。</li></ul><h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h4><ol><li><code>git config --global user.name xxx</code>：设置全局用户名，信息记录在<code>~/.gitconfig</code>文件中</li><li><code>git config --global user.email xxx@xxx.com</code>：设置全局邮箱地址，信息记录在<code>~/.gitconfig</code>文件中</li><li><code>git init</code>：将当前目录配置成git仓库，信息记录在隐藏的<code>.git</code>文件夹中</li><li><code>git add XX</code>：将XX文件添加到暂存区<ul><li><code>git add . </code>：将所有待加入暂存区的文件加入暂存区</li></ul></li><li><code>git rm --cached XX</code>：将文件从仓库索引目录中删掉</li><li><code>git commit -m "给自己看的备注信息"</code>：将暂存区的内容提交到当前分支</li><li><code>git status</code>：查看仓库状态</li><li><code>git diff XX</code>：查看XX文件相对于暂存区修改了哪些内容</li><li><code>git log</code>：查看当前分支的所有版本</li><li><code>git reflog</code>：查看<code>HEAD</code>指针的移动历史（包括被回滚的版本）</li><li><code>git reset --hard HEAD^</code> 或 <code>git reset --hard HEAD~</code>：将代码库回滚到上一个版本<ul><li><code>git reset --hard HEAD^^</code>：往上回滚两次，以此类推</li><li><code>git reset --hard HEAD~100</code>：往上回滚100个版本</li><li><code>git reset --hard 版本号</code>：回滚到某一特定版本</li></ul></li><li><code>git checkout — XX</code>或<code>git restore XX</code>：将XX文件尚未加入暂存区的修改全部撤销</li><li><code>git remote add origin git@git.acwing.com:xxx/XXX.git</code>：将本地仓库关联到远程仓库</li><li><code>git push -u</code> (第一次需要-u以后不需要)：将当前分支推送到远程仓库<ul><li><code>git push origin branch_name</code>：将本地的某个分支推送到远程仓库</li></ul></li><li><code>git clone git@git.acwing.com:xxx/XXX.git</code>：将远程仓库XXX下载到当前目录下</li><li><code>git checkout -b branch_name</code>：创建并切换到<code>branch_name</code>这个分支</li><li><code>git branch</code>：查看所有分支和当前所处分支</li><li><code>git checkout branch_name</code>：切换到<code>branch_name</code>这个分支</li><li><code>git merge branch_name</code>：将分支<code>branch_name</code>合并到当前分支上</li><li><code>git branch -d branch_name</code>：删除本地仓库的<code>branch_name</code>分支</li><li><code>git branch branch_name</code>：创建新分支</li><li><code>git push --set-upstream origin branch_name</code>：设置本地的<code>branch_name</code>分支对应远程仓库的branch_name分支</li><li><code>git push -d origin branch_name</code>：删除远程仓库的<code>branch_name</code>分支</li><li><code>git pull</code>：将远程仓库的当前分支与本地仓库的当前分支合并<ul><li><code>git pull origin branch_name</code>：将远程仓库的<code>branch_name</code>分支与本地仓库的当前分支合并</li></ul></li><li><code>git branch --set-upstream-to=origin/branch_name1 branch_name2</code>：将远程的<code>branch_name1</code>分支与本地的<code>branch_name2</code>分支对应</li><li><code>git checkout -t origin/branch_name</code> ：将远程的<code>branch_name</code>分支拉取到本地</li><li><code>git stash</code>：将工作区和暂存区中尚未提交的修改存入栈中</li><li><code>git stash apply</code>：将栈顶存储的修改恢复到当前分支，但不删除栈顶元素</li><li><code>git stash drop</code>：删除栈顶存储的修改</li><li><code>git stash pop</code>：将栈顶存储的修改恢复到当前分支，同时删除栈顶元素</li><li><code>git stash list</code>：查看栈中所有元素</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;git基本概念&quot;&gt;&lt;a href=&quot;#git基本概念&quot; class=&quot;headerlink&quot; title=&quot;git基本概念&quot;&gt;&lt;/a&gt;git基本概念&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;工作区：仓库的目录。工作区是独立于各个分支的。&lt;/li&gt;
+&lt;li&gt;暂存区：数据暂时存放的</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux-ssh</title>
+    <link href="http://hailong-sun.gitee.io/2022/01/28/linux-ssh/"/>
+    <id>http://hailong-sun.gitee.io/2022/01/28/linux-ssh/</id>
+    <published>2022-01-28T08:35:34.616Z</published>
+    <updated>2022-01-28T08:44:45.487Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h3 id="ssh登录"><a href="#ssh登录" class="headerlink" title="ssh登录"></a>ssh登录</h3><p><strong>基本用法</strong><br>远程登录服务器：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname</code></pre><ul><li><code>user</code>: 用户名</li><li><code>hostname</code>: IP地址或域名</li></ul><p>第一次登录时会提示：</p><pre class=" language-bash"><code class="language-bash">The authenticity of host <span class="token string">'123.57.47.211 (123.57.47.211)'</span> can't be established.ECDSA key fingerprint is SHA256:iy237yysfCe013/l+kpDGfEG9xxHxm0dnxnAbJTPpG8.Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes/no/<span class="token punctuation">[</span>fingerprint<span class="token punctuation">]</span><span class="token punctuation">)</span>?</code></pre><p>输入<code>yes</code>，然后回车即可。<br>这样会将该服务器的信息记录在<code>~/.ssh/known_hosts</code>文件中。</p><p>然后输入密码即可登录到远程服务器中。</p><hr><p><strong>配置文件</strong><br>创建文件 <code>~/.ssh/config</code>。</p><p>然后在文件中输入：</p><pre class=" language-bash"><code class="language-bash">Host myserver1    HostName IP地址或域名    User 用户名Host myserver2    HostName IP地址或域名    User 用户名</code></pre><p>之后再使用服务器时，可以直接使用别名<code>myserver1</code>、<code>myserver2</code>。</p><hr><p><strong>密钥登录</strong><br>创建密钥：</p><p><code>ssh-keygen</code></p><p>然后一直回车即可。</p><p>执行结束后，<code>~/.ssh/</code>目录下会多两个文件：</p><ul><li><code>id_rsa</code>：私钥</li><li><code>id_rsa.pub</code>：公钥</li></ul><hr><p>之后想免密码登录哪个服务器，就将公钥传给哪个服务器即可。</p><p>例如，想免密登录<code>myserver</code>服务器。则将公钥中的内容，复制到<code>myserver</code>中的<code>~/.ssh/authorized_keys</code>文件里即可。</p><p>也可以使用如下命令一键添加公钥：</p><pre class=" language-bash"><code class="language-bash">ssh-copy-id myserver</code></pre><hr><p><strong>执行命令</strong><br>命令格式：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">command</span></code></pre><p>例如：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">ls</span> -a</code></pre><p>或者</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 单引号中的$i可以求值</span><span class="token function">ssh</span> myserver <span class="token string">'for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done'</span></code></pre><p>或者</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 双引号中的$i不可以求值</span><span class="token function">ssh</span> myserver <span class="token string">"for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done"</span></code></pre><h3 id="scp传文件"><a href="#scp传文件" class="headerlink" title="scp传文件"></a>scp传文件</h3><p><strong>基本用法</strong><br>命令格式：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token function">source</span> destination</code></pre><p>将<code>source</code>路径下的文件复制到<code>destination</code>中</p><hr><p><strong>一次复制多个文件：</strong></p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> source1 source2 destination</code></pre><hr><p><strong>复制文件夹：</strong></p><p>将本地家目录中的<code>tmp</code>文件夹复制到<code>myserver</code>服务器中的<code>/home/acs/</code>目录下。</p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:/home/acs/</code></pre><p>将本地家目录中的<code>tmp</code>文件夹复制到<code>myserver</code>服务器中的<code>~/homework/</code>目录下。</p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:homework/</code></pre><p>将<code>myserver</code>服务器中的<code>~/homework/</code>文件夹复制到本地的当前路径下。</p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r myserver:homework <span class="token keyword">.</span></code></pre><hr><p>指定服务器的端口号：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -P 22 source1 source2 destination</code></pre><p>注意： <code>scp</code>的<code>-r -P</code>等参数尽量加在<code>source</code>和<code>destination</code>之前。</p><hr><p>使用<code>scp</code>配置其他服务器的<code>vim</code>和<code>tmux</code></p><pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> ~/.vimrc ~/.tmux.conf myserver:</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h3 id=&quot;ssh登录&quot;&gt;&lt;a href=&quot;#ssh登录&quot; class=&quot;headerlink&quot; title=&quot;ssh登录&quot;&gt;&lt;/a&gt;ssh登录&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;基本用法&lt;/strong&gt;&lt;br&gt;远程登录服务器：&lt;/p&gt;
+&lt;pre cl</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux-shell语法</title>
