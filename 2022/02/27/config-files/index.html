@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Linux-git, ML, github, gitee">
+    <meta name="keywords" content="云服务器的配置文件, ML, github, gitee">
     <meta name="description" content="Welcome to Allen&#39;Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux-git | Allen Sun&#39;Blog</title>
+    <title>云服务器的配置文件 | Allen Sun&#39;Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -273,12 +273,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux-git</h1>
+                    <h1 class="description center-align post-title">云服务器的配置文件</h1>
                 </div>
             </div>
         </div>
@@ -394,8 +394,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+                                <span class="chip bg-color">配置文件</span>
                             </a>
                         
                     </div>
@@ -406,8 +406,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                学习笔记
+                            <a href="/categories/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/" class="post-category">
+                                配置环境
                             </a>
                         
                     </div>
@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-02
+                    2022-02-27
                 </div>
                 
 
@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    802
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    11 分
                 </div>
                 
 
@@ -450,59 +450,451 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="git基本概念"><a href="#git基本概念" class="headerlink" title="git基本概念"></a>git基本概念</h4><ul>
-<li>工作区：仓库的目录。工作区是独立于各个分支的。</li>
-<li>暂存区：数据暂时存放的区域，类似于工作区写入版本库前的缓存区。暂存区是独立于各个分支的。</li>
-<li>版本库：存放所有已经提交到本地仓库的代码版本</li>
-<li>版本结构：树结构，树中每个节点代表一个代码版本。</li>
-</ul>
-<h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h4><ol>
-<li><code>git config --global user.name xxx</code>：设置全局用户名，信息记录在<code>~/.gitconfig</code>文件中</li>
-<li><code>git config --global user.email xxx@xxx.com</code>：设置全局邮箱地址，信息记录在<code>~/.gitconfig</code>文件中</li>
-<li><code>git init</code>：将当前目录配置成git仓库，信息记录在隐藏的<code>.git</code>文件夹中</li>
-<li><code>git add XX</code>：将XX文件添加到暂存区<ul>
-<li><code>git add . </code>：将所有待加入暂存区的文件加入暂存区</li>
-</ul>
-</li>
-<li><code>git rm --cached XX</code>：将文件从仓库索引目录中删掉</li>
-<li><code>git commit -m "给自己看的备注信息"</code>：将暂存区的内容提交到当前分支</li>
-<li><code>git status</code>：查看仓库状态</li>
-<li><code>git diff XX</code>：查看XX文件相对于暂存区修改了哪些内容</li>
-<li><code>git log</code>：查看当前分支的所有版本</li>
-<li><code>git reflog</code>：查看<code>HEAD</code>指针的移动历史（包括被回滚的版本）</li>
-<li><code>git reset --hard HEAD^</code> 或 <code>git reset --hard HEAD~</code>：将代码库回滚到上一个版本<ul>
-<li><code>git reset --hard HEAD^^</code>：往上回滚两次，以此类推</li>
-<li><code>git reset --hard HEAD~100</code>：往上回滚100个版本</li>
-<li><code>git reset --hard 版本号</code>：回滚到某一特定版本</li>
-</ul>
-</li>
-<li><code>git checkout — XX</code>或<code>git restore XX</code>：将XX文件尚未加入暂存区的修改全部撤销</li>
-<li><code>git remote add origin git@git.acwing.com:xxx/XXX.git</code>：将本地仓库关联到远程仓库</li>
-<li><code>git push -u</code> (第一次需要-u以后不需要)：将当前分支推送到远程仓库<ul>
-<li><code>git push origin branch_name</code>：将本地的某个分支推送到远程仓库</li>
-</ul>
-</li>
-<li><code>git clone git@git.acwing.com:xxx/XXX.git</code>：将远程仓库XXX下载到当前目录下</li>
-<li><code>git checkout -b branch_name</code>：创建并切换到<code>branch_name</code>这个分支</li>
-<li><code>git branch</code>：查看所有分支和当前所处分支</li>
-<li><code>git checkout branch_name</code>：切换到<code>branch_name</code>这个分支</li>
-<li><code>git merge branch_name</code>：将分支<code>branch_name</code>合并到当前分支上</li>
-<li><code>git branch -d branch_name</code>：删除本地仓库的<code>branch_name</code>分支</li>
-<li><code>git branch branch_name</code>：创建新分支</li>
-<li><code>git push --set-upstream origin branch_name</code>：设置本地的<code>branch_name</code>分支对应远程仓库的branch_name分支</li>
-<li><code>git push -d origin branch_name</code>：删除远程仓库的<code>branch_name</code>分支</li>
-<li><code>git pull</code>：将远程仓库的当前分支与本地仓库的当前分支合并<ul>
-<li><code>git pull origin branch_name</code>：将远程仓库的<code>branch_name</code>分支与本地仓库的当前分支合并</li>
-</ul>
-</li>
-<li><code>git branch --set-upstream-to=origin/branch_name1 branch_name2</code>：将远程的<code>branch_name1</code>分支与本地的<code>branch_name2</code>分支对应</li>
-<li><code>git checkout -t origin/branch_name</code> ：将远程的<code>branch_name</code>分支拉取到本地</li>
-<li><code>git stash</code>：将工作区和暂存区中尚未提交的修改存入栈中</li>
-<li><code>git stash apply</code>：将栈顶存储的修改恢复到当前分支，但不删除栈顶元素</li>
-<li><code>git stash drop</code>：删除栈顶存储的修改</li>
-<li><code>git stash pop</code>：将栈顶存储的修改恢复到当前分支，同时删除栈顶元素</li>
-<li><code>git stash list</code>：查看栈中所有元素</li>
-</ol>
+                <h2 id="bashrc"><a href="#bashrc" class="headerlink" title=".bashrc"></a>.bashrc</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
+<span class="token comment" spellcheck="true"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span>
+<span class="token comment" spellcheck="true"># for examples</span>
+
+<span class="token comment" spellcheck="true"># If not running interactively, don't do anything</span>
+<span class="token keyword">case</span> $- <span class="token keyword">in</span>
+    *i*<span class="token punctuation">)</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      *<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+esac
+
+<span class="token comment" spellcheck="true"># don't put duplicate lines or lines starting with space in the history.</span>
+<span class="token comment" spellcheck="true"># See bash(1) for more options</span>
+HISTCONTROL<span class="token operator">=</span>ignoreboth
+
+<span class="token comment" spellcheck="true"># append to the history file, don't overwrite it</span>
+<span class="token function">shopt</span> -s histappend
+
+<span class="token comment" spellcheck="true"># for setting history length see HISTSIZE and HISTFILESIZE in bash(1)</span>
+HISTSIZE<span class="token operator">=</span>1000
+HISTFILESIZE<span class="token operator">=</span>2000
+
+<span class="token comment" spellcheck="true"># check the window size after each command and, if necessary,</span>
+<span class="token comment" spellcheck="true"># update the values of LINES and COLUMNS.</span>
+<span class="token function">shopt</span> -s checkwinsize
+
+<span class="token comment" spellcheck="true"># If set, the pattern "**" used in a pathname expansion context will</span>
+<span class="token comment" spellcheck="true"># match all files and zero or more directories and subdirectories.</span>
+<span class="token comment" spellcheck="true">#shopt -s globstar</span>
+
+<span class="token comment" spellcheck="true"># make less more friendly for non-text input files, see lesspipe(1)</span>
+<span class="token punctuation">[</span> -x /usr/bin/lesspipe <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>SHELL<span class="token operator">=</span>/bin/sh lesspipe<span class="token variable">)</span></span>"</span>
+
+<span class="token comment" spellcheck="true"># set variable identifying the chroot you work in (used in the prompt below)</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${debian_chroot:-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -r /etc/debian_chroot <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    debian_chroot<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> /etc/debian_chroot<span class="token variable">)</span></span>
+<span class="token keyword">fi</span>
+
+<span class="token comment" spellcheck="true"># set a fancy prompt (non-color, unless we know we "want" color)</span>
+<span class="token keyword">case</span> <span class="token string">"<span class="token variable">$TERM</span>"</span> <span class="token keyword">in</span>
+    xterm-color<span class="token operator">|</span>*-256color<span class="token punctuation">)</span> color_prompt<span class="token operator">=</span>yes<span class="token punctuation">;</span><span class="token punctuation">;</span>
+esac
+
+<span class="token comment" spellcheck="true"># uncomment for a colored prompt, if the terminal has the capability; turned</span>
+<span class="token comment" spellcheck="true"># off by default to not distract the user: the focus in a terminal window</span>
+<span class="token comment" spellcheck="true"># should be on the output of commands, not on the prompt</span>
+<span class="token comment" spellcheck="true">#force_color_prompt=yes</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$force_color_prompt</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -x /usr/bin/tput <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> tput setaf 1 <span class="token operator">></span><span class="token operator">&amp;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># We have color support; assume it's compliant with Ecma-48</span>
+    <span class="token comment" spellcheck="true"># (ISO/IEC-6429). (Lack of such support is extremely rare, and such</span>
+    <span class="token comment" spellcheck="true"># a case would tend to support setf rather than setaf.)</span>
+    color_prompt<span class="token operator">=</span>yes
+    <span class="token keyword">else</span>
+    color_prompt<span class="token operator">=</span>
+    <span class="token keyword">fi</span>
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$color_prompt</span>"</span> <span class="token operator">=</span> <span class="token function">yes</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    PS1<span class="token operator">=</span><span class="token string">'<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '</span>
+<span class="token keyword">else</span>
+    PS1<span class="token operator">=</span><span class="token string">'<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\u@\h:\w\$ '</span>
+<span class="token keyword">fi</span>
+unset color_prompt force_color_prompt
+
+<span class="token comment" spellcheck="true"># If this is an xterm set the title to user@host:dir</span>
+<span class="token keyword">case</span> <span class="token string">"<span class="token variable">$TERM</span>"</span> <span class="token keyword">in</span>
+xterm*<span class="token operator">|</span>rxvt*<span class="token punctuation">)</span>
+    PS1<span class="token operator">=</span><span class="token string">"\[\e]0;<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\u@\h: \w\a\]<span class="token variable">$PS1</span>"</span>
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+*<span class="token punctuation">)</span>
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+esac
+
+<span class="token comment" spellcheck="true"># enable color support of ls and also add handy aliases</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -x /usr/bin/dircolors <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">test</span> -r ~/.dircolors <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b ~/.dircolors<span class="token variable">)</span></span>"</span> <span class="token operator">||</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b<span class="token variable">)</span></span>"</span>
+    <span class="token function">alias</span> ls<span class="token operator">=</span><span class="token string">'ls --color=auto'</span>
+    <span class="token comment" spellcheck="true">#alias dir='dir --color=auto'</span>
+    <span class="token comment" spellcheck="true">#alias vdir='vdir --color=auto'</span>
+
+    <span class="token function">alias</span> grep<span class="token operator">=</span><span class="token string">'grep --color=auto'</span>
+    <span class="token function">alias</span> fgrep<span class="token operator">=</span><span class="token string">'fgrep --color=auto'</span>
+    <span class="token function">alias</span> egrep<span class="token operator">=</span><span class="token string">'egrep --color=auto'</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment" spellcheck="true"># colored GCC warnings and errors</span>
+<span class="token comment" spellcheck="true">#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'</span>
+
+<span class="token comment" spellcheck="true"># some more ls aliases</span>
+<span class="token function">alias</span> ll<span class="token operator">=</span><span class="token string">'ls -alF'</span>
+<span class="token function">alias</span> la<span class="token operator">=</span><span class="token string">'ls -A'</span>
+<span class="token function">alias</span> l<span class="token operator">=</span><span class="token string">'ls -CF'</span>
+
+<span class="token comment" spellcheck="true"># Add an "alert" alias for long running commands.  Use like so:</span>
+<span class="token comment" spellcheck="true">#   sleep 10; alert</span>
+<span class="token function">alias</span> alert<span class="token operator">=</span><span class="token string">'notify-send --urgency=low -i "<span class="token variable"><span class="token variable">$(</span><span class="token punctuation">[</span> $? <span class="token operator">=</span> 0 <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">echo</span> terminal <span class="token operator">||</span> <span class="token keyword">echo</span> error<span class="token variable">)</span></span>" "$(history|tail -n1|sed -e '</span>\<span class="token string">''</span>s/^\s*<span class="token punctuation">[</span>0-9<span class="token punctuation">]</span>\+\s*//<span class="token punctuation">;</span>s/<span class="token punctuation">[</span><span class="token punctuation">;</span><span class="token operator">&amp;</span><span class="token operator">|</span><span class="token punctuation">]</span>\s*alert$//<span class="token string">'\''</span><span class="token punctuation">)</span>"<span class="token string">'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don'</span>t need to <span class="token function">enable</span>
+<span class="token comment" spellcheck="true"># this, if it's already enabled in /etc/bash.bashrc and /etc/profile</span>
+<span class="token comment" spellcheck="true"># sources /etc/bash.bashrc).</span>
+<span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">shopt</span> -oq posix<span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -f /usr/share/bash-completion/bash_completion <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">.</span> /usr/share/bash-completion/bash_completion
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> -f /etc/bash_completion <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">.</span> /etc/bash_completion
+  <span class="token keyword">fi</span>
+<span class="token keyword">fi</span>
+
+<span class="token function">export</span> PATH<span class="token operator">=</span>/home/acs/.homework:<span class="token variable">$PATH</span>
+<span class="token function">alias</span> tmux<span class="token operator">=</span><span class="token string">'tmux -u'</span>
+</code></pre>
+<h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><pre class=" language-bash"><code class="language-bash">set-option -g status-keys <span class="token function">vi</span>
+setw -g mode-keys <span class="token function">vi</span>
+
+setw -g monitor-activity on
+
+<span class="token comment" spellcheck="true"># setw -g c0-change-trigger 10</span>
+<span class="token comment" spellcheck="true"># setw -g c0-change-interval 100</span>
+
+<span class="token comment" spellcheck="true"># setw -g c0-change-interval 50</span>
+<span class="token comment" spellcheck="true"># setw -g c0-change-trigger  75</span>
+
+
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+<span class="token keyword">set</span> -g history-limit 100000
+
+<span class="token comment" spellcheck="true">#set-window-option -g utf8 on</span>
+
+<span class="token comment" spellcheck="true"># set command prefix</span>
+set-option -g prefix C-a
+unbind-key C-b
+bind-key C-a send-prefix
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+bind <span class="token operator">&lt;</span> resize-pane -L 7
+bind <span class="token operator">></span> resize-pane -R 7
+bind - resize-pane -D 7
+bind + resize-pane -U 7
+
+
+bind-key -n M-l next-window
+bind-key -n M-h previous-window
+
+
+
+<span class="token keyword">set</span> -g status-interval 1
+<span class="token comment" spellcheck="true"># status bar</span>
+<span class="token keyword">set</span> -g status-bg black
+<span class="token keyword">set</span> -g status-fg blue
+
+
+<span class="token comment" spellcheck="true">#set -g status-utf8 on</span>
+<span class="token keyword">set</span> -g status-justify centre
+<span class="token keyword">set</span> -g status-bg default
+<span class="token keyword">set</span> -g status-left <span class="token string">" #[fg=green]#S@#H #[default]"</span>
+<span class="token keyword">set</span> -g status-left-length 20
+
+
+<span class="token comment" spellcheck="true"># mouse support</span>
+<span class="token comment" spellcheck="true"># for tmux 2.1</span>
+<span class="token comment" spellcheck="true"># set -g mouse-utf8 on</span>
+<span class="token keyword">set</span> -g mouse on
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># for previous version</span>
+<span class="token comment" spellcheck="true">#set -g mode-mouse on</span>
+<span class="token comment" spellcheck="true">#set -g mouse-resize-pane on</span>
+<span class="token comment" spellcheck="true">#set -g mouse-select-pane on</span>
+<span class="token comment" spellcheck="true">#set -g mouse-select-window on</span>
+
+
+<span class="token comment" spellcheck="true">#set -g status-right-length 25</span>
+<span class="token keyword">set</span> -g status-right <span class="token string">"#[fg=green]%H:%M:%S #[fg=magenta]%a %m-%d #[default]"</span>
+
+<span class="token comment" spellcheck="true"># fix for tmux 1.9</span>
+bind <span class="token string">'"'</span> split-window -vc <span class="token string">"#{pane_current_path}"</span>
+bind <span class="token string">'%'</span> split-window -hc <span class="token string">"#{pane_current_path}"</span>
+bind <span class="token string">'c'</span> new-window -c <span class="token string">"#{pane_current_path}"</span>
+
+<span class="token comment" spellcheck="true"># run-shell "powerline-daemon -q"</span>
+
+<span class="token comment" spellcheck="true"># vim: ft=conf</span>
+</code></pre>
+<h2 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h2><pre class=" language-bash"><code class="language-bash"><span class="token string">" An example for a vimrc file.
+"</span>
+<span class="token string">" To use it, copy it to
+"</span>     <span class="token keyword">for</span> Unix and OS/2:  ~/.vimrc
+<span class="token string">"          for Amiga:  s:.vimrc
+"</span>  <span class="token keyword">for</span> MS-DOS and Win32:  <span class="token variable">$VIM</span>\_vimrc
+<span class="token string">"        for OpenVMS:  sys<span class="token variable">$login</span>:.vimrc
+
+"</span> When started as <span class="token string">"evim"</span>, evim.vim will already have <span class="token keyword">done</span> these settings.
+<span class="token keyword">if</span> v:progname <span class="token operator">=</span>~? <span class="token string">"evim"</span>
+  finish
+endif
+
+<span class="token string">" Use Vim settings, rather then Vi settings (much better!).
+"</span> This must be first, because it changes other options as a side effect.
+<span class="token keyword">set</span> nocompatible
+
+<span class="token string">" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+if has("</span>vms<span class="token string">")
+  set nobackup        "</span> <span class="token keyword">do</span> not keep a backup file, use versions instead
+<span class="token keyword">else</span>
+  <span class="token keyword">set</span> backup        <span class="token string">" keep a backup file
+endif
+set history=50        "</span> keep 50 lines of <span class="token function">command</span> line <span class="token function">history</span>
+<span class="token keyword">set</span> ruler        <span class="token string">" show the cursor position all the time
+set showcmd        "</span> display incomplete commands
+<span class="token keyword">set</span> incsearch        <span class="token string">" do incremental searching
+"</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+<span class="token string">"My Setting-sunshanlu
+"</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+vmap <span class="token operator">&lt;</span>leader<span class="token operator">></span>y :w<span class="token operator">!</span> /tmp/vitmp<span class="token operator">&lt;</span>CR<span class="token operator">></span>
+nmap <span class="token operator">&lt;</span>leader<span class="token operator">></span>p :r<span class="token operator">!</span> <span class="token function">cat</span> /tmp/vitmp<span class="token operator">&lt;</span>CR<span class="token operator">></span>
+
+<span class="token string">"语法高亮
+syntax enable
+syntax on
+"</span>显示行号
+<span class="token keyword">set</span> nu
+
+<span class="token string">"修改默认注释颜色
+"</span>hi Comment ctermfg<span class="token operator">=</span>DarkCyan
+<span class="token string">"允许退格键删除
+"</span><span class="token keyword">set</span> backspace<span class="token operator">=</span>2
+<span class="token string">"启用鼠标
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+"</span>按C语言格式缩进
+<span class="token keyword">set</span> cindent
+<span class="token keyword">set</span> autoindent
+<span class="token keyword">set</span> smartindent
+<span class="token keyword">set</span> shiftwidth<span class="token operator">=</span>4
+
+<span class="token string">" 允许在有未保存的修改时切换缓冲区
+"</span><span class="token keyword">set</span> hidden
+
+<span class="token string">" 设置无备份文件
+set writebackup
+set nobackup
+
+"</span>显示括号匹配
+<span class="token keyword">set</span> showmatch
+<span class="token string">"括号匹配显示时间为1(单位是十分之一秒)
+set matchtime=5
+"</span>显示当前的行号列号：
+<span class="token keyword">set</span> ruler
+<span class="token string">"在状态栏显示正在输入的命令
+set showcmd
+
+set foldmethod=syntax
+"</span>默认情况下不折叠
+<span class="token keyword">set</span> foldlevel<span class="token operator">=</span>100
+<span class="token string">" 开启状态栏信息
+set laststatus=2
+"</span> 命令行的高度，默认为1，这里设为2
+<span class="token keyword">set</span> cmdheight<span class="token operator">=</span>2
+
+
+<span class="token string">" 显示Tab符，使用一高亮竖线代替
+set list
+"</span><span class="token keyword">set</span> listchars<span class="token operator">=</span>tab:\<span class="token operator">|</span>\ ,
+<span class="token keyword">set</span> listchars<span class="token operator">=</span>tab:<span class="token operator">></span>-,trail:-
+
+
+<span class="token string">"侦测文件类型
+filetype on
+"</span>载入文件类型插件
+filetype plugin on
+<span class="token string">"为特定文件类型载入相关缩进文件
+filetype indent on
+"</span> 启用自动补全
+filetype plugin indent on 
+
+
+<span class="token string">"设置编码自动识别, 中文引号显示
+filetype on "</span>打开文件类型检测
+<span class="token string">"set fileencodings=euc-cn,ucs-bom,utf-8,cp936,gb2312,gb18030,gbk,big5,euc-jp,euc-kr,latin1
+set fileencodings=utf-8,gb2312,gbk,gb18030
+"</span>这个用能很给劲，不管encoding是什么编码，都能将文本显示汉字
+<span class="token string">"set termencoding=gb2312
+set termencoding=utf-8
+"</span>新建文件使用的编码
+<span class="token keyword">set</span> fileencoding<span class="token operator">=</span>utf-8
+<span class="token string">"set fileencoding=gb2312
+"</span>用于显示的编码，仅仅是显示
+<span class="token keyword">set</span> encoding<span class="token operator">=</span>utf-8
+<span class="token string">"set encoding=utf-8
+"</span><span class="token keyword">set</span> encoding<span class="token operator">=</span>euc-cn
+<span class="token string">"set encoding=gbk
+"</span><span class="token keyword">set</span> encoding<span class="token operator">=</span>gb2312
+<span class="token string">"set ambiwidth=double
+set fileformat=unix
+
+
+"</span>设置高亮搜索
+<span class="token keyword">set</span> hlsearch
+<span class="token string">"在搜索时，输入的词句的逐字符高亮
+set incsearch
+
+"</span> 着色模式
+<span class="token keyword">set</span> t_Co<span class="token operator">=</span>256
+<span class="token string">"colorscheme wombat256mod
+"</span>colorscheme gardener
+<span class="token string">"colorscheme elflord
+colorscheme desert
+"</span>colorscheme evening
+<span class="token string">"colorscheme darkblue
+"</span>colorscheme torte
+<span class="token string">"colorscheme default
+
+"</span> 字体 <span class="token operator">&amp;&amp;</span> 字号
+<span class="token keyword">set</span> guifont<span class="token operator">=</span>Monaco:h10
+<span class="token string">"set guifont=Consolas:h10
+
+"</span> :LoadTemplate       根据文件后缀自动加载模板
+<span class="token string">"let g:template_path='/home/ruchee/.vim/template/'
+
+"</span> :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter <span class="token operator">&amp;&amp;</span> authorinfo的结合
+<span class="token string">""</span><span class="token keyword">let</span> g:vimrc_author<span class="token operator">=</span><span class="token string">'sunshanlu'</span>
+<span class="token string">""</span><span class="token keyword">let</span> g:vimrc_email<span class="token operator">=</span><span class="token string">'sunshanlu@baidu.com'</span>
+<span class="token string">""</span><span class="token keyword">let</span> g:vimrc_homepage<span class="token operator">=</span><span class="token string">'http://www.sunshanlu.com'</span>
+<span class="token string">"
+"</span>
+<span class="token string">" Ctrl + E            一步加载语法模板和作者、时间信息
+"</span><span class="token string">"map &lt;c-e> &lt;ESC>:AuthorInfoDetect&lt;CR>&lt;ESC>Gi
+"</span><span class="token string">"imap &lt;c-e> &lt;ESC>:AuthorInfoDetect&lt;CR>&lt;ESC>Gi
+"</span><span class="token string">"vmap &lt;c-e> &lt;ESC>:AuthorInfoDetect&lt;CR>&lt;ESC>Gi
+
+
+
+"</span> <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> 引号 <span class="token operator">&amp;&amp;</span> 括号自动匹配 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> <span class="token string">"
+"</span>
+<span class="token string">":inoremap ( ()&lt;ESC>i
+
+"</span>:inoremap <span class="token punctuation">)</span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">')'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
+<span class="token string">"
+"</span>:inoremap <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
+<span class="token string">"
+"</span>:inoremap <span class="token punctuation">}</span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">'}'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
+<span class="token string">"
+"</span>:inoremap <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
+<span class="token string">"
+"</span>:inoremap <span class="token punctuation">]</span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
+<span class="token string">"
+"</span>:inoremap <span class="token operator">&lt;</span> <span class="token operator">&lt;</span><span class="token operator">></span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
+<span class="token string">"
+"</span>:inoremap <span class="token operator">></span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">'>'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
+<span class="token string">"
+"</span><span class="token string">":inoremap "</span> <span class="token string">""</span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
+<span class="token string">"
+"</span>:inoremap <span class="token string">' '</span><span class="token string">'&lt;ESC>i
+"
+":inoremap <span class="token variable"><span class="token variable">`</span> <span class="token variable">`</span></span>`&lt;ESC>i
+"
+":inoremap * **&lt;ESC>i
+
+" 每行超过80个的字符用下划线标示
+""au BufRead,BufNewFile *.s,*.asm,*.h,*.c,*.cpp,*.java,*.cs,*.lisp,*.el,*.erl,*.tex,*.sh,*.lua,*.pl,*.php,*.tpl,*.py,*.rb,*.erb,*.vim,*.js,*.jade,*.coffee,*.css,*.xml,*.html,*.shtml,*.xhtml Underlined /.\%81v/
+"
+"
+" For Win32 GUI: remove '</span>t<span class="token string">' flag from '</span>guioptions<span class="token string">': no tearoff menu entries
+" let &amp;guioptions = substitute(&amp;guioptions, "t", "", "g")
+
+" Don'</span>t use Ex mode, use Q <span class="token keyword">for</span> formatting
+map Q gq
+
+<span class="token string">" This is an alternative that also works in block mode, but the deleted
+"</span> text is lost and it only works <span class="token keyword">for</span> putting the current register.
+<span class="token string">"vnoremap p "</span>_dp
+
+<span class="token string">" Switch syntax highlighting on, when the terminal has colors
+"</span> Also switch on highlighting the last used search pattern.
+<span class="token keyword">if</span> <span class="token operator">&amp;</span>t_Co <span class="token operator">></span> 2 <span class="token operator">||</span> has<span class="token punctuation">(</span><span class="token string">"gui_running"</span><span class="token punctuation">)</span>
+  syntax on
+  <span class="token keyword">set</span> hlsearch
+endif
+
+<span class="token string">" Only do this part when compiled with support for autocommands.
+if has("</span>autocmd<span class="token string">")
+
+  "</span> Enable <span class="token function">file</span> <span class="token function">type</span> detection.
+  <span class="token string">" Use the default filetype settings, so that mail gets 'tw' set to 72,
+  "</span> <span class="token string">'cindent'</span> is on <span class="token keyword">in</span> C files, etc.
+  <span class="token string">" Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  "</span> Put these <span class="token keyword">in</span> an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au<span class="token operator">!</span>
+
+  <span class="token string">" For all text files set 'textwidth' to 80 characters.
+  autocmd FileType text setlocal textwidth=80
+
+  "</span> When editing a file, always jump to the last known cursor position.
+  <span class="token string">" Don't do it when the position is invalid or when inside an event handler
+  "</span> <span class="token punctuation">(</span>happens when dropping a <span class="token function">file</span> on gvim<span class="token punctuation">)</span>.
+  autocmd BufReadPost *
+    \ <span class="token keyword">if</span> line<span class="token punctuation">(</span><span class="token string">"'\""</span><span class="token punctuation">)</span> <span class="token operator">></span> 0 <span class="token operator">&amp;&amp;</span> line<span class="token punctuation">(</span><span class="token string">"'\""</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> line<span class="token punctuation">(</span><span class="token string">"$"</span><span class="token punctuation">)</span> <span class="token operator">|</span>
+    \   exe <span class="token string">"normal g`\""</span> <span class="token operator">|</span>
+    \ endif
+
+  augroup END
+
+<span class="token keyword">else</span>
+
+  <span class="token keyword">set</span> autoindent        <span class="token string">" always set autoindenting on
+
+endif "</span> has<span class="token punctuation">(</span><span class="token string">"autocmd"</span><span class="token punctuation">)</span>
+
+<span class="token string">" 增加鼠标行高亮
+set cursorline
+hi CursorLine  cterm=NONE   ctermbg=darkred ctermfg=white
+
+"</span> 设置tab是四个空格
+<span class="token keyword">set</span> ts<span class="token operator">=</span>4
+<span class="token keyword">set</span> expandtab
+
+" 主要给Tlist使用
+<span class="token keyword">let</span> Tlist_Exit_OnlyWindow <span class="token operator">=</span> 1
+<span class="token keyword">let</span> Tlist_Auto_Open <span class="token operator">=</span> 1
+</code></pre>
 
                 
             </div>
@@ -529,7 +921,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hailong-sun.gitee.io/2022/02/02/linux-git/">http://hailong-sun.gitee.io/2022/02/02/linux-git/</a>
+                    <a href="http://hailong-sun.gitee.io/2022/02/27/config-files/">http://hailong-sun.gitee.io/2022/02/27/config-files/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,8 +959,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+                                    <span class="chip bg-color">配置文件</span>
                                 </a>
                             
                         </div>
@@ -740,9 +1132,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/27/config-files/">
                     <div class="card-image">
@@ -760,9 +1153,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -775,6 +1168,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -793,24 +1187,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/28/linux-ssh/">
+                <a href="/2022/02/02/linux-git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux-ssh">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux-git">
                         
-                        <span class="card-title">Linux-ssh</span>
+                        <span class="card-title">Linux-git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ssh操作
+                            git教程
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-02
                             </span>
                         <span class="publish-author">
                             
