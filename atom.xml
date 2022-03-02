@@ -3,11 +3,11 @@
   <title>Allen Sun&#39;Blog</title>
   
   <subtitle>仍是少年</subtitle>
-  <link href="http://hailong-sun.gitee.io/atom.xml" rel="self"/>
+  <link href="http://sun-hailong.github.io/atom.xml" rel="self"/>
   
-  <link href="http://hailong-sun.gitee.io/"/>
+  <link href="http://sun-hailong.github.io/"/>
   <updated>2022-02-27T09:53:45.085Z</updated>
-  <id>http://hailong-sun.gitee.io/</id>
+  <id>http://sun-hailong.github.io/</id>
   
   <author>
     <name>Allen Sun</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>云服务器的配置文件</title>
-    <link href="http://hailong-sun.gitee.io/2022/02/27/config-files/"/>
-    <id>http://hailong-sun.gitee.io/2022/02/27/config-files/</id>
+    <link href="http://sun-hailong.github.io/2022/02/27/config-files/"/>
+    <id>http://sun-hailong.github.io/2022/02/27/config-files/</id>
     <published>2022-02-27T09:50:33.006Z</published>
     <updated>2022-02-27T09:53:45.085Z</updated>
     
@@ -33,17 +33,17 @@
     
     
     
-    <category term="配置环境" scheme="http://hailong-sun.gitee.io/categories/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"/>
+    <category term="配置环境" scheme="http://sun-hailong.github.io/categories/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"/>
     
     
-    <category term="配置文件" scheme="http://hailong-sun.gitee.io/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <category term="配置文件" scheme="http://sun-hailong.github.io/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>Linux-git</title>
-    <link href="http://hailong-sun.gitee.io/2022/02/02/linux-git/"/>
-    <id>http://hailong-sun.gitee.io/2022/02/02/linux-git/</id>
+    <link href="http://sun-hailong.github.io/2022/02/02/linux-git/"/>
+    <id>http://sun-hailong.github.io/2022/02/02/linux-git/</id>
     <published>2022-02-02T06:04:44.135Z</published>
     <updated>2022-02-02T06:11:58.536Z</updated>
     
@@ -59,17 +59,17 @@
     
     
     
-    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="http://sun-hailong.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://sun-hailong.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux-ssh</title>
-    <link href="http://hailong-sun.gitee.io/2022/01/28/linux-ssh/"/>
-    <id>http://hailong-sun.gitee.io/2022/01/28/linux-ssh/</id>
+    <link href="http://sun-hailong.github.io/2022/01/28/linux-ssh/"/>
+    <id>http://sun-hailong.github.io/2022/01/28/linux-ssh/</id>
     <published>2022-01-28T08:35:34.616Z</published>
     <updated>2022-01-28T08:44:45.487Z</updated>
     
@@ -85,17 +85,17 @@
     
     
     
-    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="http://sun-hailong.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://sun-hailong.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux-shell语法</title>
-    <link href="http://hailong-sun.gitee.io/2022/01/27/linux-shell-yu-fa/"/>
-    <id>http://hailong-sun.gitee.io/2022/01/27/linux-shell-yu-fa/</id>
+    <link href="http://sun-hailong.github.io/2022/01/27/linux-shell-yu-fa/"/>
+    <id>http://sun-hailong.github.io/2022/01/27/linux-shell-yu-fa/</id>
     <published>2022-01-27T04:10:54.298Z</published>
     <updated>2022-02-24T01:56:30.281Z</updated>
     
@@ -111,17 +111,17 @@
     
     
     
-    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="http://sun-hailong.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://sun-hailong.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux-tmux和vim</title>
-    <link href="http://hailong-sun.gitee.io/2022/01/27/linux-tmux-he-vim/"/>
-    <id>http://hailong-sun.gitee.io/2022/01/27/linux-tmux-he-vim/</id>
+    <link href="http://sun-hailong.github.io/2022/01/27/linux-tmux-he-vim/"/>
+    <id>http://sun-hailong.github.io/2022/01/27/linux-tmux-he-vim/</id>
     <published>2022-01-27T04:04:10.364Z</published>
     <updated>2022-01-27T04:05:30.935Z</updated>
     
@@ -135,17 +135,17 @@
     
     
     
-    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="http://sun-hailong.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://sun-hailong.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>用随机梯度下降来优化人生</title>
-    <link href="http://hailong-sun.gitee.io/2021/11/25/yong-sui-ji-ti-du-xia-jiang-lai-you-hua-ren-sheng/"/>
-    <id>http://hailong-sun.gitee.io/2021/11/25/yong-sui-ji-ti-du-xia-jiang-lai-you-hua-ren-sheng/</id>
+    <link href="http://sun-hailong.github.io/2021/11/25/yong-sui-ji-ti-du-xia-jiang-lai-you-hua-ren-sheng/"/>
+    <id>http://sun-hailong.github.io/2021/11/25/yong-sui-ji-ti-du-xia-jiang-lai-you-hua-ren-sheng/</id>
     <published>2021-11-25T10:15:59.566Z</published>
     <updated>2021-11-25T10:20:35.592Z</updated>
     
@@ -160,17 +160,17 @@
     
     
     
-    <category term="生活" scheme="http://hailong-sun.gitee.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="http://sun-hailong.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="生活" scheme="http://hailong-sun.gitee.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="http://sun-hailong.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>算法模板</title>
-    <link href="http://hailong-sun.gitee.io/2021/11/17/suan-fa-ban-zi/"/>
-    <id>http://hailong-sun.gitee.io/2021/11/17/suan-fa-ban-zi/</id>
+    <link href="http://sun-hailong.github.io/2021/11/17/suan-fa-ban-zi/"/>
+    <id>http://sun-hailong.github.io/2021/11/17/suan-fa-ban-zi/</id>
     <published>2021-11-17T10:22:22.535Z</published>
     <updated>2021-11-26T11:11:43.178Z</updated>
     
@@ -187,17 +187,17 @@
     
     
     
-    <category term="算法" scheme="http://hailong-sun.gitee.io/categories/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="http://sun-hailong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="算法模板" scheme="http://hailong-sun.gitee.io/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    <category term="算法模板" scheme="http://sun-hailong.github.io/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
   <entry>
     <title>六级英语写作</title>
-    <link href="http://hailong-sun.gitee.io/2021/11/11/liu-ji-xie-zuo/"/>
-    <id>http://hailong-sun.gitee.io/2021/11/11/liu-ji-xie-zuo/</id>
+    <link href="http://sun-hailong.github.io/2021/11/11/liu-ji-xie-zuo/"/>
+    <id>http://sun-hailong.github.io/2021/11/11/liu-ji-xie-zuo/</id>
     <published>2021-11-11T01:17:07.181Z</published>
     <updated>2021-12-18T02:52:49.342Z</updated>
     
@@ -211,17 +211,17 @@
     
     
     
-    <category term="六级英语" scheme="http://hailong-sun.gitee.io/categories/%E5%85%AD%E7%BA%A7%E8%8B%B1%E8%AF%AD/"/>
+    <category term="六级英语" scheme="http://sun-hailong.github.io/categories/%E5%85%AD%E7%BA%A7%E8%8B%B1%E8%AF%AD/"/>
     
     
-    <category term="英语写作" scheme="http://hailong-sun.gitee.io/tags/%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/"/>
+    <category term="英语写作" scheme="http://sun-hailong.github.io/tags/%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>机器学习大作业</title>
-    <link href="http://hailong-sun.gitee.io/2021/11/09/ji-qi-xue-xi-da-zuo-ye/"/>
-    <id>http://hailong-sun.gitee.io/2021/11/09/ji-qi-xue-xi-da-zuo-ye/</id>
+    <link href="http://sun-hailong.github.io/2021/11/09/ji-qi-xue-xi-da-zuo-ye/"/>
+    <id>http://sun-hailong.github.io/2021/11/09/ji-qi-xue-xi-da-zuo-ye/</id>
     <published>2021-11-09T06:57:38.736Z</published>
     <updated>2021-11-11T01:01:48.746Z</updated>
     
@@ -235,17 +235,17 @@
     
     
     
-    <category term="机器学习" scheme="http://hailong-sun.gitee.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="http://sun-hailong.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="ML" scheme="http://hailong-sun.gitee.io/tags/ML/"/>
+    <category term="ML" scheme="http://sun-hailong.github.io/tags/ML/"/>
     
   </entry>
   
   <entry>
     <title>Gitee密钥SSH出错</title>
-    <link href="http://hailong-sun.gitee.io/2021/10/29/gitee-ssh-cuo-wu/"/>
-    <id>http://hailong-sun.gitee.io/2021/10/29/gitee-ssh-cuo-wu/</id>
+    <link href="http://sun-hailong.github.io/2021/10/29/gitee-ssh-cuo-wu/"/>
+    <id>http://sun-hailong.github.io/2021/10/29/gitee-ssh-cuo-wu/</id>
     <published>2021-10-29T04:50:04.557Z</published>
     <updated>2021-10-29T05:21:12.730Z</updated>
     
@@ -260,17 +260,17 @@
     
     
     
-    <category term="Problems" scheme="http://hailong-sun.gitee.io/categories/Problems/"/>
+    <category term="Problems" scheme="http://sun-hailong.github.io/categories/Problems/"/>
     
     
-    <category term="SSH" scheme="http://hailong-sun.gitee.io/tags/SSH/"/>
+    <category term="SSH" scheme="http://sun-hailong.github.io/tags/SSH/"/>
     
   </entry>
   
   <entry>
     <title>Linux-常用文件管理命令</title>
-    <link href="http://hailong-sun.gitee.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/"/>
-    <id>http://hailong-sun.gitee.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/</id>
+    <link href="http://sun-hailong.github.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/"/>
+    <id>http://sun-hailong.github.io/2021/10/27/linux-chang-yong-wen-jian-guan-li-ming-ling/</id>
     <published>2021-10-27T11:56:25.990Z</published>
     <updated>2022-01-27T04:08:21.137Z</updated>
     
@@ -285,17 +285,17 @@
     
     
     
-    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="http://sun-hailong.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Linux" scheme="http://hailong-sun.gitee.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://sun-hailong.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>德约痛失年度大满贯</title>
-    <link href="http://hailong-sun.gitee.io/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/"/>
-    <id>http://hailong-sun.gitee.io/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/</id>
+    <link href="http://sun-hailong.github.io/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/"/>
+    <id>http://sun-hailong.github.io/2021/09/13/de-yue-cuo-shi-nian-du-quan-man-guan/</id>
     <published>2021-09-13T02:55:03.305Z</published>
     <updated>2021-10-19T11:55:57.345Z</updated>
     
@@ -310,17 +310,17 @@
     
     
     
-    <category term="生活" scheme="http://hailong-sun.gitee.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="http://sun-hailong.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="Tennis" scheme="http://hailong-sun.gitee.io/tags/Tennis/"/>
+    <category term="Tennis" scheme="http://sun-hailong.github.io/tags/Tennis/"/>
     
   </entry>
   
   <entry>
     <title>Markdown学习笔记</title>
-    <link href="http://hailong-sun.gitee.io/2021/08/30/markdown-xue-xi-bi-ji/"/>
-    <id>http://hailong-sun.gitee.io/2021/08/30/markdown-xue-xi-bi-ji/</id>
+    <link href="http://sun-hailong.github.io/2021/08/30/markdown-xue-xi-bi-ji/"/>
+    <id>http://sun-hailong.github.io/2021/08/30/markdown-xue-xi-bi-ji/</id>
     <published>2021-08-30T04:59:27.874Z</published>
     <updated>2021-11-11T01:01:27.840Z</updated>
     
@@ -335,10 +335,10 @@
     
     
     
-    <category term="学习笔记" scheme="http://hailong-sun.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="http://sun-hailong.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Markdown" scheme="http://hailong-sun.gitee.io/tags/Markdown/"/>
+    <category term="Markdown" scheme="http://sun-hailong.github.io/tags/Markdown/"/>
     
   </entry>
   
