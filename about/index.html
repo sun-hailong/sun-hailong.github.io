@@ -36,9 +36,8 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+</head>
+<link rel="stylesheet" href="/js/prism/prism.css">
 
 
 
@@ -565,7 +564,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"算法题","value":1},{"name":"学习笔记","value":7},{"name":"Problems","value":1},{"name":"配置环境","value":1},{"name":"六级英语","value":1},{"name":"生活","value":2},{"name":"机器学习","value":1},{"name":"算法","value":1}],
+                data: [{"name":"算法题","value":1},{"name":"Problems","value":1},{"name":"学习笔记","value":7},{"name":"配置环境","value":1},{"name":"六级英语","value":1},{"name":"生活","value":2},{"name":"机器学习","value":1},{"name":"算法","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -589,7 +588,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Linux","剑指offer","SSH","Markdown","配置文件","信息熵","英语写作","Tennis","生活","ML"]
+                data: ["Linux","剑指offer","SSH","Markdown","配置文件","信息熵","英语写作","Tennis","ML","生活"]
             }
         ],
         yAxis: [
@@ -726,14 +725,14 @@
             
             
             
-            <a href="/tags/Linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            <a href="/tags/SSH/">
+                <span class="chip center-align waves-effect waves-light chip-default">SSH</span>
             </a>
             
             
             
-            <a href="/tags/SSH/">
-                <span class="chip center-align waves-effect waves-light chip-default">SSH</span>
+            <a href="/tags/Linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
             </a>
             
             
@@ -768,11 +767,11 @@
             
             
             
+            
+            
             <a href="/tags/%E7%94%9F%E6%B4%BB/">
                 <span class="chip center-align waves-effect waves-light chip-default">生活</span>
             </a>
-            
-            
             
             
             
@@ -910,7 +909,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.8k</span>
+                        class="white-color">25.1k</span>
             
             
             
@@ -998,6 +997,8 @@
 	siteTime(); 
 </script>
 
+
+<script src="/js/prism/prism.js" async></script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">

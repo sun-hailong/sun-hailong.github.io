@@ -36,9 +36,8 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+</head>
+<link rel="stylesheet" href="/js/prism/prism.css">
 
 
 
@@ -430,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
@@ -447,169 +446,174 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="bashrc"><a href="#bashrc" class="headerlink" title=".bashrc"></a>.bashrc</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
-<span class="token comment" spellcheck="true"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span>
-<span class="token comment" spellcheck="true"># for examples</span>
+                <h2 id="bashrc"><a href="#bashrc" class="headerlink" title=".bashrc"></a>.bashrc</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
+<span class="token comment"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span>
+<span class="token comment"># for examples</span>
 
-<span class="token comment" spellcheck="true"># If not running interactively, don't do anything</span>
+<span class="token comment"># If not running interactively, don't do anything</span>
 <span class="token keyword">case</span> $- <span class="token keyword">in</span>
     *i*<span class="token punctuation">)</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
-      *<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-esac
+      *<span class="token punctuation">)</span> <span class="token builtin class-name">return</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
 
-<span class="token comment" spellcheck="true"># don't put duplicate lines or lines starting with space in the history.</span>
-<span class="token comment" spellcheck="true"># See bash(1) for more options</span>
-HISTCONTROL<span class="token operator">=</span>ignoreboth
+<span class="token comment"># don't put duplicate lines or lines starting with space in the history.</span>
+<span class="token comment"># See bash(1) for more options</span>
+<span class="token assign-left variable"><span class="token environment constant">HISTCONTROL</span></span><span class="token operator">=</span>ignoreboth
 
-<span class="token comment" spellcheck="true"># append to the history file, don't overwrite it</span>
-<span class="token function">shopt</span> -s histappend
+<span class="token comment"># append to the history file, don't overwrite it</span>
+<span class="token builtin class-name">shopt</span> -s histappend
 
-<span class="token comment" spellcheck="true"># for setting history length see HISTSIZE and HISTFILESIZE in bash(1)</span>
-HISTSIZE<span class="token operator">=</span>1000
-HISTFILESIZE<span class="token operator">=</span>2000
+<span class="token comment"># for setting history length see HISTSIZE and HISTFILESIZE in bash(1)</span>
+<span class="token assign-left variable"><span class="token environment constant">HISTSIZE</span></span><span class="token operator">=</span><span class="token number">1000</span>
+<span class="token assign-left variable"><span class="token environment constant">HISTFILESIZE</span></span><span class="token operator">=</span><span class="token number">2000</span>
 
-<span class="token comment" spellcheck="true"># check the window size after each command and, if necessary,</span>
-<span class="token comment" spellcheck="true"># update the values of LINES and COLUMNS.</span>
-<span class="token function">shopt</span> -s checkwinsize
+<span class="token comment"># check the window size after each command and, if necessary,</span>
+<span class="token comment"># update the values of LINES and COLUMNS.</span>
+<span class="token builtin class-name">shopt</span> -s checkwinsize
 
-<span class="token comment" spellcheck="true"># If set, the pattern "**" used in a pathname expansion context will</span>
-<span class="token comment" spellcheck="true"># match all files and zero or more directories and subdirectories.</span>
-<span class="token comment" spellcheck="true">#shopt -s globstar</span>
+<span class="token comment"># If set, the pattern "**" used in a pathname expansion context will</span>
+<span class="token comment"># match all files and zero or more directories and subdirectories.</span>
+<span class="token comment">#shopt -s globstar</span>
 
-<span class="token comment" spellcheck="true"># make less more friendly for non-text input files, see lesspipe(1)</span>
-<span class="token punctuation">[</span> -x /usr/bin/lesspipe <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>SHELL<span class="token operator">=</span>/bin/sh lesspipe<span class="token variable">)</span></span>"</span>
+<span class="token comment"># make less more friendly for non-text input files, see lesspipe(1)</span>
+<span class="token punctuation">[</span> -x /usr/bin/lesspipe <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token assign-left variable"><span class="token environment constant">SHELL</span></span><span class="token operator">=</span>/bin/sh lesspipe<span class="token variable">)</span></span>"</span>
 
-<span class="token comment" spellcheck="true"># set variable identifying the chroot you work in (used in the prompt below)</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${debian_chroot:-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -r /etc/debian_chroot <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    debian_chroot<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> /etc/debian_chroot<span class="token variable">)</span></span>
+<span class="token comment"># set variable identifying the chroot you work in (used in the prompt below)</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${debian_chroot<span class="token operator">:-</span>}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -r /etc/debian_chroot <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token assign-left variable">debian_chroot</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> /etc/debian_chroot<span class="token variable">)</span></span>
 <span class="token keyword">fi</span>
 
-<span class="token comment" spellcheck="true"># set a fancy prompt (non-color, unless we know we "want" color)</span>
-<span class="token keyword">case</span> <span class="token string">"<span class="token variable">$TERM</span>"</span> <span class="token keyword">in</span>
-    xterm-color<span class="token operator">|</span>*-256color<span class="token punctuation">)</span> color_prompt<span class="token operator">=</span>yes<span class="token punctuation">;</span><span class="token punctuation">;</span>
-esac
+<span class="token comment"># set a fancy prompt (non-color, unless we know we "want" color)</span>
+<span class="token keyword">case</span> <span class="token string">"<span class="token environment constant">$TERM</span>"</span> <span class="token keyword">in</span>
+    xterm-color<span class="token operator">|</span>*-256color<span class="token punctuation">)</span> <span class="token assign-left variable">color_prompt</span><span class="token operator">=</span>yes<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
 
-<span class="token comment" spellcheck="true"># uncomment for a colored prompt, if the terminal has the capability; turned</span>
-<span class="token comment" spellcheck="true"># off by default to not distract the user: the focus in a terminal window</span>
-<span class="token comment" spellcheck="true"># should be on the output of commands, not on the prompt</span>
-<span class="token comment" spellcheck="true">#force_color_prompt=yes</span>
+<span class="token comment"># uncomment for a colored prompt, if the terminal has the capability; turned</span>
+<span class="token comment"># off by default to not distract the user: the focus in a terminal window</span>
+<span class="token comment"># should be on the output of commands, not on the prompt</span>
+<span class="token comment">#force_color_prompt=yes</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$force_color_prompt</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> -x /usr/bin/tput <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> tput setaf 1 <span class="token operator">></span><span class="token operator">&amp;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token comment" spellcheck="true"># We have color support; assume it's compliant with Ecma-48</span>
-    <span class="token comment" spellcheck="true"># (ISO/IEC-6429). (Lack of such support is extremely rare, and such</span>
-    <span class="token comment" spellcheck="true"># a case would tend to support setf rather than setaf.)</span>
-    color_prompt<span class="token operator">=</span>yes
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -x /usr/bin/tput <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> tput setaf <span class="token number">1</span> <span class="token operator">&gt;&amp;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment"># We have color support; assume it's compliant with Ecma-48</span>
+    <span class="token comment"># (ISO/IEC-6429). (Lack of such support is extremely rare, and such</span>
+    <span class="token comment"># a case would tend to support setf rather than setaf.)</span>
+    <span class="token assign-left variable">color_prompt</span><span class="token operator">=</span>yes
     <span class="token keyword">else</span>
-    color_prompt<span class="token operator">=</span>
+    <span class="token assign-left variable">color_prompt</span><span class="token operator">=</span>
     <span class="token keyword">fi</span>
 <span class="token keyword">fi</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$color_prompt</span>"</span> <span class="token operator">=</span> <span class="token function">yes</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    PS1<span class="token operator">=</span><span class="token string">'<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '</span>
+    <span class="token assign-left variable"><span class="token environment constant">PS1</span></span><span class="token operator">=</span><span class="token string">'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '</span>
 <span class="token keyword">else</span>
-    PS1<span class="token operator">=</span><span class="token string">'<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\u@\h:\w\$ '</span>
+    <span class="token assign-left variable"><span class="token environment constant">PS1</span></span><span class="token operator">=</span><span class="token string">'${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '</span>
 <span class="token keyword">fi</span>
-unset color_prompt force_color_prompt
+<span class="token builtin class-name">unset</span> color_prompt force_color_prompt
 
-<span class="token comment" spellcheck="true"># If this is an xterm set the title to user@host:dir</span>
-<span class="token keyword">case</span> <span class="token string">"<span class="token variable">$TERM</span>"</span> <span class="token keyword">in</span>
+<span class="token comment"># If this is an xterm set the title to user@host:dir</span>
+<span class="token keyword">case</span> <span class="token string">"<span class="token environment constant">$TERM</span>"</span> <span class="token keyword">in</span>
 xterm*<span class="token operator">|</span>rxvt*<span class="token punctuation">)</span>
-    PS1<span class="token operator">=</span><span class="token string">"\[\e]0;<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\u@\h: \w\a\]<span class="token variable">$PS1</span>"</span>
+    <span class="token assign-left variable"><span class="token environment constant">PS1</span></span><span class="token operator">=</span><span class="token string">"\[<span class="token entity" title="\e">\e</span>]0;<span class="token variable">${debian_chroot<span class="token operator">:+</span>($debian_chroot)}</span>\u@\h: \w<span class="token entity" title="\a">\a</span>\]<span class="token environment constant">$PS1</span>"</span>
     <span class="token punctuation">;</span><span class="token punctuation">;</span>
 *<span class="token punctuation">)</span>
     <span class="token punctuation">;</span><span class="token punctuation">;</span>
-esac
+<span class="token keyword">esac</span>
 
-<span class="token comment" spellcheck="true"># enable color support of ls and also add handy aliases</span>
+<span class="token comment"># enable color support of ls and also add handy aliases</span>
 <span class="token keyword">if</span> <span class="token punctuation">[</span> -x /usr/bin/dircolors <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token function">test</span> -r ~/.dircolors <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b ~/.dircolors<span class="token variable">)</span></span>"</span> <span class="token operator">||</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b<span class="token variable">)</span></span>"</span>
-    <span class="token function">alias</span> ls<span class="token operator">=</span><span class="token string">'ls --color=auto'</span>
-    <span class="token comment" spellcheck="true">#alias dir='dir --color=auto'</span>
-    <span class="token comment" spellcheck="true">#alias vdir='vdir --color=auto'</span>
+    <span class="token builtin class-name">test</span> -r ~/.dircolors <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b ~/.dircolors<span class="token variable">)</span></span>"</span> <span class="token operator">||</span> <span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b<span class="token variable">)</span></span>"</span>
+    <span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls --color=auto'</span>
+    <span class="token comment">#alias dir='dir --color=auto'</span>
+    <span class="token comment">#alias vdir='vdir --color=auto'</span>
 
-    <span class="token function">alias</span> grep<span class="token operator">=</span><span class="token string">'grep --color=auto'</span>
-    <span class="token function">alias</span> fgrep<span class="token operator">=</span><span class="token string">'fgrep --color=auto'</span>
-    <span class="token function">alias</span> egrep<span class="token operator">=</span><span class="token string">'egrep --color=auto'</span>
+    <span class="token builtin class-name">alias</span> <span class="token assign-left variable">grep</span><span class="token operator">=</span><span class="token string">'grep --color=auto'</span>
+    <span class="token builtin class-name">alias</span> <span class="token assign-left variable">fgrep</span><span class="token operator">=</span><span class="token string">'fgrep --color=auto'</span>
+    <span class="token builtin class-name">alias</span> <span class="token assign-left variable">egrep</span><span class="token operator">=</span><span class="token string">'egrep --color=auto'</span>
 <span class="token keyword">fi</span>
 
-<span class="token comment" spellcheck="true"># colored GCC warnings and errors</span>
-<span class="token comment" spellcheck="true">#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'</span>
+<span class="token comment"># colored GCC warnings and errors</span>
+<span class="token comment">#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'</span>
 
-<span class="token comment" spellcheck="true"># some more ls aliases</span>
-<span class="token function">alias</span> ll<span class="token operator">=</span><span class="token string">'ls -alF'</span>
-<span class="token function">alias</span> la<span class="token operator">=</span><span class="token string">'ls -A'</span>
-<span class="token function">alias</span> l<span class="token operator">=</span><span class="token string">'ls -CF'</span>
+<span class="token comment"># some more ls aliases</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -alF'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">la</span><span class="token operator">=</span><span class="token string">'ls -A'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'ls -CF'</span>
 
-<span class="token comment" spellcheck="true"># Add an "alert" alias for long running commands.  Use like so:</span>
-<span class="token comment" spellcheck="true">#   sleep 10; alert</span>
-<span class="token function">alias</span> alert<span class="token operator">=</span><span class="token string">'notify-send --urgency=low -i "<span class="token variable"><span class="token variable">$(</span><span class="token punctuation">[</span> $? <span class="token operator">=</span> 0 <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">echo</span> terminal <span class="token operator">||</span> <span class="token keyword">echo</span> error<span class="token variable">)</span></span>" "$(history|tail -n1|sed -e '</span>\<span class="token string">''</span>s/^\s*<span class="token punctuation">[</span>0-9<span class="token punctuation">]</span>\+\s*//<span class="token punctuation">;</span>s/<span class="token punctuation">[</span><span class="token punctuation">;</span><span class="token operator">&amp;</span><span class="token operator">|</span><span class="token punctuation">]</span>\s*alert$//<span class="token string">'\''</span><span class="token punctuation">)</span>"<span class="token string">'
+<span class="token comment"># Add an "alert" alias for long running commands.  Use like so:</span>
+<span class="token comment">#   sleep 10; alert</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">alert</span><span class="token operator">=</span><span class="token string">'notify-send --urgency=low -i "$([ $? = 0 ] &amp;&amp; echo terminal || echo error)" "$(history|tail -n1|sed -e '</span><span class="token punctuation">\</span>'<span class="token string">'s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//'</span><span class="token punctuation">\</span>'<span class="token string">')"'</span>
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+<span class="token comment"># Alias definitions.</span>
+<span class="token comment"># You may want to put all your additions into a separate file like</span>
+<span class="token comment"># ~/.bash_aliases, instead of adding them here directly.</span>
+<span class="token comment"># See /usr/share/doc/bash-doc/examples in the bash-doc package.</span>
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -f ~/.bash_aliases <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">.</span> ~/.bash_aliases
+<span class="token keyword">fi</span>
 
-# enable programmable completion features (you don'</span>t need to <span class="token function">enable</span>
-<span class="token comment" spellcheck="true"># this, if it's already enabled in /etc/bash.bashrc and /etc/profile</span>
-<span class="token comment" spellcheck="true"># sources /etc/bash.bashrc).</span>
-<span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">shopt</span> -oq posix<span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token comment"># enable programmable completion features (you don't need to enable</span>
+<span class="token comment"># this, if it's already enabled in /etc/bash.bashrc and /etc/profile</span>
+<span class="token comment"># sources /etc/bash.bashrc).</span>
+<span class="token keyword">if</span> <span class="token operator">!</span> <span class="token builtin class-name">shopt</span> -oq posix<span class="token punctuation">;</span> <span class="token keyword">then</span>
   <span class="token keyword">if</span> <span class="token punctuation">[</span> -f /usr/share/bash-completion/bash_completion <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token keyword">.</span> /usr/share/bash-completion/bash_completion
+    <span class="token builtin class-name">.</span> /usr/share/bash-completion/bash_completion
   <span class="token keyword">elif</span> <span class="token punctuation">[</span> -f /etc/bash_completion <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token keyword">.</span> /etc/bash_completion
+    <span class="token builtin class-name">.</span> /etc/bash_completion
   <span class="token keyword">fi</span>
 <span class="token keyword">fi</span>
 
-<span class="token function">export</span> PATH<span class="token operator">=</span>/home/acs/.homework:<span class="token variable">$PATH</span>
-<span class="token function">alias</span> tmux<span class="token operator">=</span><span class="token string">'tmux -u'</span>
-</code></pre>
-<h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><pre class=" language-bash"><code class="language-bash">set-option -g status-keys <span class="token function">vi</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/home/acs/.homework:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tmux</span><span class="token operator">=</span><span class="token string">'tmux -u'</span></code></pre>
+
+
+
+<h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><pre class="language-bash" data-language="bash"><code class="language-bash">set-option -g status-keys <span class="token function">vi</span>
 setw -g mode-keys <span class="token function">vi</span>
 
 setw -g monitor-activity on
 
-<span class="token comment" spellcheck="true"># setw -g c0-change-trigger 10</span>
-<span class="token comment" spellcheck="true"># setw -g c0-change-interval 100</span>
+<span class="token comment"># setw -g c0-change-trigger 10</span>
+<span class="token comment"># setw -g c0-change-interval 100</span>
 
-<span class="token comment" spellcheck="true"># setw -g c0-change-interval 50</span>
-<span class="token comment" spellcheck="true"># setw -g c0-change-trigger  75</span>
+<span class="token comment"># setw -g c0-change-interval 50</span>
+<span class="token comment"># setw -g c0-change-trigger  75</span>
 
 
 set-window-option -g automatic-rename on
 set-option -g set-titles on
-<span class="token keyword">set</span> -g history-limit 100000
+<span class="token builtin class-name">set</span> -g history-limit <span class="token number">100000</span>
 
-<span class="token comment" spellcheck="true">#set-window-option -g utf8 on</span>
+<span class="token comment">#set-window-option -g utf8 on</span>
 
-<span class="token comment" spellcheck="true"># set command prefix</span>
+<span class="token comment"># set command prefix</span>
 set-option -g prefix C-a
 unbind-key C-b
 bind-key C-a send-prefix
 
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+<span class="token builtin class-name">bind</span> h select-pane -L
+<span class="token builtin class-name">bind</span> j select-pane -D
+<span class="token builtin class-name">bind</span> k select-pane -U
+<span class="token builtin class-name">bind</span> l select-pane -R
 
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
+<span class="token builtin class-name">bind</span> -n M-Left select-pane -L
+<span class="token builtin class-name">bind</span> -n M-Right select-pane -R
+<span class="token builtin class-name">bind</span> -n M-Up select-pane -U
+<span class="token builtin class-name">bind</span> -n M-Down select-pane -D
 
-bind <span class="token operator">&lt;</span> resize-pane -L 7
-bind <span class="token operator">></span> resize-pane -R 7
-bind - resize-pane -D 7
-bind + resize-pane -U 7
+<span class="token builtin class-name">bind</span> <span class="token operator">&lt;</span> resize-pane -L <span class="token number">7</span>
+<span class="token builtin class-name">bind</span> <span class="token operator">&gt;</span> resize-pane -R <span class="token number">7</span>
+<span class="token builtin class-name">bind</span> - resize-pane -D <span class="token number">7</span>
+<span class="token builtin class-name">bind</span> + resize-pane -U <span class="token number">7</span>
 
 
 bind-key -n M-l next-window
@@ -617,127 +621,129 @@ bind-key -n M-h previous-window
 
 
 
-<span class="token keyword">set</span> -g status-interval 1
-<span class="token comment" spellcheck="true"># status bar</span>
-<span class="token keyword">set</span> -g status-bg black
-<span class="token keyword">set</span> -g status-fg blue
+<span class="token builtin class-name">set</span> -g status-interval <span class="token number">1</span>
+<span class="token comment"># status bar</span>
+<span class="token builtin class-name">set</span> -g status-bg black
+<span class="token builtin class-name">set</span> -g status-fg blue
 
 
-<span class="token comment" spellcheck="true">#set -g status-utf8 on</span>
-<span class="token keyword">set</span> -g status-justify centre
-<span class="token keyword">set</span> -g status-bg default
-<span class="token keyword">set</span> -g status-left <span class="token string">" #[fg=green]#S@#H #[default]"</span>
-<span class="token keyword">set</span> -g status-left-length 20
+<span class="token comment">#set -g status-utf8 on</span>
+<span class="token builtin class-name">set</span> -g status-justify centre
+<span class="token builtin class-name">set</span> -g status-bg default
+<span class="token builtin class-name">set</span> -g status-left <span class="token string">" #[fg=green]#S@#H #[default]"</span>
+<span class="token builtin class-name">set</span> -g status-left-length <span class="token number">20</span>
 
 
-<span class="token comment" spellcheck="true"># mouse support</span>
-<span class="token comment" spellcheck="true"># for tmux 2.1</span>
-<span class="token comment" spellcheck="true"># set -g mouse-utf8 on</span>
-<span class="token keyword">set</span> -g mouse on
-<span class="token comment" spellcheck="true">#</span>
-<span class="token comment" spellcheck="true"># for previous version</span>
-<span class="token comment" spellcheck="true">#set -g mode-mouse on</span>
-<span class="token comment" spellcheck="true">#set -g mouse-resize-pane on</span>
-<span class="token comment" spellcheck="true">#set -g mouse-select-pane on</span>
-<span class="token comment" spellcheck="true">#set -g mouse-select-window on</span>
+<span class="token comment"># mouse support</span>
+<span class="token comment"># for tmux 2.1</span>
+<span class="token comment"># set -g mouse-utf8 on</span>
+<span class="token builtin class-name">set</span> -g mouse on
+<span class="token comment">#</span>
+<span class="token comment"># for previous version</span>
+<span class="token comment">#set -g mode-mouse on</span>
+<span class="token comment">#set -g mouse-resize-pane on</span>
+<span class="token comment">#set -g mouse-select-pane on</span>
+<span class="token comment">#set -g mouse-select-window on</span>
 
 
-<span class="token comment" spellcheck="true">#set -g status-right-length 25</span>
-<span class="token keyword">set</span> -g status-right <span class="token string">"#[fg=green]%H:%M:%S #[fg=magenta]%a %m-%d #[default]"</span>
+<span class="token comment">#set -g status-right-length 25</span>
+<span class="token builtin class-name">set</span> -g status-right <span class="token string">"#[fg=green]%H:%M:%S #[fg=magenta]%a %m-%d #[default]"</span>
 
-<span class="token comment" spellcheck="true"># fix for tmux 1.9</span>
-bind <span class="token string">'"'</span> split-window -vc <span class="token string">"#{pane_current_path}"</span>
-bind <span class="token string">'%'</span> split-window -hc <span class="token string">"#{pane_current_path}"</span>
-bind <span class="token string">'c'</span> new-window -c <span class="token string">"#{pane_current_path}"</span>
+<span class="token comment"># fix for tmux 1.9</span>
+<span class="token builtin class-name">bind</span> <span class="token string">'"'</span> split-window -vc <span class="token string">"#{pane_current_path}"</span>
+<span class="token builtin class-name">bind</span> <span class="token string">'%'</span> split-window -hc <span class="token string">"#{pane_current_path}"</span>
+<span class="token builtin class-name">bind</span> <span class="token string">'c'</span> new-window -c <span class="token string">"#{pane_current_path}"</span>
 
-<span class="token comment" spellcheck="true"># run-shell "powerline-daemon -q"</span>
+<span class="token comment"># run-shell "powerline-daemon -q"</span>
 
-<span class="token comment" spellcheck="true"># vim: ft=conf</span>
-</code></pre>
-<h2 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h2><pre class=" language-bash"><code class="language-bash"><span class="token string">" An example for a vimrc file.
+<span class="token comment"># vim: ft=conf</span></code></pre>
+
+
+
+<h2 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token string">" An example for a vimrc file.
 "</span>
 <span class="token string">" To use it, copy it to
 "</span>     <span class="token keyword">for</span> Unix and OS/2:  ~/.vimrc
-<span class="token string">"          for Amiga:  s:.vimrc
-"</span>  <span class="token keyword">for</span> MS-DOS and Win32:  <span class="token variable">$VIM</span>\_vimrc
-<span class="token string">"        for OpenVMS:  sys<span class="token variable">$login</span>:.vimrc
+<span class="token string">"	      for Amiga:  s:.vimrc
+"</span>  <span class="token keyword">for</span> MS-DOS and Win32:  <span class="token variable">$VIM</span><span class="token punctuation">\</span>_vimrc
+<span class="token string">"	    for OpenVMS:  sys<span class="token variable">$login</span>:.vimrc
 
 "</span> When started as <span class="token string">"evim"</span>, evim.vim will already have <span class="token keyword">done</span> these settings.
-<span class="token keyword">if</span> v:progname <span class="token operator">=</span>~? <span class="token string">"evim"</span>
+<span class="token keyword">if</span> v:progname <span class="token operator">=~</span>? <span class="token string">"evim"</span>
   finish
 endif
 
 <span class="token string">" Use Vim settings, rather then Vi settings (much better!).
 "</span> This must be first, because it changes other options as a side effect.
-<span class="token keyword">set</span> nocompatible
+<span class="token builtin class-name">set</span> nocompatible
 
 <span class="token string">" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 if has("</span>vms<span class="token string">")
-  set nobackup        "</span> <span class="token keyword">do</span> not keep a backup file, use versions instead
+  set nobackup		"</span> <span class="token keyword">do</span> not keep a backup file, use versions instead
 <span class="token keyword">else</span>
-  <span class="token keyword">set</span> backup        <span class="token string">" keep a backup file
+  <span class="token builtin class-name">set</span> backup		<span class="token string">" keep a backup file
 endif
-set history=50        "</span> keep 50 lines of <span class="token function">command</span> line <span class="token function">history</span>
-<span class="token keyword">set</span> ruler        <span class="token string">" show the cursor position all the time
-set showcmd        "</span> display incomplete commands
-<span class="token keyword">set</span> incsearch        <span class="token string">" do incremental searching
+set history=50		"</span> keep <span class="token number">50</span> lines of <span class="token builtin class-name">command</span> line <span class="token function">history</span>
+<span class="token builtin class-name">set</span> ruler		<span class="token string">" show the cursor position all the time
+set showcmd		"</span> display incomplete commands
+<span class="token builtin class-name">set</span> incsearch		<span class="token string">" do incremental searching
 "</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
 <span class="token string">"My Setting-sunshanlu
 "</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
-vmap <span class="token operator">&lt;</span>leader<span class="token operator">></span>y :w<span class="token operator">!</span> /tmp/vitmp<span class="token operator">&lt;</span>CR<span class="token operator">></span>
-nmap <span class="token operator">&lt;</span>leader<span class="token operator">></span>p :r<span class="token operator">!</span> <span class="token function">cat</span> /tmp/vitmp<span class="token operator">&lt;</span>CR<span class="token operator">></span>
+vmap <span class="token operator">&lt;</span>leader<span class="token operator">&gt;</span>y :w<span class="token operator">!</span> /tmp/vitmp<span class="token operator">&lt;</span>CR<span class="token operator">&gt;</span>
+nmap <span class="token operator">&lt;</span>leader<span class="token operator">&gt;</span>p :r<span class="token operator">!</span> <span class="token function">cat</span> /tmp/vitmp<span class="token operator">&lt;</span>CR<span class="token operator">&gt;</span>
 
 <span class="token string">"语法高亮
 syntax enable
 syntax on
 "</span>显示行号
-<span class="token keyword">set</span> nu
+<span class="token builtin class-name">set</span> nu
 
 <span class="token string">"修改默认注释颜色
-"</span>hi Comment ctermfg<span class="token operator">=</span>DarkCyan
+"</span>hi Comment <span class="token assign-left variable">ctermfg</span><span class="token operator">=</span>DarkCyan
 <span class="token string">"允许退格键删除
-"</span><span class="token keyword">set</span> backspace<span class="token operator">=</span>2
+"</span><span class="token builtin class-name">set</span> <span class="token assign-left variable">backspace</span><span class="token operator">=</span><span class="token number">2</span>
 <span class="token string">"启用鼠标
 set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 "</span>按C语言格式缩进
-<span class="token keyword">set</span> cindent
-<span class="token keyword">set</span> autoindent
-<span class="token keyword">set</span> smartindent
-<span class="token keyword">set</span> shiftwidth<span class="token operator">=</span>4
+<span class="token builtin class-name">set</span> cindent
+<span class="token builtin class-name">set</span> autoindent
+<span class="token builtin class-name">set</span> smartindent
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">shiftwidth</span><span class="token operator">=</span><span class="token number">4</span>
 
 <span class="token string">" 允许在有未保存的修改时切换缓冲区
-"</span><span class="token keyword">set</span> hidden
+"</span><span class="token builtin class-name">set</span> hidden
 
 <span class="token string">" 设置无备份文件
 set writebackup
 set nobackup
 
 "</span>显示括号匹配
-<span class="token keyword">set</span> showmatch
+<span class="token builtin class-name">set</span> showmatch
 <span class="token string">"括号匹配显示时间为1(单位是十分之一秒)
 set matchtime=5
 "</span>显示当前的行号列号：
-<span class="token keyword">set</span> ruler
+<span class="token builtin class-name">set</span> ruler
 <span class="token string">"在状态栏显示正在输入的命令
 set showcmd
 
 set foldmethod=syntax
 "</span>默认情况下不折叠
-<span class="token keyword">set</span> foldlevel<span class="token operator">=</span>100
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">foldlevel</span><span class="token operator">=</span><span class="token number">100</span>
 <span class="token string">" 开启状态栏信息
 set laststatus=2
 "</span> 命令行的高度，默认为1，这里设为2
-<span class="token keyword">set</span> cmdheight<span class="token operator">=</span>2
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">cmdheight</span><span class="token operator">=</span><span class="token number">2</span>
 
 
 <span class="token string">" 显示Tab符，使用一高亮竖线代替
 set list
-"</span><span class="token keyword">set</span> listchars<span class="token operator">=</span>tab:\<span class="token operator">|</span>\ ,
-<span class="token keyword">set</span> listchars<span class="token operator">=</span>tab:<span class="token operator">></span>-,trail:-
+"</span><span class="token builtin class-name">set</span> <span class="token assign-left variable">listchars</span><span class="token operator">=</span>tab:<span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span> ,
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">listchars</span><span class="token operator">=</span>tab:<span class="token operator">&gt;</span>-,trail:-
 
 
 <span class="token string">"侦测文件类型
@@ -758,25 +764,25 @@ set fileencodings=utf-8,gb2312,gbk,gb18030
 <span class="token string">"set termencoding=gb2312
 set termencoding=utf-8
 "</span>新建文件使用的编码
-<span class="token keyword">set</span> fileencoding<span class="token operator">=</span>utf-8
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">fileencoding</span><span class="token operator">=</span>utf-8
 <span class="token string">"set fileencoding=gb2312
 "</span>用于显示的编码，仅仅是显示
-<span class="token keyword">set</span> encoding<span class="token operator">=</span>utf-8
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">encoding</span><span class="token operator">=</span>utf-8
 <span class="token string">"set encoding=utf-8
-"</span><span class="token keyword">set</span> encoding<span class="token operator">=</span>euc-cn
+"</span><span class="token builtin class-name">set</span> <span class="token assign-left variable">encoding</span><span class="token operator">=</span>euc-cn
 <span class="token string">"set encoding=gbk
-"</span><span class="token keyword">set</span> encoding<span class="token operator">=</span>gb2312
+"</span><span class="token builtin class-name">set</span> <span class="token assign-left variable">encoding</span><span class="token operator">=</span>gb2312
 <span class="token string">"set ambiwidth=double
 set fileformat=unix
 
 
 "</span>设置高亮搜索
-<span class="token keyword">set</span> hlsearch
+<span class="token builtin class-name">set</span> hlsearch
 <span class="token string">"在搜索时，输入的词句的逐字符高亮
 set incsearch
 
 "</span> 着色模式
-<span class="token keyword">set</span> t_Co<span class="token operator">=</span>256
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">t_Co</span><span class="token operator">=</span><span class="token number">256</span>
 <span class="token string">"colorscheme wombat256mod
 "</span>colorscheme gardener
 <span class="token string">"colorscheme elflord
@@ -787,116 +793,116 @@ colorscheme desert
 <span class="token string">"colorscheme default
 
 "</span> 字体 <span class="token operator">&amp;&amp;</span> 字号
-<span class="token keyword">set</span> guifont<span class="token operator">=</span>Monaco:h10
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">guifont</span><span class="token operator">=</span>Monaco:h10
 <span class="token string">"set guifont=Consolas:h10
 
 "</span> :LoadTemplate       根据文件后缀自动加载模板
 <span class="token string">"let g:template_path='/home/ruchee/.vim/template/'
 
 "</span> :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter <span class="token operator">&amp;&amp;</span> authorinfo的结合
-<span class="token string">""</span><span class="token keyword">let</span> g:vimrc_author<span class="token operator">=</span><span class="token string">'sunshanlu'</span>
-<span class="token string">""</span><span class="token keyword">let</span> g:vimrc_email<span class="token operator">=</span><span class="token string">'sunshanlu@baidu.com'</span>
-<span class="token string">""</span><span class="token keyword">let</span> g:vimrc_homepage<span class="token operator">=</span><span class="token string">'http://www.sunshanlu.com'</span>
+<span class="token string">""</span><span class="token builtin class-name">let</span> g:vimrc_author<span class="token operator">=</span><span class="token string">'sunshanlu'</span>
+<span class="token string">""</span><span class="token builtin class-name">let</span> g:vimrc_email<span class="token operator">=</span><span class="token string">'sunshanlu@baidu.com'</span>
+<span class="token string">""</span><span class="token builtin class-name">let</span> g:vimrc_homepage<span class="token operator">=</span><span class="token string">'http://www.sunshanlu.com'</span>
 <span class="token string">"
 "</span>
 <span class="token string">" Ctrl + E            一步加载语法模板和作者、时间信息
-"</span><span class="token string">"map &lt;c-e> &lt;ESC>:AuthorInfoDetect&lt;CR>&lt;ESC>Gi
-"</span><span class="token string">"imap &lt;c-e> &lt;ESC>:AuthorInfoDetect&lt;CR>&lt;ESC>Gi
-"</span><span class="token string">"vmap &lt;c-e> &lt;ESC>:AuthorInfoDetect&lt;CR>&lt;ESC>Gi
+"</span>"map <span class="token operator">&lt;</span>c-e<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>:AuthorInfoDetect<span class="token operator">&lt;</span>CR<span class="token operator">&gt;</span><span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>Gi
+<span class="token string">""</span>imap <span class="token operator">&lt;</span>c-e<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>:AuthorInfoDetect<span class="token operator">&lt;</span>CR<span class="token operator">&gt;</span><span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>Gi
+<span class="token string">""</span>vmap <span class="token operator">&lt;</span>c-e<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>:AuthorInfoDetect<span class="token operator">&lt;</span>CR<span class="token operator">&gt;</span><span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>Gi
 
 
 
-"</span> <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> 引号 <span class="token operator">&amp;&amp;</span> 括号自动匹配 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> <span class="token string">"
+<span class="token string">" ======= 引号 &amp;&amp; 括号自动匹配 ======= "</span>
+<span class="token string">"
+"</span>:inoremap <span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>i
+
+<span class="token string">":inoremap ) &lt;c-r&gt;=ClosePair(')')&lt;CR&gt;
 "</span>
-<span class="token string">":inoremap ( ()&lt;ESC>i
+<span class="token string">":inoremap { {}&lt;ESC&gt;i
+"</span>
+<span class="token string">":inoremap } &lt;c-r&gt;=ClosePair('}')&lt;CR&gt;
+"</span>
+<span class="token string">":inoremap [ []&lt;ESC&gt;i
+"</span>
+<span class="token string">":inoremap ] &lt;c-r&gt;=ClosePair(']')&lt;CR&gt;
+"</span>
+<span class="token string">":inoremap &lt; &lt;&gt;&lt;ESC&gt;i
+"</span>
+<span class="token string">":inoremap &gt; &lt;c-r&gt;=ClosePair('&gt;')&lt;CR&gt;
+"</span>
+<span class="token string">""</span>:inoremap <span class="token string">" "</span>"<span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>i
+<span class="token string">"
+"</span>:inoremap <span class="token string">' '</span>'<span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>i
+<span class="token string">"
+"</span>:inoremap <span class="token variable"><span class="token variable">`</span> <span class="token variable">`</span></span><span class="token variable"><span class="token variable">`</span><span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>i
+<span class="token string">"
+"</span>:inoremap * **<span class="token operator">&lt;</span>ESC<span class="token operator">&gt;</span>i
 
-"</span>:inoremap <span class="token punctuation">)</span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">')'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
+<span class="token string">" 每行超过80个的字符用下划线标示
+"</span>"au BufRead,BufNewFile *.s,*.asm,*.h,*.c,*.cpp,*.java,*.cs,*.lisp,*.el,*.erl,*.tex,*.sh,*.lua,*.pl,*.php,*.tpl,*.py,*.rb,*.erb,*.vim,*.js,*.jade,*.coffee,*.css,*.xml,*.html,*.shtml,*.xhtml Underlined /.<span class="token punctuation">\</span>%81v/
 <span class="token string">"
-"</span>:inoremap <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
-<span class="token string">"
-"</span>:inoremap <span class="token punctuation">}</span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">'}'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
-<span class="token string">"
-"</span>:inoremap <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
-<span class="token string">"
-"</span>:inoremap <span class="token punctuation">]</span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
-<span class="token string">"
-"</span>:inoremap <span class="token operator">&lt;</span> <span class="token operator">&lt;</span><span class="token operator">></span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
-<span class="token string">"
-"</span>:inoremap <span class="token operator">></span> <span class="token operator">&lt;</span>c-r<span class="token operator">>=</span>ClosePair<span class="token punctuation">(</span><span class="token string">'>'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>CR<span class="token operator">></span>
-<span class="token string">"
-"</span><span class="token string">":inoremap "</span> <span class="token string">""</span><span class="token operator">&lt;</span>ESC<span class="token operator">></span>i
-<span class="token string">"
-"</span>:inoremap <span class="token string">' '</span><span class="token string">'&lt;ESC>i
-"
-":inoremap <span class="token variable"><span class="token variable">`</span> <span class="token variable">`</span></span>`&lt;ESC>i
-"
-":inoremap * **&lt;ESC>i
+"</span>
+<span class="token string">" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+"</span> <span class="token builtin class-name">let</span> <span class="token operator">&amp;</span>guioptions <span class="token operator">=</span> substitute<span class="token punctuation">(</span><span class="token operator">&amp;</span>guioptions, <span class="token string">"t"</span>, <span class="token string">""</span>, <span class="token string">"g"</span><span class="token punctuation">)</span>
 
-" 每行超过80个的字符用下划线标示
-""au BufRead,BufNewFile *.s,*.asm,*.h,*.c,*.cpp,*.java,*.cs,*.lisp,*.el,*.erl,*.tex,*.sh,*.lua,*.pl,*.php,*.tpl,*.py,*.rb,*.erb,*.vim,*.js,*.jade,*.coffee,*.css,*.xml,*.html,*.shtml,*.xhtml Underlined /.\%81v/
-"
-"
-" For Win32 GUI: remove '</span>t<span class="token string">' flag from '</span>guioptions<span class="token string">': no tearoff menu entries
-" let &amp;guioptions = substitute(&amp;guioptions, "t", "", "g")
-
-" Don'</span>t use Ex mode, use Q <span class="token keyword">for</span> formatting
+<span class="token string">" Don't use Ex mode, use Q for formatting
 map Q gq
 
-<span class="token string">" This is an alternative that also works in block mode, but the deleted
-"</span> text is lost and it only works <span class="token keyword">for</span> putting the current register.
-<span class="token string">"vnoremap p "</span>_dp
+"</span> This is an alternative that also works <span class="token keyword">in</span> block mode, but the deleted
+<span class="token string">" text is lost and it only works for putting the current register.
+"</span>vnoremap p <span class="token string">"_dp
 
-<span class="token string">" Switch syntax highlighting on, when the terminal has colors
-"</span> Also switch on highlighting the last used search pattern.
-<span class="token keyword">if</span> <span class="token operator">&amp;</span>t_Co <span class="token operator">></span> 2 <span class="token operator">||</span> has<span class="token punctuation">(</span><span class="token string">"gui_running"</span><span class="token punctuation">)</span>
+"</span> Switch syntax highlighting on, when the terminal has colors
+<span class="token string">" Also switch on highlighting the last used search pattern.
+if &amp;t_Co &gt; 2 || has("</span>gui_running<span class="token string">")
   syntax on
-  <span class="token keyword">set</span> hlsearch
+  set hlsearch
 endif
 
-<span class="token string">" Only do this part when compiled with support for autocommands.
-if has("</span>autocmd<span class="token string">")
+"</span> Only <span class="token keyword">do</span> this part when compiled with support <span class="token keyword">for</span> autocommands.
+<span class="token keyword">if</span> has<span class="token punctuation">(</span><span class="token string">"autocmd"</span><span class="token punctuation">)</span>
 
-  "</span> Enable <span class="token function">file</span> <span class="token function">type</span> detection.
-  <span class="token string">" Use the default filetype settings, so that mail gets 'tw' set to 72,
-  "</span> <span class="token string">'cindent'</span> is on <span class="token keyword">in</span> C files, etc.
-  <span class="token string">" Also load indent files, to automatically do language-dependent indenting.
+  <span class="token string">" Enable file type detection.
+  "</span> Use the default filetype settings, so that mail gets <span class="token string">'tw'</span> <span class="token builtin class-name">set</span> to <span class="token number">72</span>,
+  <span class="token string">" 'cindent' is on in C files, etc.
+  "</span> Also load indent files, to automatically <span class="token keyword">do</span> language-dependent indenting.
   filetype plugin indent on
 
-  "</span> Put these <span class="token keyword">in</span> an autocmd group, so that we can delete them easily.
+  <span class="token string">" Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au<span class="token operator">!</span>
+  au!
 
-  <span class="token string">" For all text files set 'textwidth' to 80 characters.
-  autocmd FileType text setlocal textwidth=80
+  "</span> For all text files <span class="token builtin class-name">set</span> <span class="token string">'textwidth'</span> to <span class="token number">80</span> characters.
+  autocmd FileType text setlocal <span class="token assign-left variable">textwidth</span><span class="token operator">=</span><span class="token number">80</span>
 
-  "</span> When editing a file, always jump to the last known cursor position.
-  <span class="token string">" Don't do it when the position is invalid or when inside an event handler
-  "</span> <span class="token punctuation">(</span>happens when dropping a <span class="token function">file</span> on gvim<span class="token punctuation">)</span>.
+  <span class="token string">" When editing a file, always jump to the last known cursor position.
+  "</span> Don<span class="token string">'t do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
   autocmd BufReadPost *
-    \ <span class="token keyword">if</span> line<span class="token punctuation">(</span><span class="token string">"'\""</span><span class="token punctuation">)</span> <span class="token operator">></span> 0 <span class="token operator">&amp;&amp;</span> line<span class="token punctuation">(</span><span class="token string">"'\""</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> line<span class="token punctuation">(</span><span class="token string">"$"</span><span class="token punctuation">)</span> <span class="token operator">|</span>
-    \   exe <span class="token string">"normal g`\""</span> <span class="token operator">|</span>
+    \ if line("'</span><span class="token punctuation">\</span>"<span class="token string">") &gt; 0 &amp;&amp; line("</span>'<span class="token punctuation">\</span>"<span class="token string">") &lt;= line("</span>$<span class="token string">") |
+    \   exe "</span>normal g<span class="token variable">`</span></span><span class="token punctuation">\</span>"<span class="token string">" |
     \ endif
 
   augroup END
 
-<span class="token keyword">else</span>
+else
 
-  <span class="token keyword">set</span> autoindent        <span class="token string">" always set autoindenting on
+  set autoindent		"</span> always <span class="token builtin class-name">set</span> autoindenting on
 
-endif "</span> has<span class="token punctuation">(</span><span class="token string">"autocmd"</span><span class="token punctuation">)</span>
+endif <span class="token string">" has("</span>autocmd<span class="token string">")
 
-<span class="token string">" 增加鼠标行高亮
-set cursorline
-hi CursorLine  cterm=NONE   ctermbg=darkred ctermfg=white
+"</span> 增加鼠标行高亮
+<span class="token builtin class-name">set</span> cursorline
+hi CursorLine  <span class="token assign-left variable">cterm</span><span class="token operator">=</span>NONE   <span class="token assign-left variable">ctermbg</span><span class="token operator">=</span>darkred <span class="token assign-left variable">ctermfg</span><span class="token operator">=</span>white
 
-"</span> 设置tab是四个空格
-<span class="token keyword">set</span> ts<span class="token operator">=</span>4
-<span class="token keyword">set</span> expandtab
+<span class="token string">" 设置tab是四个空格
+set ts=4
+set expandtab
 
-" 主要给Tlist使用
-<span class="token keyword">let</span> Tlist_Exit_OnlyWindow <span class="token operator">=</span> 1
-<span class="token keyword">let</span> Tlist_Auto_Open <span class="token operator">=</span> 1
-</code></pre>
+"</span> 主要给Tlist使用
+<span class="token builtin class-name">let</span> Tlist_Exit_OnlyWindow <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token builtin class-name">let</span> Tlist_Auto_Open <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+
 
                 
             </div>
@@ -1120,6 +1126,272 @@ hi CursorLine  cterm=NONE   ctermbg=darkred ctermfg=white
     
 
     
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'e0gMccfA3B9fdgNGoRi8Uyyk-gzGzoHsz',
+        appKey: '2hGq3HOXIEIFr29FsJmd4PY9',
+        notify: '' === 'true',
+        verify: '' === 'true',
+        visitor: '' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '🤣一起来玩，留下你的足迹吧~（记得点击验证哦）\n🚀昵称使用QQ好可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论进制恶意评论\n'
+    });
+</script>
+
+<!--酷Q推送-->
+
 
     
 
@@ -1425,7 +1697,7 @@ hi CursorLine  cterm=NONE   ctermbg=darkred ctermfg=white
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.8k</span>
+                        class="white-color">25.1k</span>
             
             
             
@@ -1513,6 +1785,8 @@ hi CursorLine  cterm=NONE   ctermbg=darkred ctermfg=white
 	siteTime(); 
 </script>
 
+
+<script src="/js/prism/prism.js" async></script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">

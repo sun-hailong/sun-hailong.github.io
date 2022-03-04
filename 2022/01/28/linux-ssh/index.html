@@ -36,9 +36,8 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+</head>
+<link rel="stylesheet" href="/js/prism/prism.css">
 
 
 
@@ -447,6 +446,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -454,30 +456,30 @@
             <div id="articleContent">
                 <p>[toc]</p>
 <h3 id="ssh登录"><a href="#ssh登录" class="headerlink" title="ssh登录"></a>ssh登录</h3><p><strong>基本用法</strong><br>远程登录服务器：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname</code></pre>
+
 <ul>
 <li><code>user</code>: 用户名</li>
 <li><code>hostname</code>: IP地址或域名</li>
 </ul>
 <p>第一次登录时会提示：</p>
-<pre class=" language-bash"><code class="language-bash">The authenticity of host <span class="token string">'123.57.47.211 (123.57.47.211)'</span> can't be established.
+<pre class="language-bash" data-language="bash"><code class="language-bash">The authenticity of <span class="token function">host</span> <span class="token string">'123.57.47.211 (123.57.47.211)'</span> can't be established.
 ECDSA key fingerprint is SHA256:iy237yysfCe013/l+kpDGfEG9xxHxm0dnxnAbJTPpG8.
-Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes/no/<span class="token punctuation">[</span>fingerprint<span class="token punctuation">]</span><span class="token punctuation">)</span>?
-</code></pre>
+Are you sure you want to <span class="token builtin class-name">continue</span> connecting <span class="token punctuation">(</span>yes/no/<span class="token punctuation">[</span>fingerprint<span class="token punctuation">]</span><span class="token punctuation">)</span>?</code></pre>
+
 <p>输入<code>yes</code>，然后回车即可。<br>这样会将该服务器的信息记录在<code>~/.ssh/known_hosts</code>文件中。</p>
 <p>然后输入密码即可登录到远程服务器中。</p>
 <hr>
 <p><strong>配置文件</strong><br>创建文件 <code>~/.ssh/config</code>。</p>
 <p>然后在文件中输入：</p>
-<pre class=" language-bash"><code class="language-bash">Host myserver1
+<pre class="language-bash" data-language="bash"><code class="language-bash">Host myserver1
     HostName IP地址或域名
     User 用户名
 
 Host myserver2
     HostName IP地址或域名
-    User 用户名
-</code></pre>
+    User 用户名</code></pre>
+
 <p>之后再使用服务器时，可以直接使用别名<code>myserver1</code>、<code>myserver2</code>。</p>
 <hr>
 <p><strong>密钥登录</strong><br>创建密钥：</p>
@@ -492,51 +494,55 @@ Host myserver2
 <p>之后想免密码登录哪个服务器，就将公钥传给哪个服务器即可。</p>
 <p>例如，想免密登录<code>myserver</code>服务器。则将公钥中的内容，复制到<code>myserver</code>中的<code>~/.ssh/authorized_keys</code>文件里即可。</p>
 <p>也可以使用如下命令一键添加公钥：</p>
-<pre class=" language-bash"><code class="language-bash">ssh-copy-id myserver
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">ssh-copy-id myserver</code></pre>
+
 <hr>
 <p><strong>执行命令</strong><br>命令格式：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">command</span>
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token builtin class-name">command</span></code></pre>
+
 <p>例如：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">ls</span> -a
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> user@hostname <span class="token function">ls</span> -a</code></pre>
+
 <p>或者</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 单引号中的$i可以求值</span>
-<span class="token function">ssh</span> myserver <span class="token string">'for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done'</span>
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 单引号中的$i可以求值</span>
+<span class="token function">ssh</span> myserver <span class="token string">'for ((i = 0; i &lt; 10; i ++ )) do echo $i; done'</span></code></pre>
+
 <p>或者</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 双引号中的$i不可以求值</span>
-<span class="token function">ssh</span> myserver <span class="token string">"for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done"</span>
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 双引号中的$i不可以求值</span>
+<span class="token function">ssh</span> myserver <span class="token string">"for <span class="token variable"><span class="token punctuation">((</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">))</span></span> do echo <span class="token variable">$i</span>; done"</span></code></pre>
+
+
+
+
+
 <h3 id="scp传文件"><a href="#scp传文件" class="headerlink" title="scp传文件"></a>scp传文件</h3><p><strong>基本用法</strong><br>命令格式：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token function">source</span> destination
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> <span class="token builtin class-name">source</span> destination</code></pre>
+
 <p>将<code>source</code>路径下的文件复制到<code>destination</code>中</p>
 <hr>
 <p><strong>一次复制多个文件：</strong></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> source1 source2 destination
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> source1 source2 destination</code></pre>
+
 <hr>
 <p><strong>复制文件夹：</strong></p>
 <p>将本地家目录中的<code>tmp</code>文件夹复制到<code>myserver</code>服务器中的<code>/home/acs/</code>目录下。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:/home/acs/
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:/home/acs/</code></pre>
+
 <p>将本地家目录中的<code>tmp</code>文件夹复制到<code>myserver</code>服务器中的<code>~/homework/</code>目录下。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:homework/
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> -r ~/tmp myserver:homework/</code></pre>
+
 <p>将<code>myserver</code>服务器中的<code>~/homework/</code>文件夹复制到本地的当前路径下。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -r myserver:homework <span class="token keyword">.</span>
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> -r myserver:homework <span class="token builtin class-name">.</span></code></pre>
+
 <hr>
 <p>指定服务器的端口号：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> -P 22 source1 source2 destination
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> -P <span class="token number">22</span> source1 source2 destination</code></pre>
+
 <p>注意： <code>scp</code>的<code>-r -P</code>等参数尽量加在<code>source</code>和<code>destination</code>之前。</p>
 <hr>
 <p>使用<code>scp</code>配置其他服务器的<code>vim</code>和<code>tmux</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">scp</span> ~/.vimrc ~/.tmux.conf myserver:
-</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> ~/.vimrc ~/.tmux.conf myserver:</code></pre>
+
 
                 
             </div>
@@ -760,6 +766,272 @@ Host myserver2
     
 
     
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'e0gMccfA3B9fdgNGoRi8Uyyk-gzGzoHsz',
+        appKey: '2hGq3HOXIEIFr29FsJmd4PY9',
+        notify: '' === 'true',
+        verify: '' === 'true',
+        visitor: '' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '🤣一起来玩，留下你的足迹吧~（记得点击验证哦）\n🚀昵称使用QQ好可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论进制恶意评论\n'
+    });
+</script>
+
+<!--酷Q推送-->
+
 
     
 
@@ -1065,7 +1337,7 @@ Host myserver2
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.8k</span>
+                        class="white-color">25.1k</span>
             
             
             
@@ -1153,6 +1425,8 @@ Host myserver2
 	siteTime(); 
 </script>
 
+
+<script src="/js/prism/prism.js" async></script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">

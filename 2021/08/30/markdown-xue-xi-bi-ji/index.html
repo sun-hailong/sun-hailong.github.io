@@ -36,9 +36,8 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+</head>
+<link rel="stylesheet" href="/js/prism/prism.css">
 
 
 
@@ -447,6 +446,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -454,46 +456,50 @@
             <div id="articleContent">
                 <p>ps: 添加目录是<code>[toc]</code>指令</p>
 <h2 id="关于标题"><a href="#关于标题" class="headerlink" title="关于标题"></a>关于标题</h2><p>使用<code>#</code>可表示1~6级标题</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 一级标题</span>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 一级标题</span>
 <span class="token title important"><span class="token punctuation">##</span> 二级标题</span>
 <span class="token title important"><span class="token punctuation">###</span> 三级标题</span>
 <span class="token title important"><span class="token punctuation">####</span> 四级标题</span>
 <span class="token title important"><span class="token punctuation">#####</span> 五级标题</span>
-<span class="token title important"><span class="token punctuation">######</span> 六级标题</span>
-</code></pre>
+<span class="token title important"><span class="token punctuation">######</span> 六级标题</span></code></pre>
+
+
+
 <h2 id="关于段落格式"><a href="#关于段落格式" class="headerlink" title="关于段落格式"></a>关于段落格式</h2><h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>段落的换行是使用两个以上空格加上回车</p>
 <p>也可以用空行来表示（不常用）</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token italic"><span class="token punctuation">*</span>斜体文本<span class="token punctuation">*</span></span>
-<span class="token italic"><span class="token punctuation">_</span>斜体文本<span class="token punctuation">_</span></span>
-<span class="token bold"><span class="token punctuation">**</span>粗体文本<span class="token punctuation">**</span></span>
-<span class="token bold"><span class="token punctuation">__</span>粗体文本<span class="token punctuation">__</span></span>
-<span class="token bold"><span class="token punctuation">**</span>*粗斜体文本<span class="token punctuation">**</span></span>*
-<span class="token bold"><span class="token punctuation">__</span>_粗斜体文本<span class="token punctuation">__</span></span>_
-</code></pre>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token italic"><span class="token punctuation">*</span><span class="token content">斜体文本</span><span class="token punctuation">*</span></span>
+<span class="token italic"><span class="token punctuation">_</span><span class="token content">斜体文本</span><span class="token punctuation">_</span></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">粗体文本</span><span class="token punctuation">**</span></span>
+<span class="token bold"><span class="token punctuation">__</span><span class="token content">粗体文本</span><span class="token punctuation">__</span></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content"><span class="token italic"><span class="token punctuation">*</span><span class="token content">粗斜体文本</span><span class="token punctuation">*</span></span></span><span class="token punctuation">**</span></span>
+<span class="token bold"><span class="token punctuation">__</span><span class="token content"><span class="token italic"><span class="token punctuation">_</span><span class="token content">粗斜体文本</span><span class="token punctuation">_</span></span></span><span class="token punctuation">__</span></span></code></pre>
+
+
+
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token hr punctuation">***</span>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token hr punctuation">***</span>
 <span class="token hr punctuation">* * *</span>
 <span class="token hr punctuation">*****</span>
-<span class="token hr punctuation">- - -</span>
-<span class="token hr punctuation">---------</span>
-</code></pre>
+<span class="token title important">- - -
+<span class="token punctuation">---------</span></span></code></pre>
+
 <p><strong>效果如下：</strong></p>
 <hr>
 <hr>
 <h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线 <strong>~~</strong> 即可，实例如下：</p>
-<pre class=" language-c"><code class="language-c"><span class="token operator">~</span><span class="token operator">~</span>程序员都会秃头<span class="token operator">~</span><span class="token operator">~</span>
-</code></pre>
+<pre class="language-c" data-language="c"><code class="language-c"><span class="token operator">~</span><span class="token operator">~</span>程序员都会秃头<span class="token operator">~</span><span class="token operator">~</span></code></pre>
+
 <p><strong>效果如下：</strong></p>
 <p><del>程序员都会秃头</del></p>
 <h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>下划线可以通过 HTML 的 <strong><code>&lt;u&gt;</code></strong> 标签来实现：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>u</span><span class="token punctuation">></span></span>划重点！女朋友真好看<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>u</span><span class="token punctuation">></span></span>
-</code></pre>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>u</span><span class="token punctuation">&gt;</span></span>划重点！女朋友真好看<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>u</span><span class="token punctuation">&gt;</span></span></code></pre>
+
 <p><u>划重点！女朋友真好看</u></p>
 <h2 id="关于列表"><a href="#关于列表" class="headerlink" title="关于列表"></a>关于列表</h2><h3 id="有序列表和无序列表"><a href="#有序列表和无序列表" class="headerlink" title="有序列表和无序列表"></a>有序列表和无序列表</h3><p>无序列表使用星号(<strong><code>*</code></strong>)、加号(<strong><code>+</code></strong>)或是减号(<strong><code>-</code></strong>)作为列表标记，这些标记后面要添加一个空格，然后再填写内容：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">*</span> 第一项
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">*</span> 第一项
 <span class="token list punctuation">+</span> 第二项
-<span class="token list punctuation">-</span> 第三项
-</code></pre>
+<span class="token list punctuation">-</span> 第三项</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <ul>
 <li>第一项</li>
@@ -505,10 +511,10 @@
 <li>第三项</li>
 </ul>
 <p>有序列表使用数字并加上<code>.</code> 号来表示，如：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> 第一项
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> 第一项
 <span class="token list punctuation">2.</span> 第二项
-<span class="token list punctuation">3.</span> 第三项
-</code></pre>
+<span class="token list punctuation">3.</span> 第三项</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <ol>
 <li><p>第一项</p>
@@ -519,13 +525,13 @@
 </li>
 </ol>
 <h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>列表嵌套只需在子列表中的选项前面添加四个空格即可：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> 第一项：
-<span class="token code keyword">    - 第一项嵌套的第一个元素</span>
-<span class="token code keyword">    - 第一项嵌套的第二个元素</span>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> 第一项：
+    <span class="token list punctuation">-</span> 第一项嵌套的第一个元素
+    <span class="token list punctuation">-</span> 第一项嵌套的第二个元素
 <span class="token list punctuation">2.</span> 第二项：
-<span class="token code keyword">    - 第二项嵌套的第一个元素</span>
-<span class="token code keyword">    - 第二项嵌套的第二个元素</span>
-</code></pre>
+    <span class="token list punctuation">-</span> 第二项嵌套的第一个元素
+    <span class="token list punctuation">-</span> 第二项嵌套的第二个元素</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <ol>
 <li>第一项：<ul>
@@ -540,20 +546,20 @@
 </li>
 </ol>
 <h2 id="关于区块"><a href="#关于区块" class="headerlink" title="关于区块"></a>关于区块</h2><p>Markdown 区块引用是在段落开头使用 <strong><code>&gt;</code></strong> 符号 ，然后后面紧跟一个<strong>空格</strong>符号：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 连
-<span class="token blockquote punctuation">></span> 起
-<span class="token blockquote punctuation">></span> 来
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">&gt;</span> 连
+<span class="token blockquote punctuation">&gt;</span> 起
+<span class="token blockquote punctuation">&gt;</span> 来</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <blockquote>
 <p>连<br>起<br>来</p>
 </blockquote>
 <p>当然，区块也是可以嵌套的~</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span>连
-<span class="token blockquote punctuation">>></span>不
-<span class="token blockquote punctuation">>>></span>起
-<span class="token blockquote punctuation">>>>></span>来
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">&gt;</span>连
+<span class="token blockquote punctuation">&gt;&gt;</span>不
+<span class="token blockquote punctuation">&gt;&gt;&gt;</span>起
+<span class="token blockquote punctuation">&gt;&gt;&gt;&gt;</span>来</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <blockquote>
 <p>连</p>
@@ -571,10 +577,9 @@
 </blockquote>
 </blockquote>
 </blockquote>
-<h3 id="区块与列表的嵌套使用"><a href="#区块与列表的嵌套使用" class="headerlink" title="区块与列表的嵌套使用"></a>区块与列表的嵌套使用</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 区块中使用列表
-<span class="token blockquote punctuation">></span> <span class="token list punctuation">1.</span> hey
-<span class="token blockquote punctuation">></span> <span class="token list punctuation">+</span> man
-</code></pre>
+<h3 id="区块与列表的嵌套使用"><a href="#区块与列表的嵌套使用" class="headerlink" title="区块与列表的嵌套使用"></a>区块与列表的嵌套使用</h3><pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">&gt;</span> 区块中使用列表
+<span class="token blockquote punctuation">&gt;</span> <span class="token list punctuation">1.</span> hey
+<span class="token blockquote punctuation">&gt;</span> <span class="token list punctuation">+</span> man</code></pre>
 <p><strong>效果如下：</strong></p>
 <blockquote>
 <p>区块中使用列表</p>
@@ -585,11 +590,11 @@
 <li>man</li>
 </ul>
 </blockquote>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">*</span> 第一项
-<span class="token code keyword">    > hey</span>
-<span class="token code keyword">    > man</span>
-<span class="token list punctuation">*</span> 第二项
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">*</span> 第一项
+    &gt; hey
+    &gt; man
+<span class="token list punctuation">*</span> 第二项</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <ul>
 <li>第一项<blockquote>
@@ -599,45 +604,46 @@
 <li>第二项</li>
 </ul>
 <h2 id="关于代码"><a href="#关于代码" class="headerlink" title="关于代码"></a>关于代码</h2><p>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（**`**），例如：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token code keyword">`printf()`</span>函数
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code-snippet code keyword">`printf()`</span>函数</code></pre>
+
 <p><strong>效果如下：</strong></p>
 <p><code>printf()</code>函数</p>
 <p>你也可以用<code>```</code><strong>包裹一段代码</strong>，并指定一种语言（也可以不指定）</p>
 <h2 id="关于链接"><a href="#关于链接" class="headerlink" title="关于链接"></a>关于链接</h2><p>链接使用方法如下：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token url">[链接名称](链接地址)</span>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url">[<span class="token content">链接名称</span>](<span class="token url">链接地址</span>)</span>
 或者
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>链接地址</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>链接地址</span><span class="token punctuation">&gt;</span></span></code></pre>
+
 <p>例如：</p>
-<pre class=" language-markdown"><code class="language-markdown">欢迎使用<span class="token url">[Google](https://www.google.com)</span>搜索
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">欢迎使用<span class="token url">[<span class="token content">Google</span>](<span class="token url">https://www.google.com</span>)</span>搜索</code></pre>
+
 <p>欢迎使用<a target="_blank" rel="noopener" href="https://www.google.com/">Google</a>搜索</p>
 <h3 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h3><p>我们可以通过变量来设置一个链接，变量赋值在文档末尾进行</p>
-<pre class=" language-markdown"><code class="language-markdown">这个链接使用1作为网址变量<span class="token url">[Google][<span class="token variable">1</span>]</span>
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">这个链接使用1作为网址变量<span class="token url">[<span class="token content">Google</span>][<span class="token variable">1</span>]</span></code></pre>
+
 <p>这个链接使用1作为网址变量<a target="_blank" rel="noopener" href="http://www.google.com/">Google</a></p>
 <h2 id="关于图片"><a href="#关于图片" class="headerlink" title="关于图片"></a>关于图片</h2><p>Markdown 图片语法格式如下：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token url">![alt 属性文本](图片地址)</span>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">alt 属性文本</span>](<span class="token url">图片地址</span>)</span>
 
-<span class="token url">![alt 属性文本](图片地址 <span class="token string">"可选标题"</span>)</span>
-</code></pre>
+<span class="token url"><span class="token operator">!</span>[<span class="token content">alt 属性文本</span>](<span class="token url">图片地址</span> <span class="token string">"可选标题"</span>)</span></code></pre>
+
 <ul>
 <li>开头一个感叹号 !</li>
 <li>接着一个方括号，里面放上图片的替代文字</li>
 <li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 属性的文字。</li>
 </ul>
 <p><strong>实例：</strong></p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token url">![RUNOOB 图标](http://static.runoob.com/images/runoob-logo.png)</span>
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">RUNOOB 图标</span>](<span class="token url">http://static.runoob.com/images/runoob-logo.png</span>)</span></code></pre>
+
 <p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标"></p>
 <h2 id="关于表格"><a href="#关于表格" class="headerlink" title="关于表格"></a>关于表格</h2><p>Markdown 制作表格使用 <strong><code>|</code></strong> 来分隔不同的单元格，使用 <strong><code>-</code></strong> 来分隔表头和其他行。</p>
 <p>语法格式如下：</p>
-<pre class=" language-markdown"><code class="language-markdown">|  表头   | 表头  |
-|  ----  | ----  |
-| 单元格  | 单元格 |
-| 单元格  | 单元格 |
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important">  表头   </span><span class="token punctuation">|</span><span class="token table-header important"> 表头  </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span>  <span class="token punctuation">----</span>  <span class="token punctuation">|</span> <span class="token punctuation">----</span>  <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> 单元格  </span><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 单元格  </span><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span></span></span></code></pre>
+
+
 <p><strong>效果如下：</strong></p>
 <table>
 <thead>
@@ -660,11 +666,11 @@
 <li><strong>:-</strong> 设置内容和标题栏居左对齐。</li>
 <li><strong>:-:</strong> 设置内容和标题栏居中对齐。</li>
 </ul>
-<pre class=" language-markdown"><code class="language-markdown">| 左对齐 | 右对齐 | 居中对齐 |
-| :-----| ----: | :----: |
-| 单元格 | 单元格 | 单元格 |
-| 单元格 | 单元格 | 单元格 |
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 左对齐 </span><span class="token punctuation">|</span><span class="token table-header important"> 右对齐 </span><span class="token punctuation">|</span><span class="token table-header important"> 居中对齐 </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">:-----</span><span class="token punctuation">|</span> <span class="token punctuation">----:</span> <span class="token punctuation">|</span> <span class="token punctuation">:----:</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span><span class="token table-data"> 单元格 </span><span class="token punctuation">|</span></span></span></code></pre>
+
 <table>
 <thead>
 <tr>
@@ -686,8 +692,8 @@
 </tbody></table>
 <h2 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h2><h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>当你需要在编辑器中插入数学公式时，用<code> $$ </code>包裹TeX 或 LaTeX 格式的数学公式来实现。</p>
 <p>具体使用时自行百度LaTeX语法。</p>
-<pre class=" language-markdown"><code class="language-markdown">$$ f(x)=x^2+2x+1 $$
-</code></pre>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">$$ f(x)=x^2+2x+1 $$</code></pre>
+
 <p>$$f(x)=x^2 + 2x$$</p>
 <h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p>Markdown可以画很多流程图，具体使用时自行百度。</p>
 
@@ -913,6 +919,272 @@
     
 
     
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'e0gMccfA3B9fdgNGoRi8Uyyk-gzGzoHsz',
+        appKey: '2hGq3HOXIEIFr29FsJmd4PY9',
+        notify: '' === 'true',
+        verify: '' === 'true',
+        visitor: '' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '🤣一起来玩，留下你的足迹吧~（记得点击验证哦）\n🚀昵称使用QQ好可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论进制恶意评论\n'
+    });
+</script>
+
+<!--酷Q推送-->
+
 
     
 
@@ -1226,7 +1498,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.8k</span>
+                        class="white-color">25.1k</span>
             
             
             
@@ -1314,6 +1586,8 @@
 	siteTime(); 
 </script>
 
+
+<script src="/js/prism/prism.js" async></script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">

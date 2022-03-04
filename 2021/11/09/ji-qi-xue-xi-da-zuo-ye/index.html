@@ -36,9 +36,8 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+</head>
+<link rel="stylesheet" href="/js/prism/prism.css">
 
 
 
@@ -447,92 +446,99 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+                <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib <span class="token keyword">as</span> plt
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 
-<span class="token comment" spellcheck="true"># 数据读入</span>
+<span class="token comment"># 数据读入</span>
 dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"winequality-red.csv"</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">";"</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 命名采取下划线的规则</span>
-dataset<span class="token punctuation">.</span>columns <span class="token operator">=</span> dataset<span class="token punctuation">.</span>columns<span class="token punctuation">.</span>str<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'_'</span><span class="token punctuation">)</span>
-</code></pre>
+<span class="token comment"># 命名采取下划线的规则</span>
+dataset<span class="token punctuation">.</span>columns <span class="token operator">=</span> dataset<span class="token punctuation">.</span>columns<span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'_'</span><span class="token punctuation">)</span></code></pre>
+
 <p>首先进行导入相关库的操作</p>
 <p>将数据以分隔符为<code>;</code>的方式读入。同时由于该文件命名规则不符合python的命名规则，所以我调用了函数将空格替换成了下划线<code>_</code></p>
 <p>效果如下：</p>
 <p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109150315575.png"></p>
-<h3 id="查看数据集的信息"><a href="#查看数据集的信息" class="headerlink" title="查看数据集的信息"></a>查看数据集的信息</h3><pre class=" language-python"><code class="language-python">dataset<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
+<h3 id="查看数据集的信息"><a href="#查看数据集的信息" class="headerlink" title="查看数据集的信息"></a>查看数据集的信息</h3><pre class="language-python" data-language="python"><code class="language-python">dataset<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+
+
 <img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109150459825.png" style="zoom:50%;">
 
-<h3 id="判断是否具有缺失值"><a href="#判断是否具有缺失值" class="headerlink" title="判断是否具有缺失值"></a>判断是否具有缺失值</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查看数据是否存在缺失值</span>
-dataset<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-</code></pre>
+<h3 id="判断是否具有缺失值"><a href="#判断是否具有缺失值" class="headerlink" title="判断是否具有缺失值"></a>判断是否具有缺失值</h3><pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 查看数据是否存在缺失值</span>
+dataset<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+
 <p>根据此操作，可以预测是否需要进行缺失值处理，通过数据分析后，效果并没有让我们失望，无一例缺失值！</p>
 <img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109162228847.png" style="zoom:50%;">
 
 <p>最终由于Quality 类别太细，等级分为0-10，分布太广，故采取二分类的方式：</p>
 <p>将等级分为<strong>两个等级</strong>，劣质(&lt;=5)，优质(&gt;=5)</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将大于5的设为1，其余设为0</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 将大于5的设为1，其余设为0</span>
 dataset<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dataset<span class="token punctuation">[</span><span class="token string">'quality'</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'quality'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
-dataset<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dataset<span class="token punctuation">[</span><span class="token string">'quality'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'quality'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
-</code></pre>
+dataset<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dataset<span class="token punctuation">[</span><span class="token string">'quality'</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'quality'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+
 <h3 id="图像分析"><a href="#图像分析" class="headerlink" title="图像分析"></a>图像分析</h3><p>采取直方图的方式进行分析</p>
 <p><strong>分析发现各类属性的取值范围差别较大，同时分布也不一致，需要进行归一化处理</strong></p>
-<pre class=" language-python"><code class="language-python">dataset<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python">dataset<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
 <p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211109162140129.png"></p>
 <h3 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化"></a>数据归一化</h3><p>利用公式：$x^*=\frac {x-min}{max-min}$对数据进行归一化处理</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将数据转成numpy</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 将数据转成numpy</span>
 red <span class="token operator">=</span> dataset<span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># 对数据进行归一化处理</span>
-mins <span class="token operator">=</span> red<span class="token punctuation">.</span>min<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 返回每一列最小值的列表</span>
-maxs <span class="token operator">=</span> red<span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 返回每一列最大值的列表</span>
-ranges <span class="token operator">=</span> maxs <span class="token operator">-</span> mins <span class="token comment" spellcheck="true"># 最大值列表 - 最小值列表 = 差值列表</span>
-norm_red <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>np<span class="token punctuation">.</span>shape<span class="token punctuation">(</span>red<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 用于存储归一化后的数据</span>
-row <span class="token operator">=</span> red<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 数据集的行数</span>
-norm_red <span class="token operator">=</span> red <span class="token operator">-</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> <span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 矩阵每一列数据都减去每一列的最小值</span>
-norm_red <span class="token operator">=</span> norm_red <span class="token operator">/</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>ranges<span class="token punctuation">,</span> <span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 最终归一化得到的数据</span>
-</code></pre>
-<h2 id="算法的训练与评价"><a href="#算法的训练与评价" class="headerlink" title="算法的训练与评价"></a>算法的训练与评价</h2><h3 id="1-采用神经网络算法"><a href="#1-采用神经网络算法" class="headerlink" title="1. 采用神经网络算法"></a>1. 采用神经网络算法</h3><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取前面10列</span>
-y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取最后一列quality</span>
+<span class="token comment"># 对数据进行归一化处理</span>
+mins <span class="token operator">=</span> red<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 返回每一列最小值的列表</span>
+maxs <span class="token operator">=</span> red<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 返回每一列最大值的列表</span>
+ranges <span class="token operator">=</span> maxs <span class="token operator">-</span> mins <span class="token comment"># 最大值列表 - 最小值列表 = 差值列表</span>
+norm_red <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>np<span class="token punctuation">.</span>shape<span class="token punctuation">(</span>red<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 用于存储归一化后的数据</span>
+row <span class="token operator">=</span> red<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># 数据集的行数</span>
+norm_red <span class="token operator">=</span> red <span class="token operator">-</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> <span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 矩阵每一列数据都减去每一列的最小值</span>
+norm_red <span class="token operator">=</span> norm_red <span class="token operator">/</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>ranges<span class="token punctuation">,</span> <span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 最终归一化得到的数据</span></code></pre>
 
-<span class="token comment" spellcheck="true"># 使用神经网络算法</span>
+
+
+<h2 id="算法的训练与评价"><a href="#算法的训练与评价" class="headerlink" title="算法的训练与评价"></a>算法的训练与评价</h2><h3 id="1-采用神经网络算法"><a href="#1-采用神经网络算法" class="headerlink" title="1. 采用神经网络算法"></a>1. 采用神经网络算法</h3><pre class="language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># 取前面10列</span>
+y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment"># 取最后一列quality</span>
+
+<span class="token comment"># 使用神经网络算法</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neural_network <span class="token keyword">import</span> MLPClassifier
 
 x_train<span class="token punctuation">,</span>x_test<span class="token punctuation">,</span>y_train<span class="token punctuation">,</span>y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># random_state的设置是为了保证每次结果相同</span>
+<span class="token comment"># random_state的设置是为了保证每次结果相同</span>
 mlp_model <span class="token operator">=</span> MLPClassifier<span class="token punctuation">(</span>hidden_layer_sizes<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'tanh'</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">)</span>
-mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 训练</span>
-accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正确率</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'神经网络模型的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span>
-</code></pre>
+mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment"># 训练</span>
+accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment"># 正确率</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'神经网络模型的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span></code></pre>
+
 <p>算法流程：</p>
 <p>首先取出前十列作为x，最后一列quality作为y</p>
 <p>然后通过<code>train_test_split</code>函数进行训练集与测试集的划分，random_state的设置是为了保证每次结果相同</p>
 <p>通过设置两层隐藏层，大小为128</p>
 <p>得到神经网络模型的最终<strong>预测准确率</strong>为0.784375</p>
-<h3 id="2-采用SVM算法"><a href="#2-采用SVM算法" class="headerlink" title="2. 采用SVM算法"></a>2. 采用SVM算法</h3><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取前面10列</span>
-y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取最后一列quality</span>
+<h3 id="2-采用SVM算法"><a href="#2-采用SVM算法" class="headerlink" title="2. 采用SVM算法"></a>2. 采用SVM算法</h3><pre class="language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># 取前面10列</span>
+y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment"># 取最后一列quality</span>
 
-<span class="token comment" spellcheck="true"># 使用SVM算法</span>
+<span class="token comment"># 使用SVM算法</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>svm <span class="token keyword">import</span> SVC
 
 x_train<span class="token punctuation">,</span>x_test<span class="token punctuation">,</span>y_train<span class="token punctuation">,</span>y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
 
 mlp_model <span class="token operator">=</span> SVC<span class="token punctuation">(</span>C<span class="token operator">=</span><span class="token number">1e4</span><span class="token punctuation">,</span> gamma<span class="token operator">=</span><span class="token string">'auto'</span><span class="token punctuation">,</span> kernel<span class="token operator">=</span><span class="token string">'rbf'</span><span class="token punctuation">)</span>
-mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 训练</span>
-accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正确率</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'SVM的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span>
-</code></pre>
+mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment"># 训练</span>
+accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment"># 正确率</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'SVM的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span></code></pre>
+
 <p><strong>1. 简介：</strong></p>
 <p>SVM（支持向量机）主要用于分类问题，主要的应用场景有字符识别、面部识别、行人检测、文本分类等领域。</p>
 <p>通常SVM用于二元分类问题，对于多元分类通常将其分解为多个二元分类问题，再进行分类。</p>
@@ -542,20 +548,20 @@ accuracy <span class="token operator">=</span> mlp_model<span class="token punct
 <p>设置迭代回合数为10000，gamma参数为<code>auto</code></p>
 <p>同时设定核函数为<strong>高斯核函数</strong>，其形式为：$K(x,z)=exp(\frac {-\parallel x-z\parallel^2 }{2\sigma^2} )$</p>
 <p>得到SVM模型的最终<strong>预测准确率</strong>为0.79375</p>
-<h3 id="3-采用KNN算法"><a href="#3-采用KNN算法" class="headerlink" title="3. 采用KNN算法"></a>3. 采用KNN算法</h3><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取前面10列</span>
-y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取最后一列quality</span>
+<h3 id="3-采用KNN算法"><a href="#3-采用KNN算法" class="headerlink" title="3. 采用KNN算法"></a>3. 采用KNN算法</h3><pre class="language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># 取前面10列</span>
+y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment"># 取最后一列quality</span>
 
-<span class="token comment" spellcheck="true"># 使用KNN算法</span>
+<span class="token comment"># 使用KNN算法</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsClassifier
 
 x_train<span class="token punctuation">,</span>x_test<span class="token punctuation">,</span>y_train<span class="token punctuation">,</span>y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
 
 mlp_model <span class="token operator">=</span> KNeighborsClassifier<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
-mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 训练</span>
-accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正确率</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'KNN的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span>
-</code></pre>
+mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment"># 训练</span>
+accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment"># 正确率</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'KNN的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span></code></pre>
+
 <p><strong>1. 简介：</strong></p>
 <p>KNN是一种<strong>非参的</strong>，<strong>惰性</strong>的算法模型。什么是非参，什么是惰性呢？</p>
 <p><strong>非参</strong>的意思并不是说这个算法不需要参数，而是意味着这个模型不会对数据做出任何的假设，与之相对的是线性回归（我们总会假设线性回归是一条直线）。也就是说KNN建立的模型结构是根据数据来决定的，这也比较符合现实的情况，毕竟在现实中的情况往往与理论上的假设是不相符的。</p>
@@ -565,20 +571,20 @@ accuracy <span class="token operator">=</span> mlp_model<span class="token punct
 <p>然后通过<code>train_test_split</code>函数进行训练集与测试集的划分，random_state的设置是为了保证每次结果相同</p>
 <p>通过不断调参发现设置n的值为4时效果最佳。</p>
 <p>得到KNN模型的最终<strong>预测准确率</strong>为0.75625</p>
-<h3 id="4-采用logistic回归方法"><a href="#4-采用logistic回归方法" class="headerlink" title="4.采用logistic回归方法"></a>4.采用logistic回归方法</h3><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取前面10列</span>
-y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 取最后一列quality</span>
+<h3 id="4-采用logistic回归方法"><a href="#4-采用logistic回归方法" class="headerlink" title="4.采用logistic回归方法"></a>4.采用logistic回归方法</h3><pre class="language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># 取前面10列</span>
+y <span class="token operator">=</span> norm_red<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">]</span> <span class="token comment"># 取最后一列quality</span>
 
-<span class="token comment" spellcheck="true"># 使用logistic算法</span>
+<span class="token comment"># 使用logistic算法</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
 
 x_train<span class="token punctuation">,</span>x_test<span class="token punctuation">,</span>y_train<span class="token punctuation">,</span>y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
 
 mlp_model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span>C<span class="token operator">=</span><span class="token number">1e3</span><span class="token punctuation">,</span> solver<span class="token operator">=</span><span class="token string">'liblinear'</span><span class="token punctuation">,</span> multi_class<span class="token operator">=</span><span class="token string">'auto'</span><span class="token punctuation">)</span>
-mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 训练</span>
-accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正确率</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'逻辑回归的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span>
-</code></pre>
+mlp_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment"># 训练</span>
+accuracy <span class="token operator">=</span> mlp_model<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span> <span class="token comment"># 正确率</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'逻辑回归的预测准确率是：'</span><span class="token punctuation">,</span> accuracy<span class="token punctuation">)</span></code></pre>
+
 <p>得到logistic模型的最终<strong>预测准确率</strong>为0.78125</p>
 <p>综上所述，四种模型的预测准确率如下：</p>
 <p>神经网络模型：0.784375</p>
@@ -809,6 +815,272 @@ accuracy <span class="token operator">=</span> mlp_model<span class="token punct
     
 
     
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'e0gMccfA3B9fdgNGoRi8Uyyk-gzGzoHsz',
+        appKey: '2hGq3HOXIEIFr29FsJmd4PY9',
+        notify: '' === 'true',
+        verify: '' === 'true',
+        visitor: '' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '🤣一起来玩，留下你的足迹吧~（记得点击验证哦）\n🚀昵称使用QQ好可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论进制恶意评论\n'
+    });
+</script>
+
+<!--酷Q推送-->
+
 
     
 
@@ -1121,7 +1393,7 @@ accuracy <span class="token operator">=</span> mlp_model<span class="token punct
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.8k</span>
+                        class="white-color">25.1k</span>
             
             
             
@@ -1209,6 +1481,8 @@ accuracy <span class="token operator">=</span> mlp_model<span class="token punct
 	siteTime(); 
 </script>
 
+
+<script src="/js/prism/prism.js" async></script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
