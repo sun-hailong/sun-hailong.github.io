@@ -35,8 +35,10 @@
 
 body {
     /* background-color: #eaeaea; */
-	background: linear-gradient(60deg, #93a5cf 0%, #e4efe9 100%);
+    background: linear-gradient(60deg, #93a5cf 0%, #e4efe9 100%);
+    background-attachment: fixed
     margin: 0;
+    /* color: #7F95D1; */
     color: #34495e;
     overflow-x: hidden;
     overflow-y: auto; 
