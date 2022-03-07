@@ -454,7 +454,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-变量的声明和定义有什么区别"><a href="#1-变量的声明和定义有什么区别" class="headerlink" title="1. 变量的声明和定义有什么区别"></a>1. 变量的声明和定义有什么区别</h4><p>变量的定义为变量分配地址和存储空间， 变量的声明不分配地址。一个变量可以在多个地方声明， 但是只在一个地方定义。 加入extern修饰的是变量的声明， 说明此变量将在文件以外或在文件后面部分定义。</p>
+                <h3 id="1-10"><a href="#1-10" class="headerlink" title="1~10"></a>1~10</h3><h4 id="1-变量的声明和定义有什么区别"><a href="#1-变量的声明和定义有什么区别" class="headerlink" title="1. 变量的声明和定义有什么区别"></a>1. 变量的声明和定义有什么区别</h4><p>变量的定义为变量分配地址和存储空间， 变量的声明不分配地址。一个变量可以在多个地方声明， 但是只在一个地方定义。 加入extern修饰的是变量的声明， 说明此变量将在文件以外或在文件后面部分定义。</p>
 <pre class="language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">extern</span> <span class="token keyword">int</span> A<span class="token punctuation">;</span>
@@ -527,20 +527,14 @@
 </ul>
 <p>一个C 、C + + 程序编译时内存分为5 大存储区： 堆区、栈区、全局/静态区、常量区、程序代码区。</p>
 <h4 id="10-C语言的指针和引用和C-的有什么区别？"><a href="#10-C语言的指针和引用和C-的有什么区别？" class="headerlink" title="10. C语言的指针和引用和C++的有什么区别？"></a>10. C语言的指针和引用和C++的有什么区别？</h4><ul>
-<li><p>指针有自己的一块空间，而引用只是一个别名；</p>
-</li>
-<li><p>使用<code>sizeof</code>看一个指针的大小是4，而引用则是被引用对象的大小；</p>
-</li>
-<li><p>指针使用时必须解引用，而直接对引用的修改都会改变引用所指向的对象；</p>
-</li>
-<li><p>指针在使用中可以指向其它对象，但是引用只能是一个对象的引用，不能被改变；</p>
-</li>
-<li><p>指针可以有多级指针（**p），而引用止于一级；</p>
-</li>
-<li><p>如果返回动态内存分配的对象或者内存，必须使用指针，引用可能引起内存泄露。</p>
-</li>
+<li>指针有自己的一块空间，而引用只是一个别名；</li>
+<li>使用<code>sizeof</code>看一个指针的大小是4，而引用则是被引用对象的大小；</li>
+<li>指针使用时必须解引用，而直接对引用的修改都会改变引用所指向的对象；</li>
+<li>指针在使用中可以指向其它对象，但是引用只能是一个对象的引用，不能被改变；</li>
+<li>指针可以有多级指针（**p），而引用止于一级；</li>
+<li>如果返回动态内存分配的对象或者内存，必须使用指针，引用可能引起内存泄露。</li>
 </ul>
-<h4 id="11-typedef和define有什么区别"><a href="#11-typedef和define有什么区别" class="headerlink" title="11. typedef和define有什么区别"></a>11. typedef和define有什么区别</h4><ul>
+<h3 id="11-20"><a href="#11-20" class="headerlink" title="11~20"></a>11~20</h3><h4 id="11-typedef和define有什么区别"><a href="#11-typedef和define有什么区别" class="headerlink" title="11. typedef和define有什么区别"></a>11. typedef和define有什么区别</h4><ul>
 <li><p>用法不同：<code>typedef </code>用来定义一种数据类型的别名，增强程序的可读性。<code>define </code>主要用来定义常量，以及书写复杂使用频繁的宏。</p>
 </li>
 <li><p>执行时间不同：<code>typedef </code>是编译过程的一部分，有类型检查的功能。<code>define </code>是宏定义，是预编译的部分，其发生在编译之前，只是简单的进行字符串的替换，不进行类型的检查。</p>
@@ -595,8 +589,7 @@
 <li>缺省取址运算符。</li>
 <li>缺省取址运算符 <code>const </code>。</li>
 </ul>
-<h4 id="17-对C-中的smart-pointer四个智能指针：shared-ptr-unique-ptr-weak-ptr-auto-ptr的理解"><a href="#17-对C-中的smart-pointer四个智能指针：shared-ptr-unique-ptr-weak-ptr-auto-ptr的理解" class="headerlink" title="17. 对C++中的smart pointer四个智能指针：shared_ptr,unique_ptr,weak_ptr,auto_ptr的理解"></a>17. 对C++中的smart pointer四个智能指针：shared_ptr,unique_ptr,weak_ptr,auto_ptr的理解</h4><p>其中后三个是c++11支持， 并且第一个已经被11弃用。</p>
-<p>智能指针的作用是管理一个指针， 因为存在以下这种情况： 申请的空间在函数结束时忘记释放， 造成内存泄漏。使用智能指针可以很大程度上的避免这个问题， 因为智能指针就是一个类， 当超出了类的作用域是， 类会自动调用析构函数， 析构函数会自动释放资源。所以智能指针的作用原理就是在函数结束时自动释放内存空间， 不需要手动释放内存空间。</p>
+<h4 id="17-对C-中的smart-pointer四个智能指针的理解"><a href="#17-对C-中的smart-pointer四个智能指针的理解" class="headerlink" title="17. 对C++中的smart pointer四个智能指针的理解"></a>17. 对C++中的smart pointer四个智能指针的理解</h4><p>智能指针的作用是管理一个指针， 因为存在以下这种情况： 申请的空间在函数结束时忘记释放， 造成内存泄漏。使用智能指针可以很大程度上的避免这个问题，因为智能指针就是一个类， 当超出了类的作用域是， 类会自动调用析构函数，析构函数会自动释放资源。所以智能指针的作用原理就是在函数结束时自动释放内存空间， 不需要手动释放内存空间。</p>
 <ul>
 <li><p><code>auto_ptr</code>（c++98的方案，c++11已经抛弃）<br>采用所有权模式。</p>
 <pre class="language-c" data-language="c"><code class="language-c">auto_ptr<span class="token operator">&lt;</span> string<span class="token operator">&gt;</span> <span class="token function">p1</span> <span class="token punctuation">(</span>new <span class="token function">string</span> <span class="token punctuation">(</span>"I reigned lonely as a cloud<span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -635,12 +628,10 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
 <li>当释放或者删除<code>v.clear()</code>里面的数据时， 其存储空间不释放， 仅仅是清空了里面的数据。因此， 对<code>vector</code>的任何操作一旦引起了空间的重新配置， 指向原<code>vector</code>的所有迭代器会都失效了。</li>
 </ul>
 <h4 id="20-vector中的reserve和resize的区别"><a href="#20-vector中的reserve和resize的区别" class="headerlink" title="20. vector中的reserve和resize的区别"></a>20. vector中的reserve和resize的区别</h4><ul>
-<li><p><code>reserve</code>是直接扩充到已经确定（<strong>最大容量</strong>）的大小，可以减少多次开辟、释放空间的问题（优化<code>push_back</code>），就可以提高效率，其次还可以减少多次要拷贝数据的问题。<code>reserve</code>只是保证<code>vector</code>中的空间大小（<code>capacity</code>）最少达到参数所指定的大小n。</p>
-</li>
-<li><p><code>resize()</code>可以改变有效空间（<strong>分配元素数量</strong>）的大小，也有改变默认值的功能。若<code>size</code> 大于<code>capacity</code>，则<code>capacity</code>的大小也会随着改变。</p>
-</li>
+<li><code>reserve</code>是直接扩充到已经确定（<strong>最大容量</strong>）的大小，可以减少多次开辟、释放空间的问题（优化<code>push_back</code>），就可以提高效率，其次还可以减少多次要拷贝数据的问题。<code>reserve</code>只是保证<code>vector</code>中的空间大小（<code>capacity</code>）最少达到参数所指定的大小n。</li>
+<li><code>resize()</code>可以改变有效空间（<strong>分配元素数量</strong>）的大小，也有改变默认值的功能。若<code>size</code> 大于<code>capacity</code>，则<code>capacity</code>的大小也会随着改变。</li>
 </ul>
-<h4 id="21-vector中的size和capacity的区别"><a href="#21-vector中的size和capacity的区别" class="headerlink" title="21. vector中的size和capacity的区别"></a>21. vector中的size和capacity的区别</h4><ul>
+<h3 id="21-30"><a href="#21-30" class="headerlink" title="21~30"></a>21~30</h3><h4 id="21-vector中的size和capacity的区别"><a href="#21-vector中的size和capacity的区别" class="headerlink" title="21. vector中的size和capacity的区别"></a>21. vector中的size和capacity的区别</h4><ul>
 <li><p><code>size</code>表示当前<code>vector</code>中有多少个元素<code>（finish - start）</code>;</p>
 </li>
 <li><p><code>capacity</code>函数则表示它已经分配的内存中可以容纳多少元素<code>（end_of_storage - start）</code></p>
@@ -699,12 +690,10 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
 </li>
 </ul>
 <h4 id="30-构造函数为什么一般不定义为虚函数"><a href="#30-构造函数为什么一般不定义为虚函数" class="headerlink" title="30. 构造函数为什么一般不定义为虚函数"></a>30. 构造函数为什么一般不定义为虚函数</h4><ul>
-<li><p>因为创建一个对象时需要确定对象的类型，而虚函数是在运行时确定其类型的。而在构造一个对象时，由于对象还未创建成功，编译器无法知道对象的实际类型，是类本身还是类的派生类等等</p>
-</li>
-<li><p><strong>虚函数的调用需要虚函数表指针</strong>，而该指针存放在对象的内存空间中；若构造函数声明为虚函数，那么由于对象还未创建，还没有内存空间，更没有虚函数表地址用来调用虚函数即构造函数了</p>
-</li>
+<li>因为创建一个对象时需要确定对象的类型，而虚函数是在运行时确定其类型的。而在构造一个对象时，由于对象还未创建成功，编译器无法知道对象的实际类型，是类本身还是类的派生类等等</li>
+<li><strong>虚函数的调用需要虚函数表指针</strong>，而该指针存放在对象的内存空间中；若构造函数声明为虚函数，那么由于对象还未创建，还没有内存空间，更没有虚函数表地址用来调用虚函数即构造函数了</li>
 </ul>
-<h4 id="31-为什么析构函数最好声明为虚函数"><a href="#31-为什么析构函数最好声明为虚函数" class="headerlink" title="31. 为什么析构函数最好声明为虚函数"></a>31. 为什么析构函数最好声明为虚函数</h4><ul>
+<h3 id="31-40"><a href="#31-40" class="headerlink" title="31~40"></a>31~40</h3><h4 id="31-为什么析构函数最好声明为虚函数"><a href="#31-为什么析构函数最好声明为虚函数" class="headerlink" title="31. 为什么析构函数最好声明为虚函数"></a>31. 为什么析构函数最好声明为虚函数</h4><ul>
 <li><p>当析构一个指向派生类的基类指针时，最好将基类的析构函数声明为虚函数，否则可能存在内存泄露的问题</p>
 </li>
 <li><p>如果析构函数不被声明成虚函数，则编译器实施静态绑定，在删除指向派生类的基类指针时，只会调用基类的析构函数而不调用派生类析构函数，这样就会造成派生类对象析构不完全。</p>
@@ -1511,7 +1500,7 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.5k</span>
+                        class="white-color">34.7k</span>
             
             
             
