@@ -429,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    6.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    22 分
                 </div>
                 
 
@@ -454,7 +454,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-10"><a href="#1-10" class="headerlink" title="1~10"></a>1~10</h3><h4 id="1-变量的声明和定义有什么区别"><a href="#1-变量的声明和定义有什么区别" class="headerlink" title="1. 变量的声明和定义有什么区别"></a>1. 变量的声明和定义有什么区别</h4><p>变量的定义为变量分配地址和存储空间， 变量的声明不分配地址。一个变量可以在多个地方声明， 但是只在一个地方定义。 加入extern修饰的是变量的声明， 说明此变量将在文件以外或在文件后面部分定义。</p>
+                <h2 id="1-10"><a href="#1-10" class="headerlink" title="1~10"></a>1~10</h2><h3 id="1-变量的声明和定义有什么区别"><a href="#1-变量的声明和定义有什么区别" class="headerlink" title="1. 变量的声明和定义有什么区别"></a>1. 变量的声明和定义有什么区别</h3><p>变量的定义为变量分配地址和存储空间， 变量的声明不分配地址。一个变量可以在多个地方声明， 但是只在一个地方定义。 加入extern修饰的是变量的声明， 说明此变量将在文件以外或在文件后面部分定义。</p>
 <pre class="language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">extern</span> <span class="token keyword">int</span> A<span class="token punctuation">;</span>
@@ -464,7 +464,7 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">int</span> A<span class="token punctuation">;</span> <span class="token comment">//是定义，定义了A为整型的外部变量</span></code></pre>
 
-<h4 id="2-简述-ifdef、-else、-endif和-ifndef的作用"><a href="#2-简述-ifdef、-else、-endif和-ifndef的作用" class="headerlink" title="2. 简述#ifdef、#else、#endif和#ifndef的作用"></a>2. 简述#ifdef、#else、#endif和#ifndef的作用</h4><ul>
+<h3 id="2-简述-ifdef、-else、-endif和-ifndef的作用"><a href="#2-简述-ifdef、-else、-endif和-ifndef的作用" class="headerlink" title="2. 简述#ifdef、#else、#endif和#ifndef的作用"></a>2. 简述#ifdef、#else、#endif和#ifndef的作用</h3><ul>
 <li>利用<code>#ifdef</code>、<code>#endif</code>将某程序功能模块包括进去，以向特定用户提供该功能。在不需要时用户可轻易将其屏蔽。</li>
 </ul>
 <pre class="language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">MATH</span></span>
@@ -482,29 +482,84 @@
 <li>应对硬件的限制。由于一些具体应用环境的硬件不一样，限于条件，本地缺乏这种设备，只能绕过硬件，直接写出预期结果。</li>
 </ul>
 <p>注意： 虽然不用条件编译命令而直接用if语句也能达到要求，但那样做目标程序长（ 因为所有语句都编译），运行时间长（ 因为在程序运行时间对if语句进行测试）。而采用条件编译，可以减少被编译的语句，从而减少目标程序的长度， 减少运行时间。</p>
-<h4 id="3-结构体可以直接赋值吗"><a href="#3-结构体可以直接赋值吗" class="headerlink" title="3. 结构体可以直接赋值吗"></a>3. 结构体可以直接赋值吗</h4><p>声明时可以直接初始化， 同一结构体的不同对象之间也可以直接赋值， 但是当结构体中含有指针“ 成员” 时一定要小心。</p>
+<h3 id="3-结构体可以直接赋值吗"><a href="#3-结构体可以直接赋值吗" class="headerlink" title="3. 结构体可以直接赋值吗"></a>3. 结构体可以直接赋值吗</h3><p>声明时可以直接初始化， 同一结构体的不同对象之间也可以直接赋值， 但是当结构体中含有指针“ 成员” 时一定要小心。</p>
 <p>注意：当有多个指针指向同一段内存时， 某个指针释放这段内存可能会导致其他指针的非法操作。因此在释放前一定要确保其他指针不再使用这段内存空间。</p>
-<h4 id="4-sizeof-和strlen-的区别"><a href="#4-sizeof-和strlen-的区别" class="headerlink" title="4. sizeof 和strlen 的区别"></a>4. sizeof 和strlen 的区别</h4><ul>
+<h3 id="4-sizeof和strlen的区别"><a href="#4-sizeof和strlen的区别" class="headerlink" title="4. sizeof和strlen的区别"></a>4. sizeof和strlen的区别</h3><ul>
 <li><code>sizeof</code>是一个操作符，<code>strlen</code>是库函数。</li>
 <li><code>sizeof</code>的参数可以是数据的类型，也可以是变量，而<code>strlen</code>只能以结尾为<code>'\0'</code>的字符串作参数。</li>
 <li>编译器在编译时就计算出了<code>sizeof</code>的结果，而<code>strlen</code>函数必须在运行时才能计算出来。并且<code>sizeof</code>计算的是数据类型占内存的大小，而<code>strlen</code>计算的是字符串实际的长度。</li>
 <li>数组做<code>sizeof</code>的参数不退化，传递给<code>strlen</code>就退化为指针了</li>
 </ul>
-<h4 id="5-C语言的malloc和C-中的new有什么区别"><a href="#5-C语言的malloc和C-中的new有什么区别" class="headerlink" title="5. Ｃ语言的malloc和C++中的new有什么区别"></a>5. Ｃ语言的malloc和C++中的new有什么区别</h4><ul>
-<li><code>new </code>、<code>delete </code>是操作符，可以重载，只能在C++ 中使用。</li>
-<li><code>malloc</code>、<code>free </code>是函数，可以覆盖，C、C++ 中都可以使用。</li>
-<li><code>new </code>可以调用对象的构造函数，对应的<code>delete </code>调用相应的析构函数。</li>
-<li><code>malloc </code>仅仅分配内存，<code>free </code>仅仅回收内存，并不执行构造和析构函数</li>
-<li><code>new </code>、<code>delete </code>返回的是某种数据类型指针，<code>malloc</code>、<code>free </code>返回的是void 指针。</li>
+<h3 id="5-new-delete、malloc-free"><a href="#5-new-delete、malloc-free" class="headerlink" title="5. new/delete、malloc/free"></a>5. new/delete、malloc/free</h3><h4 id="5-1-new-delete、malloc-free-区别"><a href="#5-1-new-delete、malloc-free-区别" class="headerlink" title="5.1 new/delete、malloc/free 区别"></a>5.1 new/delete、malloc/free 区别</h4><table>
+<thead>
+<tr>
+<th align="center">特征</th>
+<th align="center">new/delete</th>
+<th align="center">malloc/free</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">分配内存的位置</td>
+<td align="center">自由存储区</td>
+<td align="center">堆</td>
+</tr>
+<tr>
+<td align="center">内存分配成功的返回值</td>
+<td align="center">完整类型指针</td>
+<td align="center">void*</td>
+</tr>
+<tr>
+<td align="center">内存分配失败的返回值</td>
+<td align="center">默认抛出异常</td>
+<td align="center">返回 NULL</td>
+</tr>
+<tr>
+<td align="center">分配内存的大小</td>
+<td align="center">由编译器根据类型计算得出</td>
+<td align="center">必须显式指定字节数</td>
+</tr>
+<tr>
+<td align="center">处理数组</td>
+<td align="center">有处理数组的 new 版本 new[]</td>
+<td align="center">需要用户计算数组的大小后进行内存分配</td>
+</tr>
+<tr>
+<td align="center">是否相互调用</td>
+<td align="center">可以，看具体的 operator new/delete 实现</td>
+<td align="center">不可调用 new</td>
+</tr>
+<tr>
+<td align="center">函数重载</td>
+<td align="center">允许</td>
+<td align="center">不允许</td>
+</tr>
+<tr>
+<td align="center">构造函数与析构函数</td>
+<td align="center">调用</td>
+<td align="center">不调用</td>
+</tr>
+</tbody></table>
+<h4 id="5-2-C-有了malloc-free，为什么还需要new-delete"><a href="#5-2-C-有了malloc-free，为什么还需要new-delete" class="headerlink" title="5.2 C++有了malloc/free，为什么还需要new/delete?"></a>5.2 C++有了malloc/free，为什么还需要new/delete?</h4><ul>
+<li><code>malloc/free</code>是C++/C语言的标准库函数，<code>new/delete</code>是C++的运算符。他们都可用于申请动态内存和释放内存。</li>
+<li>对于非内部数据类型的对象而言，只用<code>malloc/free</code>无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于<code>malloc/free</code>是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于<code>malloc/free</code>。</li>
+<li>因此C++需要一个能完成动态内存分配和初始化工作的运算符<code>new</code>，以及一个能完成清理与释放内存工作的运算符<code>delete</code>。<code>new/delete</code>不是库函数，是运算符。</li>
 </ul>
-<h4 id="6-volatile有什么作用"><a href="#6-volatile有什么作用" class="headerlink" title="6. volatile有什么作用"></a>6. volatile有什么作用</h4><ul>
+<h4 id="5-3-delete和delete-的区别"><a href="#5-3-delete和delete-的区别" class="headerlink" title="5.3 delete和delete[]的区别"></a>5.3 delete和delete[]的区别</h4><p><code>delete</code>只会调用一次析构函数，而<code>delete[]</code>会调用每个成员的析构函数</p>
+<h4 id="5-4-内存泄漏与定位"><a href="#5-4-内存泄漏与定位" class="headerlink" title="5.4 内存泄漏与定位"></a>5.4 内存泄漏与定位</h4><p>内存泄漏并非指的是内存在物理上的消失，而是分配某段内存后，失去了对该内存的控制，造成内存的浪费。比如 C++ <code>new </code>之后没有 <code>delete</code>。</p>
+<p><strong>定位内存泄露</strong>：</p>
+<ol>
+<li>在<code>windows</code>平台下通过<code>CRT</code>中的库函数进行检测；</li>
+<li>在可能泄漏的调用前后生成块的快照，比较前后的状态，定位泄漏的位置</li>
+<li><code>Linux</code>下通过工具<code>valgrind</code>检测</li>
+</ol>
+<h3 id="6-volatile有什么作用"><a href="#6-volatile有什么作用" class="headerlink" title="6. volatile有什么作用"></a>6. volatile有什么作用</h3><ul>
 <li>状态寄存器一类的并行设备硬件寄存器。</li>
 <li>一个中断服务子程序会访问到的非自动变量。</li>
 <li>多线程间被几个任务共享的变量。</li>
 </ul>
-<h4 id="7-一个参数可以既是const又是volatile吗"><a href="#7-一个参数可以既是const又是volatile吗" class="headerlink" title="7. 一个参数可以既是const又是volatile吗"></a>7. 一个参数可以既是const又是volatile吗</h4><p>可以， 用<code>const</code> 和<code>volatile</code> 同时修饰变量， 表示这个变量在程序内部是只读的， 不能改变的， 只在程序外部条件变化下改变， 并且编译器不会优化这个变量。每次使用这个变量时， 都要小心地去内存读取这个变量的值， 而不是去寄存器读取它的备份。</p>
+<h3 id="7-一个参数可以既是const又是volatile吗"><a href="#7-一个参数可以既是const又是volatile吗" class="headerlink" title="7. 一个参数可以既是const又是volatile吗"></a>7. 一个参数可以既是const又是volatile吗</h3><p>可以， 用<code>const</code> 和<code>volatile</code> 同时修饰变量， 表示这个变量在程序内部是只读的， 不能改变的， 只在程序外部条件变化下改变， 并且编译器不会优化这个变量。每次使用这个变量时， 都要小心地去内存读取这个变量的值， 而不是去寄存器读取它的备份。</p>
 <p>注意： 在此一定要注意<code>const</code> 的意思，<code>const</code>只是不允许程序中的代码改变某一变量， 其在编译期发挥作用， 它并没有实际地禁止某段内存的读写特性。</p>
-<h4 id="8-结构体内存对齐问题"><a href="#8-结构体内存对齐问题" class="headerlink" title="8. 结构体内存对齐问题"></a>8. 结构体内存对齐问题</h4><ul>
+<h3 id="8-结构体内存对齐问题"><a href="#8-结构体内存对齐问题" class="headerlink" title="8. 结构体内存对齐问题"></a>8. 结构体内存对齐问题</h3><ul>
 <li><p>结构体作为一种复合数据类型， 其构成元素既可以是基本数据类型的变量， 也可以是一些复合型类型数据。</p>
 </li>
 <li><p>对此， 编译器会自动进行成员变量的对齐以提高运算效率。默认情况下， 按自然对齐条件分配空间。各个成员按照它们被声明的顺序在内存中顺序存储， 第一个成员的地址和整个结构的地址相同， 向结构体成员中<code>size</code>最大的成员对齐。</p>
@@ -514,7 +569,7 @@
 <li><p>收尾工作：结构体的总大小，也就是<code>sizeof</code>的结果，必须是其内部最大成员的整数倍，不足的要补齐</p>
 </li>
 </ul>
-<h4 id="9-简述C、C-程序编译的内存分配情况"><a href="#9-简述C、C-程序编译的内存分配情况" class="headerlink" title="9. 简述C、C++程序编译的内存分配情况"></a>9. 简述C、C++程序编译的内存分配情况</h4><ul>
+<h3 id="9-简述C、C-程序编译的内存分配情况"><a href="#9-简述C、C-程序编译的内存分配情况" class="headerlink" title="9. 简述C、C++程序编译的内存分配情况"></a>9. 简述C、C++程序编译的内存分配情况</h3><ul>
 <li><p>从静态存储区域分配：</p>
 <p>内存在程序编译时就已经分配好， 这块内存在程序的整个运行期间都存在。速度快、不容易出错， 因为有系统会善后。例如全局变量， <code>static</code>变量， 常量字符串等。</p>
 </li>
@@ -525,29 +580,60 @@
 <p>即动态内存分配。程序在运行的时候用<code>malloc</code>或<code>new</code>申请任意大小的内存， 程序员自己负责在何 时用<code>free</code>或<code>delete</code>释放内存。动态内存的生存期由程序员决定， 使用非常灵活。如果在堆上分配了空间， 就有责任回收它， 否则运行的程序会出现内存泄漏， 另外频繁地分配和释放不同大小的堆空间将会产生堆内碎块。</p>
 </li>
 </ul>
-<p>一个C 、C + + 程序编译时内存分为5 大存储区： 堆区、栈区、全局/静态区、常量区、程序代码区。</p>
-<h4 id="10-C语言的指针和引用和C-的有什么区别？"><a href="#10-C语言的指针和引用和C-的有什么区别？" class="headerlink" title="10. C语言的指针和引用和C++的有什么区别？"></a>10. C语言的指针和引用和C++的有什么区别？</h4><ul>
-<li>指针有自己的一块空间，而引用只是一个别名；</li>
-<li>使用<code>sizeof</code>看一个指针的大小是4，而引用则是被引用对象的大小；</li>
-<li>指针使用时必须解引用，而直接对引用的修改都会改变引用所指向的对象；</li>
-<li>指针在使用中可以指向其它对象，但是引用只能是一个对象的引用，不能被改变；</li>
-<li>指针可以有多级指针（**p），而引用止于一级；</li>
-<li>如果返回动态内存分配的对象或者内存，必须使用指针，引用可能引起内存泄露。</li>
+<p>一个C 、C + + 程序编译时内存分为5大存储区： 堆区、栈区、全局/静态区、常量区、程序代码区。</p>
+<h3 id="10-指针和引用？"><a href="#10-指针和引用？" class="headerlink" title="10. 指针和引用？"></a>10. 指针和引用？</h3><h4 id="10-1-指针和引用的区别"><a href="#10-1-指针和引用的区别" class="headerlink" title="10.1 指针和引用的区别"></a>10.1 指针和引用的区别</h4><ul>
+<li><p><strong>初始化区别</strong>：引用必须被初始化，指针不必。</p>
+</li>
+<li><p><strong>可修改区别</strong>：引用初始化以后不能被改变，指针可以改变所指的对象。</p>
+</li>
+<li><p><strong>非空区别</strong>：不存在指向空值的引用，但是存在指向空值的指针。</p>
+</li>
+<li><p><strong>合法性区别</strong>：在使用引用之前不需要测试他的合法性；相反，指针则应该总是被测试，防止其为空。</p>
+</li>
+<li><p>应用区别</p>
+<ul>
+<li>使用指针的情况<ul>
+<li>考虑到存在不指向任何对象的可能(在这种情况下，能够设置指针为空)</li>
+<li>需要能够在不同时刻指向不同对象(在这种情况下，能够改变指针的指向)</li>
 </ul>
-<h3 id="11-20"><a href="#11-20" class="headerlink" title="11~20"></a>11~20</h3><h4 id="11-typedef和define有什么区别"><a href="#11-typedef和define有什么区别" class="headerlink" title="11. typedef和define有什么区别"></a>11. typedef和define有什么区别</h4><ul>
+</li>
+<li><strong>使用引用的情况</strong>：总是指向一个对象并且一旦指向一个对象后就不会改变指向</li>
+</ul>
+</li>
+</ul>
+<h4 id="10-2-在什么时候需要使用“常引用”？"><a href="#10-2-在什么时候需要使用“常引用”？" class="headerlink" title="10.2 在什么时候需要使用“常引用”？"></a>10.2 <strong>在什么时候需要使用“常引用”？</strong></h4><p>如果既要利用引用提高程序的效率，又要保护传递给函数的数据不在函数中被改变，就应使用常引用。</p>
+<h4 id="10-3-将“引用”作为函数返回值类型的优点和注意事项"><a href="#10-3-将“引用”作为函数返回值类型的优点和注意事项" class="headerlink" title="10.3 将“引用”作为函数返回值类型的优点和注意事项"></a>10.3 <strong>将“引用”作为函数返回值类型的优点和注意事项</strong></h4><p>好处：在内存中不产生返回值的副本，提高效率</p>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>不能返回局部变量的引用。主要原因是局部变量会在函数返回后被销毁，因此被返回的引用就成为了”无所指”的引用，程序会进入未知状态。</li>
+<li>不能返回函数内部 <code>new </code>分配的内存的引用。原因是引用所指向的空间就无法释放，造成内存泄漏。</li>
+<li>可以返回类成员的引用，但最好是 <code>const</code>。主要原因是如果其它对象可以获得该属性的非常量引用（或指针），那么对该属性的单纯赋值就会破坏业务规则的完整性。</li>
+<li>流操作符和赋值操作符重载返回值申明为引用。</li>
+<li>在另外的一些操作符中，却千万不能返回引用，例如四则运算符。</li>
+</ol>
+<h4 id="10-4-句柄和指针的区别与联系"><a href="#10-4-句柄和指针的区别与联系" class="headerlink" title="10.4 句柄和指针的区别与联系"></a>10.4 句柄和指针的区别与联系</h4><p>句柄和指针其实是两个截然不同的概念。</p>
+<ul>
+<li>Windows系统用句柄标记系统资源，隐藏系统的信息。只要知道有这个东西，然后去调用即可，他是一个<code>32bit</code>的<code>uint</code>。</li>
+<li>指针则标记某个物理内存地址。</li>
+</ul>
+<h4 id="10-5-常量指针和指针常量"><a href="#10-5-常量指针和指针常量" class="headerlink" title="10.5 常量指针和指针常量"></a>10.5 常量指针和指针常量</h4><ul>
+<li>常量指针是一个指针，读成常量的指针，指向一个只读变量。如<code>const int *p</code></li>
+<li>指针常量是一个不能给改变指向的指针。指针是个常量，不能中途改变指向，如<code>int *const p</code></li>
+</ul>
+<p><strong>技巧</strong>：* 前面的是对被指向对象的修饰，* 后面的是对指针本身的修饰。</p>
+<h2 id="11-20"><a href="#11-20" class="headerlink" title="11~20"></a>11~20</h2><h3 id="11-typedef和define有什么区别"><a href="#11-typedef和define有什么区别" class="headerlink" title="11. typedef和define有什么区别"></a>11. typedef和define有什么区别</h3><ul>
 <li><p>用法不同：<code>typedef </code>用来定义一种数据类型的别名，增强程序的可读性。<code>define </code>主要用来定义常量，以及书写复杂使用频繁的宏。</p>
 </li>
 <li><p>执行时间不同：<code>typedef </code>是编译过程的一部分，有类型检查的功能。<code>define </code>是宏定义，是预编译的部分，其发生在编译之前，只是简单的进行字符串的替换，不进行类型的检查。</p>
 </li>
 </ul>
-<h4 id="12-指针常量与常量指针区别"><a href="#12-指针常量与常量指针区别" class="headerlink" title="12. 指针常量与常量指针区别"></a>12. 指针常量与常量指针区别</h4><p>指针常量是指定义了一个指针， 这个指针的值只能在定义时初始化， 其他地方不能改变。常量指针 是指定义了一个指针， 这个指针指向一个只读的对象， 不能通过常量指针来改变这个对象的值。 指针常量强调的是<strong>指针</strong>的不可改变性， 而常量指针强调的是指针对其所指<strong>对象</strong>的不可改变性。</p>
-<h4 id="13-说一说extern“C”"><a href="#13-说一说extern“C”" class="headerlink" title="13. 说一说extern“C”"></a>13. 说一说extern“C”</h4><p><code>extern "C"</code>  的主要作用就是为了能够正确实现C + + 代码调用其他C 语言代码。加上<code>extern</code> “ C “ 后， 会指示编译器这部分代码按C 语言（ 而不是C + + ） 的方式进行编译。由于C + + 支持函数重载， 因此编译器编译函数的过程中会将函数的参数类型也加到编译后的代码中， 而不仅仅是函数名； 而C语言并不支持函数重载， 因此编译C语言代码的函数时不会带上函数的参数类型， 一般只包括函数名。</p>
-<h4 id="14-什么是右值引用，跟左值又有什么区别？"><a href="#14-什么是右值引用，跟左值又有什么区别？" class="headerlink" title="14. 什么是右值引用，跟左值又有什么区别？"></a>14. 什么是右值引用，跟左值又有什么区别？</h4><ul>
+<h3 id="13-说一说extern“C”"><a href="#13-说一说extern“C”" class="headerlink" title="13. 说一说extern“C”"></a>13. 说一说extern“C”</h3><p><code>extern "C"</code>  的主要作用就是为了能够正确实现C + + 代码调用其他C 语言代码。加上<code>extern</code> “ C “ 后， 会指示编译器这部分代码按C 语言（ 而不是C + + ） 的方式进行编译。由于C + + 支持函数重载， 因此编译器编译函数的过程中会将函数的参数类型也加到编译后的代码中， 而不仅仅是函数名； 而C语言并不支持函数重载， 因此编译C语言代码的函数时不会带上函数的参数类型， 一般只包括函数名。</p>
+<h3 id="14-什么是右值引用，跟左值又有什么区别？"><a href="#14-什么是右值引用，跟左值又有什么区别？" class="headerlink" title="14. 什么是右值引用，跟左值又有什么区别？"></a>14. 什么是右值引用，跟左值又有什么区别？</h3><ul>
 <li>左值：能取地址，或者具名对象，表达式结束后依然存在的持久对象；</li>
 <li>右值：不能取地址，匿名对象，表达式结束后就不再存在的临时对象； </li>
 <li>左值能寻址，能赋值，可变。右值不能</li>
 </ul>
-<h4 id="15-说一说C-中四种cast转换"><a href="#15-说一说C-中四种cast转换" class="headerlink" title="15. 说一说C++中四种cast转换"></a>15. 说一说C++中四种cast转换</h4><p>C + + 中四种类型转换是：<code>static_cast</code>, <code>dynamic_cast</code>, <code>const_cast</code>,<br><code>reinterpret_cast</code></p>
+<h3 id="15-说一说C-中四种cast转换"><a href="#15-说一说C-中四种cast转换" class="headerlink" title="15. 说一说C++中四种cast转换"></a>15. 说一说C++中四种cast转换</h3><p>C + + 中四种类型转换是：<code>static_cast</code>, <code>dynamic_cast</code>, <code>const_cast</code>,<br><code>reinterpret_cast</code></p>
 <ol>
 <li><code>static_cast</code></li>
 </ol>
@@ -555,14 +641,17 @@
 <li>用于各种隐式转换，比如非<code>const</code>转<code>const</code>，<code>void*</code>转指针等, <code>static_cast</code>能用于多态向上转化，如果向下转能成功但是不安全，结果未知；</li>
 </ul>
 <ol start="2">
-<li><code>dynamic_cast</code></li>
-</ol>
+<li><p><code>dynamic_cast</code></p>
 <p>用于动态类型转换。只能用于含有虚函数的类， 用于类层次间的向上和向下转化。只能转指针或引用。向下转化时如果是非法的，对于指针返回NULL，对于引用抛异常 。要深入了解内部转换的原理。</p>
+</li>
+</ol>
 <ul>
-<li>向上转换：指的是子类向基类的转换</li>
-<li>向下转换：指的是基类向子类的转换</li>
-</ul>
+<li><p>向上转换：指的是子类向基类的转换</p>
+</li>
+<li><p>向下转换：指的是基类向子类的转换</p>
 <p>它通过判断在执行到该语句的时候变量的运行时类型和要转换的类型是否相同来判断是否能够进行向下转换。</p>
+</li>
+</ul>
 <ol start="3">
 <li><code>const_cast</code></li>
 </ol>
@@ -581,7 +670,7 @@
 <ul>
 <li>C的强制转换表面上看起来功能强大什么都能转，但是转化不够明确，不能进行错误检查，容易出错。</li>
 </ul>
-<h4 id="16-C-的空类有哪些成员函数"><a href="#16-C-的空类有哪些成员函数" class="headerlink" title="16. C++的空类有哪些成员函数"></a>16. C++的空类有哪些成员函数</h4><ul>
+<h3 id="16-C-的空类有哪些成员函数"><a href="#16-C-的空类有哪些成员函数" class="headerlink" title="16. C++的空类有哪些成员函数"></a>16. C++的空类有哪些成员函数</h3><ul>
 <li>缺省构造函数。</li>
 <li>缺省拷贝构造函数。</li>
 <li>缺省析构函数。</li>
@@ -589,14 +678,14 @@
 <li>缺省取址运算符。</li>
 <li>缺省取址运算符 <code>const </code>。</li>
 </ul>
-<h4 id="17-对C-中的smart-pointer四个智能指针的理解"><a href="#17-对C-中的smart-pointer四个智能指针的理解" class="headerlink" title="17. 对C++中的smart pointer四个智能指针的理解"></a>17. 对C++中的smart pointer四个智能指针的理解</h4><p>智能指针的作用是管理一个指针， 因为存在以下这种情况： 申请的空间在函数结束时忘记释放， 造成内存泄漏。使用智能指针可以很大程度上的避免这个问题，因为智能指针就是一个类， 当超出了类的作用域是， 类会自动调用析构函数，析构函数会自动释放资源。所以智能指针的作用原理就是在函数结束时自动释放内存空间， 不需要手动释放内存空间。</p>
+<h3 id="17-对C-中的smart-pointer四个智能指针的理解"><a href="#17-对C-中的smart-pointer四个智能指针的理解" class="headerlink" title="17. 对C++中的smart pointer四个智能指针的理解"></a>17. 对C++中的smart pointer四个智能指针的理解</h3><p>智能指针的作用是管理一个指针， 因为存在以下这种情况： 申请的空间在函数结束时忘记释放， 造成内存泄漏。使用智能指针可以很大程度上的避免这个问题，因为智能指针就是一个类， 当超出了类的作用域是， 类会自动调用析构函数，析构函数会自动释放资源。所以智能指针的作用原理就是在函数结束时自动释放内存空间， 不需要手动释放内存空间。</p>
 <ul>
 <li><p><code>auto_ptr</code>（c++98的方案，c++11已经抛弃）<br>采用所有权模式。</p>
 <pre class="language-c" data-language="c"><code class="language-c">auto_ptr<span class="token operator">&lt;</span> string<span class="token operator">&gt;</span> <span class="token function">p1</span> <span class="token punctuation">(</span>new <span class="token function">string</span> <span class="token punctuation">(</span>"I reigned lonely as a cloud<span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 auto_ptr<span class="token operator">&lt;</span>string<span class="token operator">&gt;</span> p2<span class="token punctuation">;</span>
 p2 <span class="token operator">=</span> p1<span class="token punctuation">;</span> <span class="token comment">//auto_ptr不会报错.</span></code></pre>
 
-<p>此时不会报错， p2剥夺了p1的所有权， 但是当程序运行时访问p1 将会报错。所以<code>auto_ptr</code>的缺点是： 存在潜在的内存崩溃问题！</p>
+<p>此时不会报错， p2剥夺了p1的所有权， 但是当程序运行时访问p1将会报错。所以<code>auto_ptr</code>的缺点是： 存在潜在的内存崩溃问题！</p>
 </li>
 <li><p><code>unique_ptr</code>（替换<code>auto_ptr</code>）</p>
 <p><code>unique_ptr</code>实现独占式拥有或严格拥有概念， 保证同一时间内只有一个智能指针可以指向该对象。它对于避免资源泄露( 例如“ 以<code>new</code>创建对象后因为发生异常而忘记调用<code>delete</code>” ) 特别有用。</p>
@@ -615,47 +704,47 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
 <p><code>shared_ptr</code> 实现共享式拥有概念。多个智能指针可以指向相同对象， 该对象和其相关资源会在“ 最后一个引用被销毁” 时候释放。从名字<code>shared</code>就可以看出了资源可以被多个指针共享， 它使用计数机制来表明资源被几个指针共享。可以通过成员函数<code>use_count()</code> 来查看资源的所有者个数。除了可以通过<code>new</code> 来构造， 还可以通过传入<code>auto_ptr</code> , <code>unique_ptr</code> , <code>weak_ptr</code> 来构造。当我们调用<code>release()</code>时， 当前指针会释放资源所有权， 计数减一。当计数等于0 时， 资源会被释放。</p>
 </li>
 <li><p><code>weak_ptr</code></p>
-<p><code>weak_ptr</code> 是一种不控制对象生命周期的智能指针， 它指向一个 <code>share_ptr</code>管理的对象。 进行该对象的内存管理的是那个强引用的<code>share_ptr</code>，<code>weak_ptr</code>只是提供了对管理对象的一个访问手段。<code>weak_ptr</code>设计的目的是为配合<code>share_ptr</code>而引入的一种智能指针来协助 <code>share_ptr</code>工作, 它只可以从一个<code>share_ptr</code>或另一个<code>weak_ptr</code>对象构造, 它的构造和析构不会引起引用记数的增加或减少。<code>weak_ptr</code>是用来解决<code>share_ptr</code>相互引用时的死锁问题, 如果说两个<code>share_ptr</code>相互引用, 那么这两个指针的引用计数永远不可能下降为0 , 资源永远不会释放。它是对对象的一种弱引用， 不会增加对象的引用计数， 和<code>share_ptr</code> 之间可以相互转化，<code>share_ptr</code>可以直接赋值给它， 它可以通过调用<code>lock</code>函数来获得<code>share_ptr</code>。</p>
+<p><code>weak_ptr</code> 是一种不控制对象生命周期的智能指针， 它指向一个 <code>share_ptr</code>管理的对象。 <code>weak_ptr</code>只是提供了对管理对象的一个访问手段，<strong>它的最大作用在于协助<code>shared_ptr</code>工作，像旁观者那样观测资源的使用情况</strong>,它只可以从一个<code>share_ptr</code>或另一个<code>weak_ptr</code>对象构造, 它的构造和析构不会引起引用记数的增加或减少。<code>weak_ptr</code>是用来解决<code>share_ptr</code>相互引用时的死锁问题, 如果说两个<code>share_ptr</code>相互引用, 那么这两个指针的引用计数永远不可能下降为0 , 资源永远不会释放。</p>
 </li>
 </ul>
-<h4 id="18-对虚函数和多态的理解"><a href="#18-对虚函数和多态的理解" class="headerlink" title="18. 对虚函数和多态的理解"></a>18. 对虚函数和多态的理解</h4><ul>
+<h3 id="18-对虚函数和多态的理解"><a href="#18-对虚函数和多态的理解" class="headerlink" title="18. 对虚函数和多态的理解"></a>18. 对虚函数和多态的理解</h3><ul>
 <li>多态的实现主要分为静态多态和动态多态， 静态多态主要是重载， 在编译的时候就已经确定； <strong>动态多态是用虚函数机制实现的</strong>， 在运行期间动态绑定。举个例子： 一个父类类型的指针指向一个子类对象时候， 使用父类的指针去调用子类中重写了的父类中的虚函数的时候， 会调用子类重写过后的函数， 在父类中声明为加了<code>virtual</code> 关键字的函数， 在子类中重写时候不需要加<code>virtual</code>也是虚函数。</li>
 <li>虚函数的实现： 在有虚函数的类中， 类的最开始部分是一个虚函数表的指针，这个指针指向一个<strong>虚函数表</strong>， <strong>表中放了虚函数的地址</strong>， 实际的虚函数在代码段中。当子类继承了父类的时候也会继承其虚函数表， 当子类重写父类中虚函数时候， 会将其继承到的虚函数表中的地址替换为重新写的函数地址。使用了虚函数， 会增加访问内存开销， 降低效率。</li>
 </ul>
-<h4 id="19-vector的底层原理"><a href="#19-vector的底层原理" class="headerlink" title="19. vector的底层原理"></a>19. vector的底层原理</h4><ul>
+<h3 id="19-vector的底层原理"><a href="#19-vector的底层原理" class="headerlink" title="19. vector的底层原理"></a>19. vector的底层原理</h3><ul>
 <li><code>vector</code>底层是一个动态数组， 包含三个迭代器，<code>start</code>和<code>finish</code>之间是已经被使用的空间范围，<code>end_of_storage</code>是整块连续空间包括备用空间的尾部。</li>
 <li>当空间不够装下数据<code>v.push_back(val)</code>时， 会自动申请另一片更大的空间（1.5倍或2倍）， 然后把原来的数据拷贝到新的内存空间， 接着释放原来的那片空间。</li>
 <li>当释放或者删除<code>v.clear()</code>里面的数据时， 其存储空间不释放， 仅仅是清空了里面的数据。因此， 对<code>vector</code>的任何操作一旦引起了空间的重新配置， 指向原<code>vector</code>的所有迭代器会都失效了。</li>
 </ul>
-<h4 id="20-vector中的reserve和resize的区别"><a href="#20-vector中的reserve和resize的区别" class="headerlink" title="20. vector中的reserve和resize的区别"></a>20. vector中的reserve和resize的区别</h4><ul>
+<h3 id="20-vector中的reserve和resize的区别"><a href="#20-vector中的reserve和resize的区别" class="headerlink" title="20. vector中的reserve和resize的区别"></a>20. vector中的reserve和resize的区别</h3><ul>
 <li><code>reserve</code>是直接扩充到已经确定（<strong>最大容量</strong>）的大小，可以减少多次开辟、释放空间的问题（优化<code>push_back</code>），就可以提高效率，其次还可以减少多次要拷贝数据的问题。<code>reserve</code>只是保证<code>vector</code>中的空间大小（<code>capacity</code>）最少达到参数所指定的大小n。</li>
 <li><code>resize()</code>可以改变有效空间（<strong>分配元素数量</strong>）的大小，也有改变默认值的功能。若<code>size</code> 大于<code>capacity</code>，则<code>capacity</code>的大小也会随着改变。</li>
 </ul>
-<h3 id="21-30"><a href="#21-30" class="headerlink" title="21~30"></a>21~30</h3><h4 id="21-vector中的size和capacity的区别"><a href="#21-vector中的size和capacity的区别" class="headerlink" title="21. vector中的size和capacity的区别"></a>21. vector中的size和capacity的区别</h4><ul>
+<h2 id="21-30"><a href="#21-30" class="headerlink" title="21~30"></a>21~30</h2><h3 id="21-vector中的size和capacity的区别"><a href="#21-vector中的size和capacity的区别" class="headerlink" title="21. vector中的size和capacity的区别"></a>21. vector中的size和capacity的区别</h3><ul>
 <li><p><code>size</code>表示当前<code>vector</code>中有多少个元素<code>（finish - start）</code>;</p>
 </li>
 <li><p><code>capacity</code>函数则表示它已经分配的内存中可以容纳多少元素<code>（end_of_storage - start）</code></p>
 </li>
 </ul>
-<h4 id="22-vector中erase方法与algorithm中的remove方法区别"><a href="#22-vector中erase方法与algorithm中的remove方法区别" class="headerlink" title="22. vector中erase方法与algorithm中的remove方法区别"></a>22. vector中erase方法与algorithm中的remove方法区别</h4><ul>
+<h3 id="22-vector中erase方法与algorithm中的remove方法区别"><a href="#22-vector中erase方法与algorithm中的remove方法区别" class="headerlink" title="22. vector中erase方法与algorithm中的remove方法区别"></a>22. vector中erase方法与algorithm中的remove方法区别</h3><ul>
 <li><p><code>vector</code>中<code>erase</code>方法真正删除了元素，迭代器不能访问了</p>
 </li>
 <li><p><code>remove</code>只是简单地将元素移到了容器的最后面，迭代器还是可以访问到。因为<code>algorithm</code>通过迭代器进行操作，不知道容器的内部结构，所以无法进行真正的删除。</p>
 </li>
 </ul>
-<h4 id="23-vector迭代器失效的情况"><a href="#23-vector迭代器失效的情况" class="headerlink" title="23. vector迭代器失效的情况"></a>23. vector迭代器失效的情况</h4><ul>
+<h3 id="23-vector迭代器失效的情况"><a href="#23-vector迭代器失效的情况" class="headerlink" title="23. vector迭代器失效的情况"></a>23. vector迭代器失效的情况</h3><ul>
 <li><p>当插入一个元素到<code>vector</code>中，由于引起了内存重新分配，所以指向原内存的迭代器全部失效。</p>
 </li>
 <li><p>当删除容器中一个元素后，该迭代器所指向的元素已经被删除，那么也造成迭代器失效。<code>erase</code>方法会返回下一个有效的迭代器，所以当我们要删除某个元素时，需要<code>it=vec.erase(it)</code></p>
 </li>
 </ul>
-<h4 id="24-list的底层原理"><a href="#24-list的底层原理" class="headerlink" title="24. list的底层原理"></a>24. list的底层原理</h4><ul>
+<h3 id="24-list的底层原理"><a href="#24-list的底层原理" class="headerlink" title="24. list的底层原理"></a>24. list的底层原理</h3><ul>
 <li><p><code>list</code>的底层是一个双向链表，使用链表存储数据，并不会将它们存储到一整块连续的内存空间中。恰恰相反，各元素占用的存储空间（又称为节点）是独立的、分散的，它们之间的线性关系通过指针来维持,每次插入或删除一个元素，就配置或释放一个元素空间。</p>
 </li>
 <li><p><code>list</code>不支持随机存取，如果需要大量的插入和删除，而不关心随即存取</p>
 </li>
 </ul>
-<h4 id="25-map-、set、multiset、multimap的底层原理"><a href="#25-map-、set、multiset、multimap的底层原理" class="headerlink" title="25. map 、set、multiset、multimap的底层原理"></a>25. map 、set、multiset、multimap的底层原理</h4><p><code>map </code>、<code>set</code>、<code>multiset</code>、<code>multimap </code>的底层实现都是红黑树，<code>epoll</code>模型的底层数据结构也是红黑树，<code>linux</code> 系统中<code>CFS</code>进程调度算法， 也用到红黑树。</p>
+<h3 id="25-map-、set、multiset、multimap的底层原理"><a href="#25-map-、set、multiset、multimap的底层原理" class="headerlink" title="25. map 、set、multiset、multimap的底层原理"></a>25. map 、set、multiset、multimap的底层原理</h3><p><code>map </code>、<code>set</code>、<code>multiset</code>、<code>multimap </code>的底层实现都是红黑树，<code>epoll</code>模型的底层数据结构也是红黑树，<code>linux</code> 系统中<code>CFS</code>进程调度算法， 也用到红黑树。</p>
 <p>红黑树的特性：</p>
 <ul>
 <li>每个结点或是红色或是黑色；</li>
@@ -664,7 +753,7 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
 <li>如果一个结点是红的，则它的两个儿子均是黑色；</li>
 <li>每个结点到其子孙结点的所有路径上包含相同数目的黑色结点。</li>
 </ul>
-<h4 id="26-map-、set、multiset、multimap的特点"><a href="#26-map-、set、multiset、multimap的特点" class="headerlink" title="26. map 、set、multiset、multimap的特点"></a>26. map 、set、multiset、multimap的特点</h4><ul>
+<h3 id="26-map-、set、multiset、multimap的特点"><a href="#26-map-、set、multiset、multimap的特点" class="headerlink" title="26. map 、set、multiset、multimap的特点"></a>26. map 、set、multiset、multimap的特点</h3><ul>
 <li><p><code>set</code>和<code>multiset</code>会根据特定的排序准则自动将元素排序，<code>set</code>中元素不允许重复，<code>multiset</code>可以重复。</p>
 </li>
 <li><p><code>map</code>和<code>multimap</code>将<code>key</code>和<code>value</code>组成的<code>pair</code>作为元素，根据<code>key</code>的排序准则自动将元素排序（因为红黑树也是二叉搜索树，所以<code>map</code>默认是按<code>key</code>排序），<code>map</code>中元素的<code>key</code>不允许重复，<code>multimap</code>可以重复。</p>
@@ -672,40 +761,34 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
 <li><p><code>map</code>和<code>set</code>的增删改查速度为都是<code>logn</code>，是比较高效的。</p>
 </li>
 </ul>
-<h4 id="27-为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？"><a href="#27-为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？" class="headerlink" title="27. 为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？"></a>27. 为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？</h4><ul>
+<h3 id="27-为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？"><a href="#27-为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？" class="headerlink" title="27. 为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？"></a>27. 为何map和set的插入删除效率比其他序列容器高，而且每次insert之后，以前保存的iterator不会失效？</h3><ul>
 <li><p>存储的是结点，不需要内存拷贝和内存移动。</p>
 </li>
 <li><p>插入操作只是结点指针换来换去，结点内存没有改变。而<code>iterator</code>就像指向结点的指针，内存没变，指向内存的指针也不会变。</p>
 </li>
 </ul>
-<h4 id="28-delete和delete-的区别"><a href="#28-delete和delete-的区别" class="headerlink" title="28. delete和delete[]的区别"></a>28. delete和delete[]的区别</h4><p><code>delete</code>只会调用一次析构函数，而<code>delete[]</code>会调用每个成员的析构函数</p>
-<h4 id="29-C-文件编译与执行的四个阶段"><a href="#29-C-文件编译与执行的四个阶段" class="headerlink" title="29. C++文件编译与执行的四个阶段"></a>29. C++文件编译与执行的四个阶段</h4><ul>
-<li><p>预处理：根据文件中的预处理指令来修改源文件的内容</p>
+<h3 id="29-C-文件编译与执行的四个阶段"><a href="#29-C-文件编译与执行的四个阶段" class="headerlink" title="29. C++文件编译与执行的四个阶段"></a>29. C++文件编译与执行的四个阶段</h3><ul>
+<li><p>预处理：预处理用于将所有的<code>#include</code>头文件以及宏定义替换成其真正的内容，预处理之后得到的仍然是文本文件，但文件体积会大很多。<code>gcc</code>的预处理是预处理器<code>cpp</code>来完成的；</p>
 </li>
-<li><p>编译：编译成汇编代码</p>
+<li><p>编译：将经过预处理之后的程序转换成特定汇编代码(assembly code)的过程；命令中<code>-S</code>让编译器在编译之后停止，不进行后续过程。</p>
 </li>
-<li><p>汇编：把汇编代码翻译成目标机器指令</p>
+<li><p>汇编：将上一步的汇编代码转换成机器码(machine code)，这一步产生的文件叫做目标文件，是二进制格式。<code>gcc</code>汇编过程通过<code>as</code>命令完成。</p>
 </li>
-<li><p>链接：链接目标代码生成可执行程序</p>
+<li><p>链接：链接过程将多个目标文件以及所需的库文件(.so等)链接成最终的可执行文件(executable file)。</p>
 </li>
 </ul>
-<h4 id="30-构造函数为什么一般不定义为虚函数"><a href="#30-构造函数为什么一般不定义为虚函数" class="headerlink" title="30. 构造函数为什么一般不定义为虚函数"></a>30. 构造函数为什么一般不定义为虚函数</h4><ul>
+<h3 id="30-构造函数为什么一般不定义为虚函数"><a href="#30-构造函数为什么一般不定义为虚函数" class="headerlink" title="30. 构造函数为什么一般不定义为虚函数"></a>30. 构造函数为什么一般不定义为虚函数</h3><ul>
 <li>因为创建一个对象时需要确定对象的类型，而虚函数是在运行时确定其类型的。而在构造一个对象时，由于对象还未创建成功，编译器无法知道对象的实际类型，是类本身还是类的派生类等等</li>
 <li><strong>虚函数的调用需要虚函数表指针</strong>，而该指针存放在对象的内存空间中；若构造函数声明为虚函数，那么由于对象还未创建，还没有内存空间，更没有虚函数表地址用来调用虚函数即构造函数了</li>
 </ul>
-<h3 id="31-40"><a href="#31-40" class="headerlink" title="31~40"></a>31~40</h3><h4 id="31-为什么析构函数最好声明为虚函数"><a href="#31-为什么析构函数最好声明为虚函数" class="headerlink" title="31. 为什么析构函数最好声明为虚函数"></a>31. 为什么析构函数最好声明为虚函数</h4><ul>
+<h2 id="31-40"><a href="#31-40" class="headerlink" title="31~40"></a>31~40</h2><h3 id="31-为什么析构函数最好声明为虚函数"><a href="#31-为什么析构函数最好声明为虚函数" class="headerlink" title="31. 为什么析构函数最好声明为虚函数"></a>31. 为什么析构函数最好声明为虚函数</h3><ul>
 <li><p>当析构一个指向派生类的基类指针时，最好将基类的析构函数声明为虚函数，否则可能存在内存泄露的问题</p>
 </li>
 <li><p>如果析构函数不被声明成虚函数，则编译器实施静态绑定，在删除指向派生类的基类指针时，只会调用基类的析构函数而不调用派生类析构函数，这样就会造成派生类对象析构不完全。</p>
 </li>
 </ul>
-<h4 id="32-深拷贝和浅拷贝的区别"><a href="#32-深拷贝和浅拷贝的区别" class="headerlink" title="32. 深拷贝和浅拷贝的区别"></a>32. 深拷贝和浅拷贝的区别</h4><p>深拷贝和浅拷贝可以简单的理解为：如果一个类拥有资源，当这个类的对象发生复制过程的时候，如果资源重新分配了就是深拷贝；反之没有重新分配资源，就是浅拷贝。</p>
-<h4 id="33-如何判断内存泄漏"><a href="#33-如何判断内存泄漏" class="headerlink" title="33. 如何判断内存泄漏"></a>33. 如何判断内存泄漏</h4><ul>
-<li><p>可以使用<code>linux</code>环境下的内存泄漏检查工具<code>Valgrind</code></p>
-</li>
-<li><p>在写代码时可以添加内存申请和释放的统计功能，统计当前申请和释放的内存是否一致</p>
-</li>
-</ul>
+<h3 id="32-深拷贝和浅拷贝的区别"><a href="#32-深拷贝和浅拷贝的区别" class="headerlink" title="32. 深拷贝和浅拷贝的区别"></a>32. 深拷贝和浅拷贝的区别</h3><p>深拷贝和浅拷贝可以简单的理解为：如果一个类拥有资源，当这个类的对象发生复制过程的时候，如果资源重新分配了就是深拷贝；反之没有重新分配资源，就是浅拷贝。</p>
+<h3 id="33-移动语义"><a href="#33-移动语义" class="headerlink" title="33. 移动语义"></a>33. 移动语义</h3><p>将内存的所有权从一个对象转移到另外一个对象，高效的移动用来替换效率低下的复制，对象的移动语义需要实现移动构造函数（move constructor）和移动赋值运算符（move assignment operator）。</p>
 
                 
             </div>
@@ -1500,7 +1583,7 @@ pu3 <span class="token operator">=</span> unique_ptr<span class="token operator"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34.7k</span>
+                        class="white-color">35.5k</span>
             
             
             
