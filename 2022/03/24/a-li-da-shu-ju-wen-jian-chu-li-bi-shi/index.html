@@ -33,9 +33,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml">
-
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 <link rel="stylesheet" href="/js/prism/prism.css">
 
@@ -471,11 +471,9 @@
 </li>
 </ul>
 <p>生成数据所用时间：</p>
-<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20220324154730337.png" alt="生成数据的时间" style="zoom: 50%;">
+<img src="https://s2.loli.net/2022/06/13/TVO3P96AvtloNEK.png" alt="生成数据的时间" style="zoom:50%;">
 
-<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20220324154837258.png" alt="数据" style="zoom:50%;">
-
-
+<img src="https://s2.loli.net/2022/06/13/BJFwGz5yaIb21m7.png" alt="数据" style="zoom:50%;">
 
 <h2 id="4、数据说明"><a href="#4、数据说明" class="headerlink" title="4、数据说明"></a>4、数据说明</h2><pre class="language-c" data-language="c"><code class="language-c"><span class="token keyword">const</span> <span class="token keyword">int</span> M <span class="token operator">=</span> <span class="token number">1e7</span><span class="token punctuation">;</span><span class="token comment">//每个大文件包含无序的1kw个数</span>
 <span class="token keyword">const</span> <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">2e6</span><span class="token punctuation">;</span><span class="token comment">//每个小文件包含有序的200w个数</span>
@@ -493,15 +491,13 @@ out<span class="token punctuation">.</span>txt<span class="token comment">//输�
 
 
 <h2 id="5、样例分析"><a href="#5、样例分析" class="headerlink" title="5、样例分析"></a>5、样例分析</h2><p>生成2个文件，每个文件为10行自然数：</p>
-<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20220324160152145.png" alt="生成的数据" style="zoom:50%;">
+<img src="https://s2.loli.net/2022/06/13/PGERCd5Mg7SWo8D.png" alt="生成的数据" style="zoom:50%;">
 
 <p>经过外部排序，将其分解为4个小文件，每个文件为5行有序的自然数：</p>
-<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20220324160415004.png" alt="小文件" style="zoom:50%;">
+<img src="https://s2.loli.net/2022/06/13/lUoc8izW31kpuQL.png" alt="小文件" style="zoom:50%;">
 
 <p>进行归并排序后得到最终答案：</p>
-<img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20220324160616149.png" alt="答案" style="zoom:50%;">
-
-
+<img src="https://s2.loli.net/2022/06/13/lRPo9mJQghwSfiG.png" alt="答案" style="zoom:50%;">
                 
             </div>
             <hr/>

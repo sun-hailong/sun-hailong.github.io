@@ -33,9 +33,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml">
-
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 <link rel="stylesheet" href="/js/prism/prism.css">
 
@@ -455,10 +455,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>最近笔者想更新博客的时候，使用hexo三连始终无法上传，然后发现是SSH与Gitee没连上</p>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125356539.png"></p>
+<p><img src="https://s2.loli.net/2022/06/13/EvHwY8F23lWg4QR.png" alt="错误信息"></p>
 <p>使用了百度的各种方法以后，尝试了删除原先的密钥，重新添加SSH，一顿操作后仍然无效，然后我就发现了github是可以正常连接上，而gitee无法连接上。</p>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029131234179.png"></p>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125548204.png"></p>
+<p><img src="https://s2.loli.net/2022/06/13/pz8hyKlMJwSYDHn.png" alt="错误信息"></p>
+<p><img src="https://s2.loli.net/2022/06/13/ZqkXhHeJ4CiwvFy.png" alt="github可以成功"></p>
 <p>关于如何判断SSH是否连接上的方法如下：</p>
 <pre class="language-html" data-language="html"><code class="language-html">ssh -T git@github.com
 ssh -T git@gitee.com</code></pre>
@@ -470,7 +470,7 @@ ssh -T git@gitee.com</code></pre>
 <pre class="language-html" data-language="html"><code class="language-html">ssh -T -v git@gitee.com</code></pre>
 
 <p>由于我本地当时没有截图这个部分，所有这个地方就使用了知乎原帖的图片</p>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029125933941.png">  </p>
+<p><img src="https://s2.loli.net/2022/06/13/Nzonr1FD5jb9d2x.png" alt="知乎原图"></p>
 <p>根据知乎大神的回答，才发现是<strong>SSH算法出错</strong>， 将 rsa改为ed25519 就解决了。</p>
 <p>（这个错误真的莫名其妙！！！！<strong>疯狂diss</strong>Gitee平台！！！！）</p>
 <ol>
@@ -478,7 +478,7 @@ ssh -T git@gitee.com</code></pre>
 <pre class="language-html" data-language="html"><code class="language-html">ssh-keygen -t ed25519 -C"XXX@XXX.com"</code></pre>
 
 <p>输入以上命令以后，连续三次回车即可</p>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130155982.png"></p>
+<p><img src="https://s2.loli.net/2022/06/13/LYfoyZSBMtgcmJu.png" alt="修改后"></p>
 </li>
 <li><p>用记事本打开 C:\Users\电脑用户名\ .ssh\id_ed25519.pub</p>
 <p>将里面内容全选并复制</p>
@@ -488,7 +488,7 @@ ssh -T git@gitee.com</code></pre>
 <li><p>大功告成</p>
 </li>
 </ol>
-<p><img src="https://gitee.com/hailong-sun/pictures/raw/master/iCloud/image-20211029130609909.png"></p>
+<p><img src="https://s2.loli.net/2022/06/13/7XxKuwd291QsymT.png" alt="成功"></p>
 
                 
             </div>
