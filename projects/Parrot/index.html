@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Parrot: Multilingual Visual Instruction Tuning">
+  <meta name="keywords" content="Multimodal Large Language Models, Multilingual MLLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parrot</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5ZVQZ7NHC"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="icon" href="./images/logo.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js_slide/fontawesome.all.min.js"></script>
+  <script src="static/js_slide/bulma-carousel.min.js"></script>
+  <script src="static/js_slide/bulma-slider.min.js"></script>
+  <script src="static/js_slide/index.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- Vendor Stylesheets -->
+  <!--=================js==========================-->
+  <link rel="stylesheet" href="static/css/tab_gallery.css">
+  <link rel="stylesheet" href="static/css/juxtapose.css">
+  <link rel="stylesheet" href="static/css/image_card_fader.css">
+  <link rel="stylesheet" href="static/css/image_card_slider.css">
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"
+                        style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;"><img
+                            src="./images/logo.png" width="60" height="60" style="margin-right: 10px;">Parrot:</h1>
+                    <h1 class="title is-2 publication-title">Multilingual Visual Instruction Tuning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/sunhl/">Hai-Long Sun</a><sup>1,2,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/zhoudw/">Da-Wei Zhou</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="#"> Yang Li</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/lusy/">Shiyin Lu</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/yic/">Chao Yi</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Qing-Guo Chen</a><sup>3</sup>,</span><br>
+            <span class="author-block">
+              <a href="#">Zhao Xu</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="#">Weihua Luo</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="#">Kaifu Zhang</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/zhandc/">De-Chuan Zhan</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/yehj/">Han-Jia Ye</a><sup>1,2</sup></span>
+            </div>
+            <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Artificial Intelligence, Nanjing University</span>
+            <span class="author-block"><sup>2</sup>National Key Laboratory for Novel Software Technology, Nanjing University</span><br>
+            <span class="author-block"><sup>3</sup>AI Business, Alibaba Group</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2406.02539"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.02539"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/AIDC-AI/Parrot"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/AIDC-AI/Parrot-dataset/tree/main/sharegpt_4v" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+              <!-- Benchmark Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/AIDC-AI/Parrot-dataset" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-tasks"></i>
+                  </span>
+                  <span>Benchmark</span>
+                  </a>
+              </span>
+              <!-- Model Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/AIDC-AI/Parrot-7B"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    🤗
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+              <h2 class="title is-2">Abstract</h2>
+              <div class="content has-text-justified">
+                  <p>
+                    The rapid development of Multimodal Large Language Models (MLLMs) like GPT-4V has marked a significant step towards artificial general intelligence. Existing methods mainly focus on aligning vision encoders with LLMs through supervised fine-tuning (SFT) to endow LLMs with multimodal abilities, making MLLMs' inherent ability to react to <em>multiple languages</em> progressively deteriorate as the training process evolves. We empirically find that the imbalanced SFT datasets, primarily composed of English-centric image-text pairs, lead to significantly reduced performance in non-English languages. This is due to the failure of aligning the vision encoder and LLM with multilingual tokens during the SFT process. In this paper, we introduce Parrot, a novel method that utilizes textual guidance to drive visual token alignment at the language level. Parrot makes the visual tokens condition on diverse language inputs and uses Mixture-of-Experts (MoE) to promote the alignment of multilingual tokens. Specifically, to enhance non-English visual tokens alignment, we compute the cross-attention using the initial visual features and textual embeddings, the result of which is then fed into the MoE router to select the most relevant experts. The selected experts subsequently convert the initial visual tokens into language-specific visual tokens. Moreover, considering the current lack of benchmarks for evaluating multilingual capabilities within the field, we collect and make available a Massive Multilingual Multimodal Benchmark which includes 6 languages, 15 categories, and 12,000 questions, named as MMMB. Our method not only demonstrates state-of-the-art performance on multilingual MMBench and <b>MMMB</b>, but also excels across a broad range of multimodal tasks. Both the source code and the training dataset of Parrot will be made publicly available.
+                  </p>
+              </div>
+          </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <br>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+          <h2 class="title is-2">Technical Description</h2>
+          <br>
+      </div>
+
+      <!-- Architecture -->
+      <div class="columns is-centered">
+          <div class="column is-full-width">
+              <h4 class="title is-3">• Architecture</h4>
+
+              <div class="content has-text-justified">
+                  <img class="columns is-centered has-text-centered" src="./images/teaser.png" alt="Teaser" width="95%"
+                       style="margin:0 auto">
+                  <br>
+                  <figcaption>
+                      <p style="text-align: center; color: #061E61;">
+                          <b>Figure 1:</b> The overall architecture of Parrot. It converts English-biased features to language-specific features based on the multilingual MoE module, aiming to improve the multilingual capabilities. The training details within each stage are presented on the right.
+                      </p>
+                  </figcaption>
+                  <br>
+                  <p>
+                  <ul>
+                      <li>
+                          <b>Stage 1: Modality Alignment.</b> In this stage, we keep both the vision encoder and the LLM weights frozen, focusing solely on optimizing the projectors to align the visual features $\Hmat_v$ with the pre-trained LLM word embedding. This stage can be likened to training a visual tokenizer that is compatible with the frozen LLM. To enhance the diversity of images, we extract a portion of data from LAION and CC12M datasets and construct the in-house caption data through GPT-4V.
+                      </li>
+                      <li>
+                          <b>Stage 2: Instruction Tuning for Multilingual Alignment.</b>
+                          We still keep the vision encoder weights frozen while continuing to train the projector, MoE, and LLM. Due to the design of the MoE module, Parrot can rapidly learn to align visual representations across multiple languages by using a small amount of multilingual image-text data. As shown in Table 1, we only use nearly 10K training data for each language in stage 2. This approach is particularly beneficial given the scarcity of data resources in low-resource languages.
+                      </li>
+                  </ul>
+                  </p>
+                  <br>
+
+                  <img class="columns is-centered has-text-centered" src="./images/table1.png" alt="Table1" width="50%"
+                       style="margin:0 auto">
+              </div>
+              <br/>
+
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+          <h2 class="title is-2">MMMB: A Massive Multilingual Multimodal Benchmark</h2>
+          <br>
+      </div>
+
+      <!-- Limitations -->
+      <div class="columns is-centered">
+          <div class="column is-full-width">
+              <h4 class="title is-3">• Limitations of Existing Benchmarks</h4>
+
+              <div class="content has-text-justified">
+                  <p>
+                    There are several existing multilingual benchmarks (<em>i.e.</em>, Multi30K, M3Exam, MMBench, and LLaVA-Bench) for MLLMs, but they have some limitations: 
+                    <ol>
+                      <li> <b>Outdated Benchmarks.</b> Multi30k is designed for image-text retrieval tasks, and the performance has nearly reached the upper bound due to the relatively easy problems. </li>
+                      <li> <b>Non-Standardized Evaluations.</b> Other benchmarks, like LLaVA-Bench, rely on evaluations using GPT-4. Dependence on GPT-4 as a de facto ''Ground Truth'' may hinder reproducibility. Meanwhile, since LLaVA uses a deprecated version (GPT-4-0314), using other different versions could result in unfair comparisons. On the other hand, because M3Exam does not offer consistent test samples across different languages, it cannot ensure whether poor performance is due to the problem's difficulty or the model's lack of multilingual capabilities.</li>
+                      <li> <b>Limited Languages.</b> MMBench and LLaVA-Bench are limited in English and Chinese, which can not measure the multilingual capabilities across a broad spectrum.</li>
+                    </ol>
+                  </p>
+                  <br>
+                  <img class="columns is-centered has-text-centered" src="./images/bad-cases.png" alt="bad-cases" width="95%"
+                       style="margin:0 auto">
+                  <br>
+                  <figcaption>
+                      <p style="text-align: center; color: #061E61;">
+                          <b>Figure 2:</b> Some bad cases for multilingual benchmarkperceive. Left: code reasoning is strongly related to English. Middle: logical reasoning is too challenging. Right: lack relevance between image and text.
+                      </p>
+                  </figcaption>
+                  <br>
+              </div>
+              <br/>
+
+          </div>
+      </div>
+
+      <!--  Construction -->
+      <div class="columns is-centered">
+          <div class="column is-full-width">
+              <h2 class="title is-3">• Construction of the Multilingual Benchmark</h2>
+
+              <div class="content has-text-justified">
+                  <p>
+                    We selected six languages for inclusion: English (<em>en</em>), Chinese (<em>zh</em>), Portuguese (<em>pt</em>), Arabic (<em>ar</em>), Turkish (<em>tr</em>), and Russian (<em>ru</em>). These languages represent a diverse range of linguistic families, and we list the detailed information and some multilingual cases in Figure 3. In terms of dataset requirements and consistency, our benchmark incorporates datasets in two main respects:
+                    <ol>
+                      <li> Since MMBench officially includes English and Chinese versions, we extend it to the other four languages.</li>
+                      <li> For the massive multilingual multimodal benchmark, denoted as <b>MMMB</b>, we select and clean the suitable data from ScienceQA, MME, and SEED-Bench datasets with established guidelines. These datasets are then processed into a Visual Question Answering (VQA) format, resulting in a total of 12,000 samples across all six languages.</li>
+                    </ol>
+                  </p>
+                  <br>
+                  <img class="columns is-centered has-text-centered" src="./images/MMMB.png" alt="MMMB" width="100%"
+                       style="margin:0 auto">
+                  <br>
+                  <figcaption>
+                      <p style="text-align: center; color: #061E61;">
+                          <b>Figure 3:</b> Overview of MMMB. It incorporates 6 languages, 15 categories, and 12,000 questions.
+                      </p>
+                  </figcaption>
+              </div>
+              <br/>
+
+          </div>
+      </div>
+
+      <div class="columns is-centered">
+          <div class="column is-full-width">
+              <h2 class="title is-3">• Evaluations</h2>
+
+              <div class="content has-text-justified">
+                  <img class="columns is-centered has-text-centered" src="./images/benchmark.png" alt="benchmark" width="100%"
+                       style="margin:0 auto">
+                  <br>
+                  <img class="columns is-centered has-text-centered" src="./images/experiments.png" alt="experiments" width="100%"
+                       style="margin:0 auto">
+              </div>
+              <br/>
+
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+          <h2 class="title is-2">Demonstrations</h2>
+          <br>
+      </div>
+      <p>
+        To enhance the intuitive understanding of the Parrot's multilingual capability, we prepare a comprehensive case study accompanied by illustrative visuals. 
+      </p>
+      <br>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+            <br/>
+            <h3 class="title is-4">• Example-1: Djokovic</h3>
+            <div class="content has-text-justified">
+              <img class="columns is-centered has-text-centered" src="./images/case1.png" alt="case1" width="95%"
+              style="margin:0 auto">
+            </div>
+
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+            <br/>
+            <h3 class="title is-4">• Example-2: Deer and Swan</h3>
+            <div class="content has-text-justified">
+              <img class="columns is-centered has-text-centered" src="./images/case2.png" alt="case2" width="95%"
+              style="margin:0 auto">
+            </div>
+
+        </div>
+      </div>
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+              <br/>
+              <h3 class="title is-4">• Example-3: English</h3>
+              <div class="content has-text-justified">
+                <img class="columns is-centered has-text-centered" src="./images/case_en.png" alt="case_en" width="95%"
+                style="margin:0 auto">
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+              <br/>
+              <h3 class="title is-4">• Example-4: Chinese</h3>
+              <div class="content has-text-justified">
+                <img class="columns is-centered has-text-centered" src="./images/case_zh.png" alt="case_zh" width="95%"
+                style="margin:0 auto">
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+              <br/>
+              <h3 class="title is-4">• Example-5: Portuguese</h3>
+              <div class="content has-text-justified">
+                <img class="columns is-centered has-text-centered" src="./images/case_pt.png" alt="case_pt" width="95%"
+                style="margin:0 auto">
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+              <br/>
+              <h3 class="title is-4">• Example-6: Arabic</h3>
+              <div class="content has-text-justified">
+                <img class="columns is-centered has-text-centered" src="./images/case_ar.png" alt="case_ar" width="95%"
+                style="margin:0 auto">
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+              <br/>
+              <h3 class="title is-4">• Example-7: Turkish</h3>
+              <div class="content has-text-justified">
+                <img class="columns is-centered has-text-centered" src="./images/case_tr.png" alt="case_tr" width="95%"
+                style="margin:0 auto">
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+              <br/>
+              <h3 class="title is-4">• Example-8: Russian</h3>
+              <div class="content has-text-justified">
+                <img class="columns is-centered has-text-centered" src="./images/case_ru.png" alt="case_ru" width="95%"
+                style="margin:0 auto">
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{sun2024parrot,
+      title={Parrot: Multilingual Visual Instruction Tuning},
+      author={Sun, Hai-Long and Zhou, Da-Wei and Li, Yang and Lu, Shiyin and Yi, Chao and Chen, Qing-Guo and Xu, Zhao and Luo, Weihua and Zhang, Kaifu and Zhan, De-Chuan and others},
+      journal={arXiv preprint arXiv:2406.02539},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+  
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
