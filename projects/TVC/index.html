@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Mitigating Visual Forgetting via Take-along Visual Conditioning for Multi-modal Long CoT Reasoning">
+  <meta name="keywords" content="Multimodal Large Language Models, Long-chain Reasoning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TVC</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5ZVQZ7NHC"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <!-- <link rel="icon" href="./images/logo.png"> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js_slide/fontawesome.all.min.js"></script>
+  <script src="static/js_slide/bulma-carousel.min.js"></script>
+  <script src="static/js_slide/bulma-slider.min.js"></script>
+  <script src="static/js_slide/index.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- Vendor Stylesheets -->
+  <!--=================js==========================-->
+  <link rel="stylesheet" href="static/css/tab_gallery.css">
+  <link rel="stylesheet" href="static/css/juxtapose.css">
+  <link rel="stylesheet" href="static/css/image_card_fader.css">
+  <link rel="stylesheet" href="static/css/image_card_slider.css">
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"
+                        style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;">
+                    <h1 class="title is-2 publication-title">Mitigating Visual Forgetting via Take-along Visual Conditioning for Multi-modal Long CoT Reasoning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/sunhl/">Hai-Long Sun</a><sup>1,2,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=Y-3iZ9EAAAAJ&hl=zh-CN&oi=ao">Zhun Sun</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://houwenpeng.com/">Houwen Peng</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.lamda.nju.edu.cn/yehj/">Han-Jia Ye</a><sup>1,2</sup></span>
+            </div>
+            <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Artificial Intelligence, Nanjing University</span>
+            <span class="author-block"><sup>2</sup>National Key Laboratory for Novel Software Technology, Nanjing University</span><br>
+            <span class="author-block"><sup>3</sup>Tencent Hunyuan Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/xx.xx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/sun-hailong/TVC"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/Allen8/TVC-Data" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+              <!-- Model Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/Allen8/TVC-72B"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    🤗
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+              <h2 class="title is-2">Abstract</h2>
+              <div class="content has-text-justified">
+                  <p>
+                    Recent advancements in Large Language Models (LLMs) have demonstrated enhanced reasoning capabilities, evolving from Chain-of-Thought (CoT) prompting to advanced, product-oriented solutions like OpenAI o1. During our re-implementation of this model, we noticed that in multimodal tasks requiring visual input (e.g., geometry problems), Multimodal LLMs (MLLMs) struggle to maintain focus on the visual information, in other words, MLLMs suffer from a gradual decline in attention to visual information as reasoning progresses, causing text-over-relied outputs. To investigate this, we ablate image inputs during long-chain reasoning. Concretely, we truncate the reasoning process midway, then re-complete the reasoning process with the input image removed. We observe only a ~2% accuracy drop on MathVista’s test-hard subset, revealing the model's textual outputs dominate the following reasoning process. Motivated by this, we propose Take-along Visual Conditioning (TVC), a strategy that shifts image input to critical reasoning stages and compresses redundant visual tokens via dynamic pruning. This methodology helps the model retain attention to the visual components throughout the reasoning. Our approach achieves state-of-the-art performance on average across five mathematical reasoning benchmarks (+3.4% vs previous SOTA), demonstrating the effectiveness of TVC in enhancing multimodal reasoning systems.
+                  </p>
+              </div>
+          </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <br>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">Visual Forgetting</h2>
+        <h2 class="content has-text-justified">
+          <b>Illustration of Layer-level and Token-level Attention Weights.</b> (a) The layer-level attention weights of image tokens across different response token positions. (b) The token-level attention weights at the middle layer. It shows that the model's attention to the image gradually decreases during the reasoning process.
+        </h2>
+        <img src="./images/visual-forgetting.png" width="50%"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">TVC Architecture</h2>
+        <h2 class="content has-text-justified">
+          <b>Overview of TVC System Design.</b> The TVC method consists of two key stages: training and testing. In the training stage, we introduce Dynamic Visual Reaffirmation (DVR), which guides the model through iterative reinforcement of visual evidence during long reasoning chains. In the testing phase, we present Periodic Visual Calibration (PVC), where visual reactivation is periodically triggered at self-reflection intervals.
+        </h2>
+        <img src="./images/teaser.png" width="50%"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">Data Generation Pipeline</h2>
+        <h2 class="content has-text-justified">
+          <b>Illustrations of the TVC's Data Generation Pipeline.</b> We use iterative distillation to collect long-chain reasoning data, followed by a comprehensive response filtering process to ensure high-quality reasoning.
+        </h2>
+        <img src="./images/data-pipeline.png" width="50%"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">Benchmark Performance</h2>
+        <h2 class="content has-text-justified">
+          <b>Main Results on Visual Reasoning Tasks.</b> We conduct evaluation experiments across 6 benchmarks, covering both general reasoning and task-specific reasoning assessments. TVC exhibits notable effectiveness and generalizability when applied to Qwen2-VL, surpassing other state-of-the-art MLLMs by a large margin.
+        </h2>
+        <img src="./images/main-result.png" height="100%"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Examples of TVC</h2> <br></div>
+      <div class="content has-text-justified">
+        <img class="columns is-centered has-text-centered" src="./images/case-study.png" width="95%"
+        style="margin:0 auto">
+      </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{sun2024mitigating,
+      title={Mitigating Visual Forgetting via Take-along Visual Conditioning for Multi-modal Long CoT Reasoning},
+      author={Sun, Hai-Long and Sun, Zhun and Peng, Houwen and Ye, Han-Jia},
+      journal={arXiv preprint arXiv:xxxx.xxxxx},
+      year={2025}
+    }</code></pre>
+  </div>
+</section>
+
+  
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
