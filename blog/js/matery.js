@@ -1,18 +1,4 @@
 $(function () {
-    let ensureVisibleAnimatedBlocks = function () {
-        $('[data-aos]').addClass('aos-animate');
-    };
-
-    let initSubtitleFallback = function () {
-        let $subtitle = $('#subtitle');
-        if ($subtitle.length === 0 || $subtitle.text().trim()) {
-            return;
-        }
-
-        // Keep a readable subtitle when the remote typed.js asset is unavailable.
-        $subtitle.text('英雄是一时的, 但传奇是一世的');
-    };
-
     /**
      * 添加文章卡片hover效果.
      */
@@ -72,21 +58,15 @@ $(function () {
     });
 
     /*初始化瀑布流布局*/
-    if ($.fn.masonry && $('#articles').length) {
-        $('#articles').masonry({
-            itemSelector: '.article'
-        });
-    }
+    $('#articles').masonry({
+        itemSelector: '.article'
+    });
 
-    if (window.AOS && typeof window.AOS.init === 'function') {
-        AOS.init({
-            easing: 'ease-in-out-sine',
-            duration: 700,
-            delay: 100
-        });
-    }
-    ensureVisibleAnimatedBlocks();
-    initSubtitleFallback();
+    AOS.init({
+        easing: 'ease-in-out-sine',
+        duration: 700,
+        delay: 100
+    });
 
     /*文章内容详情的一些初始化特性*/
     let articleInit = function () {
@@ -120,17 +100,15 @@ $(function () {
                 this.insertAdjacentElement('afterend', captionDiv)
             }
         });
-        if ($.fn.lightGallery) {
-            $('#articleContent, #myGallery').lightGallery({
-                selector: '.img-item',
-                // 启用字幕
-                subHtmlSelectorRelative: true
-            });
-        }
+        $('#articleContent, #myGallery').lightGallery({
+            selector: '.img-item',
+            // 启用字幕
+            subHtmlSelectorRelative: true
+        });
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
-        if (progressElement && typeof window.ScrollProgress === 'function') {
+        if (progressElement) {
             new ScrollProgress((x, y) => {
                 progressElement.style.width = y * 100 + '%';
             });
