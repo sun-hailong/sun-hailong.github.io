@@ -1,0 +1,17 @@
+/* for box */
+
+.highlighted-text {
+  border: 2px solid #000000; /* 设置边框颜色和粗细 */
+  background-color: #f0f0f0; /* 设置背景颜色 */
+  padding: 10px; /* 设置内边距 */
+  border-radius: 8px; /* 设置边框圆角 */
+  font-weight: bold; /* 文本加粗显示 */
+  color: #e71111; /* 文本颜色 */
+  text-align: left; /* 文本居中显示 */
+  /* 设置下边距 */
+  margin-bottom: 10px;
+}
+
+/* for single col */
+
+.wrapper2 { width: 460px; margin: 0 auto; }
