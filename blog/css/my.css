@@ -1,1 +1,7 @@
 /* Here is your custom css styles. */
+
+/* Fallback: keep blog content visible when AOS init is blocked or fails. */
+[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+}
