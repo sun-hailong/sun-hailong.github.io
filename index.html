@@ -1,1470 +1,498 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="ML, github, gitee">
-    <meta name="description" content="Welcome to Allen&#39;Blog">
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Hai-Long Sun @ LAMDA, NJU-AI</title>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <title>Allen Sun&#39;Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Allen Sun'Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
-<link rel="stylesheet" href="/js/prism/prism.css">
-
-
-
-
-<body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">Allen Sun&#39;Blog</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hai-Long Sun - Homepage">
     
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <link rel="canonical" href="www.lamda.nju.edu.cn/sunhl"/>
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
+
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/images/favicon.png" type="image/png" />
+    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/images/favicon.png" type="image/png" />
+    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/avatar.css">
+    <link rel="stylesheet" href="./assets/css/pub.css">
+    <link rel="stylesheet" href="./assets/css/scroll.css">
+    <link rel="stylesheet" href="./assets/css/new.css">
+
+    <style>
+      .conf-highlight {
+        color: #ea3323;
+        font-weight: bold; /* Making it bold as in the original style */
+      }
+      nav.sticky {
+        background-color: #2F48BC !important; /* New background color for the sticky nav bar */
+      }
+      /* Adjust link color if needed for contrast with the new nav background */
+    </style>
+    <style>
+        #back-to-top {
+          border: 1px solid #ccc;
+          border-radius: 0;
+          font-size: 15px;
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+          height: 30px;
+        }
+        .blog-entry {
+          display: inline-block;
+          margin-top: 12px;
+          padding: 6px 14px;
+          border: 1px solid #2F48BC;
+          color: #2F48BC;
+          text-decoration: none;
+          font-size: 14px;
+        }
+        .blog-entry:hover {
+          background-color: #2F48BC;
+          color: #fff;
+        }
+    </style>
+  </head>
+  <body>
+
+    <nav class="sticky">
+      <ul>
+        
+        <li><img style="margin-bottom:5pt;margin-top:3pt;margin-left:-20%;" width="0" src="" class="logo"></li>
+        <li><a href="./index.html" style="font-family: Segoe UI;  color: #f7f7f7;"><ah>Home</ah></a></li>
+        <li><a href="#research-interests" style="font-family: Segoe UI;  color: #f7f7f7;"><ah>Research Interests</ah></a></li>
+        <li><a href="#publications" style="font-family: Segoe UI;  color: #f7f7f7;"><ah>Publications</ah></a></li>
+        <li><a href="#awards" style="font-family: Segoe UI;  color: #f7f7f7;"><ah>Awards</ah></a></li>
+        <li><a href="./blog/index.html" style="font-family: Segoe UI;  color: #f7f7f7;"><ah>Blog</ah></a></li>
+        
+      </ul>
+    </nav>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <script src="./assets/js/vanilla-back-to-top.min.js"></script>
+    <script>addBackToTop({
+        backgroundColor: '#fff',
+        innerHTML: 'Back to Top',
+        textColor: '#333'
+      })
+    </script>
     
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
+    <div class="wrapper">
+      <header>
+        
+        
+        <a class="image avatar"><img src="./assets/images/sunhl.jpg" alt="avatar" onContextMenu="return false" /></a>
+        
+        
+        <h1>Hai-Long Sun</h1> 
+        
+        <a class="image"><img height="60" img src="./assets/images/sunhl-font.png" alt="Hai-Long Sun" onContextMenu="return false" /></a>
+        
+        <br>
+        
+        M.Sc. Student
+		    <br>
+        School of Artificial Intelligence, Nanjing University
+        <br>
+        sunhl (at) lamda.nju.edu.cn
+        
+        <div class="social-icons">
+           <a href="https://scholar.google.com/citations?user=zKUG--gAAAAJ&hl=zh-CN" target="_blank">
+             <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
+           </a>  
+           <a href="https://github.com/sun-hailong" target="_blank">
+             <i class="fab fa-github"></i>
+           </a>
+           <a href="https://dblp.uni-trier.de/pid/356/9344.html" target="_blank">
+             <i class="ai ai-dblp"></i>
+           </a>
+        </div>
+        <a class="blog-entry" href="./blog/index.html">Blog</a>
+
+        <div class="org-logos" style="margin-top: 10px; text-align: center;">
+          <a href="http://www.lamda.nju.edu.cn/MainPage.ashx" target="_blank" style="margin-left: 5px;">
+            <img src="./assets/images/lamda.jpg" alt="LAMDA Group" style="height: 50px;">
+          </a>
+		  <br>
+          <a href="https://www.nju.edu.cn/main.htm" target="_blank" style="margin-left: 5px;">
+            <img src="./assets/images/nju_badge.jpg" alt="Nanjing University" style="height: 60px;">
+          </a>
+        </div>
+          
+
+      </header>
+
+<section>
+
+<h2 id="about-me">👀 About Me</h2>
+
+<p>Currently I'm a graduate student of <a href="https://ai.nju.edu.cn/" target="_blank">School of Artificial 
+Intelligence</a> in <a href="https://www.nju.edu.cn/main.htm" target="_blank">Nanjing University</a> and
+a member of <a href="http://www.lamda.nju.edu.cn/MainPage.ashx" target="_blank">LAMDA Group</a>, which is
+led by Prof. <a href="http://www.lamda.nju.edu.cn/zhouzh/" target="_blank">Zhi-Hua Zhou</a>.</p>
+
+<p>I received my B.Sc. degree from <a href="https://cs.nuaa.edu.cn/" target="_blank">College of Computer
+Science & Technology</a>, <a href="https://www.nuaa.edu.cn/" target="_blank">Nanjing
+University of Aeronautics and Astronautics</a> in June 2023 (GPA ranked 1 / 120). In the same year, I was admitted to
+study for a M.Sc. degree in Nanjing University, under the supervision of Prof. 
+<a href="http://www.lamda.nju.edu.cn/yehj" target="_blank"> Han-Jia Ye </a> without entrance examination.</p>
+
+<h2 id="news">📣 News</h2>
+<div class="container custom-scrollbar" style="height:200px;width:103%;overflow:auto;">
+  <li> [2025-10] Awarded the <b>National Scholarship</b> for Graduate Students.</li>
+  <li> [2025-09] Two papers are accepted to <a href="https://neurips.cc/" target="_blank">NeurIPS 2025</a>.</li>
+	<li> [2025-08] We release the multimodal LLM <a href="https://huggingface.co/AIDC-AI/Ovis2.5-9B" target="_blank">Ovis2.5-9B</a>.</li>
+	<li> [2025-05] Recognized as <a href="https://iclr.cc/Conferences/2025/Reviewers" target="_blank">ICLR 2025 Notable Reviewer</a>.</li>
+	<li> [2025-05] One paper about <a href="https://arxiv.org/abs/2503.13360" target="_blank">visual forgetting of MLLM</a> is accepted to <a href="https://2025.aclweb.org/" target="_blank">ACL 2025</a>.</li>
+	<li>[2025-05] One paper about <a href="https://arxiv.org/abs/2406.02539" target="_blank">multilingual MLLM (Parrot)</a> is accepted to <a href="https://icml.cc/" target="_blank">ICML 2025</a>.</li>
+	<li>[2025-02] One paper about <a href="https://arxiv.org/abs/2411.14432" target="_blank">MLLM Long-Chain Reasoning</a> is accepted to <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2025</a>.</li>
+	<li>[2025-01] Our <a href="https://github.com/sun-hailong/LAMDA-PILOT" target="_blank">toolbox for class-incremental learning with PTMs (PILOT)</a> is accepted to <a href="https://doi.org/10.1007/s11432-024-4276-4" target="_blank">SCIS</a>.</li>
+	<li>[2024-12] One paper about <a href="https://arxiv.org/abs/2412.09441" target="_blank">class-incremental learning</a> is accepted to <a href="https://aaai.org/conference/aaai/aaai-25/" target="_blank">AAAI 2025</a>.</li>
+	<li>[2024-11] We win the <b>Grand Prize</b> in the "Challenge Cup" - China Telecom Track.</li>
+	<li> [2024-07] We get the <a href="https://gusty-cabbage-7e7.notion.site/The-Second-Scientific-Figure-Captioning-Challenge-SCICAP-Challenge-2024-d9131ae2517640998430fac2271c6e43" target="_blank"><b>Champion</b></a> of SCICAP challenge @IJCAI'24.</li>
+	<li> [2024-06] One paper about multilingual MLLM is uploaded to <a href="https://arxiv.org/abs/2406.02539" target="_blank">arXiv</a>.</li>
+	<li>[2024-04] One survey about <a href="https://arxiv.org/abs/2401.16386" target="_blank">PTM-based continual learning</a> is accepted to <a href="https://ijcai24.org/" target="_blank">IJCAI 2024</a>.</li>
+	<li> [2024-02] One paper about <a href="https://arxiv.org/abs/2403.12030" target="_blank">class-incremental learning</a> is accepted to <a href="http://cvpr2024.thecvf.com/" target="_blank">CVPR 2024</a>.</li>
+	<li> [2023-09] We release a <a href="https://arxiv.org/abs/2309.07117" target="_blank">toolbox</a> about the pre-trained model-based continual learning.</li>
+</div>
+
+<h2 id="research-interests">🌟 Research Interests</h2>
+<p>My research interests include Machine Learning and Data Mining. Currently, I focus on <b>Multimodal Large Language Models</b> and <b>Continual Learning</b>. </p>
+
+
+<!-- <h2 id="preprint">🔥 Preprint</h2>
+
+<div class="publications">
+<ol class="bibliography">
+<li>
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      <img src="assets/images/TURBO.png" alt="TURBO" class="teaser img-fluid z-depth-1" width="200px" height="120px" />
+      <abbr class="badge">Preprint</abbr>
+    </div>
+    <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+      <div class="title">Multimodal Tabular Reasoning with Privileged Structured Information</div>
+      <div class="author">Jun-Peng Jiang, Yu Xia, <b>Hai-Long Sun</b>, Shiyin Lu, Qing-Guo Chen, Weihua Luo, Kaifu Zhang, De-Chuan Zhan, Han-Jia Ye</div>
+      <div class="periodical"><em><span class="conf-highlight">Preprint</span></em></div>
+    </div>
+  </div>
+</li>
+</ol>
+</div> -->
+
+
+<h2 id="publications">🚀 Publications 
+	<a href="https://scholar.google.com/citations?user=zKUG--gAAAAJ&hl=zh-CN"><img src="https://img.shields.io/endpoint?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io%40google-scholar-stats%2Fgs_data_shieldsio.json"></a>
+	<img src="https://img.shields.io/github/stars/sun-hailong?affiliations=OWNER%2CCOLLABORATOR&amp;style=flat&amp;label=Stars&amp;logo=github&amp;labelColor=f6f6f6&amp;color=9cf&amp;logoColor=020d12">
+</h2>
+
+<div class="publications">
+<ol class="bibliography">
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/TVC.png" alt="TVC" class="teaser img-fluid z-depth-1" width="200px" height="120px" />
+    <abbr class="badge">ACL</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">Mitigating Visual Forgetting via Take-along Visual Conditioning for Multi-modal Long CoT Reasoning</div>
+  <div class="author"><b>Hai-Long Sun</b>, Zhun Sun, Houwen Peng, Han-Jia Ye.</div>
+   <div class="periodical"><em><span class="conf-highlight">ACL'25. CCF-A</span> </em>
+  </div>
+[<a href="https://arxiv.org/abs/2503.13360" target="_blank">Paper</a>]
+[<a href="https://sun-hailong.github.io/projects/TVC/" target="_blank">Project Page</a>]
+[<a href="https://huggingface.co/Allen8/TVC-72B" target="_blank">Huggingface</a>]<br>
+<img src="https://img.shields.io/github/stars/sun-hailong/TVC?style=social">
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/parrot.png" alt="Parrot" class="teaser img-fluid z-depth-1" width="200px" height="100px" />
+    <abbr class="badge">ICML</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">Parrot: Multilingual Visual Instruction Tuning</div>
+  <div class="author"><b>Hai-Long Sun</b>, Da-Wei Zhou, Yang Li, Shiyin Lu, Chao Yi, Qing-Guo Chen, Zhao Xu, Weihua Luo, Kaifu Zhang, De-Chuan Zhan, Han-Jia Ye.</div>
+   <div class="periodical"><em><span class="conf-highlight">ICML'25. CCF-A</span> </em>
+  </div>
+[<a href="https://arxiv.org/abs/2406.02539" target="_blank">Paper</a>]
+[<a href="https://github.com/AIDC-AI/Parrot" target="_blank">Code</a>]
+[<a href="https://sun-hailong.github.io/projects/Parrot/" target="_blank">Project Page</a>]
+[<a href="https://huggingface.co/AIDC-AI/Parrot-7B" target="_blank">Huggingface</a>]<br>
+<img src="https://img.shields.io/github/stars/AIDC-AI/Parrot?style=social">
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/pilot.png" alt="PILOT" class="teaser img-fluid z-depth-1" width="200px" height="80px" />
+    <abbr class="badge">SCIS</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">PILOT: A Pre-Trained Model-Based Continual Learning Toolbox</div>
+  <div class="author"><b>Hai-Long Sun</b>, Da-Wei Zhou, De-Chuan Zhan, Han-Jia Ye.</div>
+   <div class="periodical"><em><span class="conf-highlight">SCIS 2025. CCF-A</span> </em>
+  </div>
+[<a href="https://arxiv.org/abs/2309.07117" target="_blank">Paper</a>]
+[<a href="https://github.com/sun-hailong/LAMDA-PILOT" target="_blank">Code</a>]
+[<a href="https://zhuanlan.zhihu.com/p/670317165" target="_blank">中文解读</a>]<br>
+<img src="https://img.shields.io/github/stars/sun-hailong/LAMDA-PILOT?style=social">
+<img src="https://img.shields.io/badge/dynamic/json?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io@google-scholar-stats%2Fgs_data.json&amp;query=$[%27publications%27][%27zKUG--gAAAAJ:ufrVoPGSRksC%27][%27num_citations%27]" />
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/AAAI2025-MOS.png" alt="MOS" class="teaser img-fluid z-depth-1" width="200px" height="80px" />
+    <abbr class="badge">AAAI</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">MOS: Model Surgery for Pre-Trained Model-Based Class-Incremental Learning</div>
+  <div class="author"><b>Hai-Long Sun</b>, Da-Wei Zhou, Hanbin Zhao, Le Gan, De-Chuan Zhan, Han-Jia Ye.</div>
+   <div class="periodical"><em><span class="conf-highlight">AAAI'25. CCF-A</span> </em>
+  </div>
+[<a href="https://arxiv.org/abs/2412.09441" target="_blank">Paper</a>]
+[<a href="https://github.com/sun-hailong/AAAI25-MOS" target="_blank">Code</a>]<br>
+<img src="https://img.shields.io/github/stars/sun-hailong/AAAI25-MOS?style=social">
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/CVPR2024-EASE.png" alt="EASE" class="teaser img-fluid z-depth-1" width="200px" height="80px" />
+    <abbr class="badge">CVPR</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">Expandable Subspace Ensemble for Pre-Trained Model-Based Class-Incremental Learning</div>
+  <div class="author">Da-Wei Zhou, <b>Hai-Long Sun</b>, Han-Jia Ye, De-Chuan Zhan.</div>
+   <div class="periodical"><em><span class="conf-highlight">CVPR'24. CCF-A</span> </em>
+  </div>
+[<a href="https://arxiv.org/abs/2403.12030" target="_blank">Paper</a>]
+[<a href="https://github.com/sun-hailong/CVPR24-Ease" target="_blank">Code</a>]<br>
+<img src="https://img.shields.io/github/stars/sun-hailong/CVPR24-EASE?style=social">
+<img src="https://img.shields.io/badge/dynamic/json?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io@google-scholar-stats%2Fgs_data.json&amp;query=$[%27publications%27][%27zKUG--gAAAAJ:d1gkVwhDpl0C%27][%27num_citations%27]" />
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/IJCAI2024-survey.png" alt="Survey" class="teaser img-fluid z-depth-1" width="200px" height="100px" />
+    <abbr class="badge">IJCAI</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">Continual Learning with Pre-Trained Models: A Survey</div>
+  <div class="author">Da-Wei Zhou, <b>Hai-Long Sun</b>, Han-Jia Ye, De-Chuan Zhan.</div>
+   <div class="periodical"><em><span class="conf-highlight">IJCAI'24. CCF-A</span> </em>
+  </div>
+  <strong><a href="https://resources.paperdigest.org/2025/03/most-influential-ijcai-papers-2025-03-version/" target="_blank"><i class="conf-highlight">Top-4 Most Influential IJCAI Papers</i></a></strong> <br />
+
+
+[<a href="https://arxiv.org/abs/2401.16386" target="_blank">Paper</a>]
+[<a href="https://github.com/sun-hailong/LAMDA-PILOT" target="_blank">Code</a>]
+[<a href="https://zhuanlan.zhihu.com/p/681100367" target="_blank">中文解读</a>]
+[<a href="https://mp.weixin.qq.com/s/dWumvQxhlItc_Lo2uv4SEg" target="_blank">Media</a>]<br>
+<img src="https://img.shields.io/badge/dynamic/json?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io@google-scholar-stats%2Fgs_data.json&amp;query=$[%27publications%27][%27zKUG--gAAAAJ:u-x6o8ySG0sC%27][%27num_citations%27]" />
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="assets/images/CVPR2025-Insight-V.png" alt="Insight-V" class="teaser img-fluid z-depth-1" width="200px" height="100px" />
+    <abbr class="badge">CVPR</abbr> 
+  </div>
+  <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+  <div class="title">Insight-V: Exploring Long-Chain Visual Reasoning with Multimodal Large Language Models</div>
+  <div class="author">Yuhao Dong, Zuyan Liu, <b>Hai-Long Sun</b>, Jingkang Yang, Winston Hu, Yongming Rao, Ziwei Liu.</div>
+   <div class="periodical"><em><span class="conf-highlight">CVPR'25 (Highlight). CCF-A</span> </em>
+  </div>
+[<a href="https://arxiv.org/abs/2411.14432" target="_blank">Paper</a>]
+[<a href="https://github.com/dongyh20/Insight-V" target="_blank">Code</a>]<br>
+<img src="https://img.shields.io/github/stars/dongyh20/Insight-V?style=social">
+<img src="https://img.shields.io/badge/dynamic/json?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io@google-scholar-stats%2Fgs_data.json&amp;query=$[%27publications%27][%27zKUG--gAAAAJ:hqOjcs7Dif8C%27][%27num_citations%27]" />
+  </div>
+</div>
+</li>
+
+<li>
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      <img src="assets/images/NeurIPS25-TSPIN.png" alt="TSPIN" class="teaser img-fluid z-depth-1" width="200px" height="100px" />
+      <abbr class="badge">NeurIPS</abbr>
+    </div>
+    <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+      <div class="title">Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs</div>
+      <div class="author">Yibo Wang, <b>Hai-Long Sun</b>, Guangda Huzhang, Qing-Guo Chen, Zhao Xu, Weihua Luo, Kaifu Zhang, Lijun Zhang</div>
+      <div class="periodical"><em><span class="conf-highlight">NeurIPS'25. CCF-A</span> </em></div>
+      [<a href="https://openreview.net/pdf?id=Hk4cCTukeI" target="_blank">Paper</a>]
+  </div>
+</div>
+</li>
+
+<li>
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      <img src="assets/images/TURBO.png" alt="TURBO" class="teaser img-fluid z-depth-1" width="200px" height="120px" />
+      <abbr class="badge">NeurIPS</abbr>
+    </div>
+    <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+      <div class="title">Multimodal Tabular Reasoning with Privileged Structured Information</div>
+      <div class="author">Jun-Peng Jiang, Yu Xia, <b>Hai-Long Sun</b>, Shiyin Lu, Qing-Guo Chen, Weihua Luo, Kaifu Zhang, De-Chuan Zhan, Han-Jia Ye</div>
+      <div class="periodical"><em><span class="conf-highlight">NeurIPS'25. CCF-A</span></em></div>
+      [<a href="https://arxiv.org/abs/2506.04088" target="_blank">Paper</a>]
+    </div>
+  </div>
+</li>
+
+<li>
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      <img src="assets/images/Ovis2-5.png" alt="Ovis2.5" class="teaser img-fluid z-depth-1" width="200px" height="100px" />
+      <abbr class="badge">Technical Report</abbr>
+    </div>
+    <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+      <div class="title">Ovis2.5: A Technical Report</div>
+      <div class="author">Ovis Contributors</div>
+      <div class="periodical"><em><span class="conf-highlight">Technical Report</span> </em>
+      </div>
+      [<a href="https://arxiv.org/abs/2508.11737" target="_blank">Paper</a>]
+      [<a href="https://github.com/AIDC-AI/Ovis" target="_blank">Code</a>] <br>
+      <img src="https://img.shields.io/github/stars/AIDC-AI/Ovis?style=social">
+      <img src="https://img.shields.io/badge/dynamic/json?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io@google-scholar-stats%2Fgs_data.json&amp;query=$[%27publications%27][%27zKUG--gAAAAJ:roLk4NBRz8UC%27][%27num_citations%27]" />
+    </div>
+  </div>
+</li>
+
+<li>
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      <img src="assets/images/VLMEvalKit.png" alt="VLMEvalKit" class="teaser img-fluid z-depth-1" width="200px" height="100px" />
+      <abbr class="badge">Technical Report</abbr>
+    </div>
+    <div class="col-sm-9" style="position: relative;width: 100%;padding-right: 15px;padding-left: 20px;">
+      <div class="title">VLMEvalKit: A Toolkit for Evaluating Large Vision-Language Models</div>
+      <div class="author">VLMEvalKit Contributors</div>
+      <div class="periodical"><em><span class="conf-highlight">Technical Report</span> </em>
+      </div>
+      [<a href="https://arxiv.org/abs/2407.11691" target="_blank">Paper</a>]
+      [<a href="https://github.com/open-compass/VLMEvalKit" target="_blank">Code</a>] <br>
+      <img src="https://img.shields.io/github/stars/open-compass/VLMEvalKit?style=social">
+      <img src="https://img.shields.io/badge/dynamic/json?labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=Citations&amp;logo=Google%20Scholar&amp;url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsun-hailong%2Fsun-hailong.github.io@google-scholar-stats%2Fgs_data.json&amp;query=$[%27publications%27][%27zKUG--gAAAAJ:Y0pCki6q_DkC%27][%27num_citations%27]" />
+    </div>
+  </div>
+</li>
+
+</ol>
+</div>
+
+<h2 id="awards">🏆 Awards & Honors & Contests</h2>
+<ul>
+  <li>2025, <b>National Scholarship</b> for Graduate Students</li>
+	<li>2022, CCF Elite Collegiate Student Award</li>
+	<li>2020/2022, <b>National Scholarship</b> for Undergraduates</li>
+	<li>2022, <b>Grand Prize</b>(全国唯一特等奖), China Collegiate Computing Contest - Network Technology Challenge in Track A</li>
+	<li>2022, <b>Bronze Medal</b>, ACM-ICPC Asia East Continent Final Contest</li>
+	<li>2020, <b>Second Prize</b>, The First China AI Guandan Algorithm Competition</li>
+	<li>2022, <b>Gold Medal</b>, Jiangsu Collegiate Programming Contest</li>
+	<li>2022, <b>Meritorious Winner</b> in MCM/ICM</li>
+	<li>2023, <b>Outstanding Graduate</b> of Nanjing University of Aeronautics and Astronautics</li>
+	<li>2023, 全国单打亚军、团体季军, 第26届全国大学生网球锦标赛总决赛</li>
+	<li>2024, 江苏省单打冠军、团体冠军, 2024年江苏省大学生网球锦标赛</li>
+	<li>2024, <b>Champion</b>, The Second Scientific Figure Captioning Challenge @IJCAI'24</li>	
+	<li>2024, <b>特等奖</b>, 挑战杯“揭榜挂帅”专项赛-中国电信赛道</li>	
 </ul>
 
+<h2 id="internships">👨‍💻 Internship Experience</h2>
+<p><img src="assets/images/alibaba-logo.svg" alt="Alibaba Logo" style="height: 20px; margin-right: 8px; vertical-align: middle;"> <br>
+  2024.03~2024.10, Alibaba, AIDC-AI Business, MLLM Research Intern
+</p>
+<p><img src="assets/images/hunyuan-logo.svg" alt="Hunyuan Logo" style="height: 25px; margin-right: 2px; vertical-align: middle;"> <img src="assets/images/tencent-logo.svg" alt="Tencent Logo" style="height: 20px; margin-right: 8px; vertical-align: middle;"> <br>
+  2024.10~2025.04, Tecent, TEG Group, Hunyuan Research Intern <br>
+  <!-- Supervisor: <a href="https://scholar.google.com.hk/citations?user=UYlhQS8AAAAJ&hl=zh-CN">Houwen Peng</a> and <a href="https://scholar.google.com.hk/citations?user=Jkss014AAAAJ&hl=zh-CN">Han Hu</a> -->
+</p>
+<p><img src="assets/images/bytedance-logo.svg" alt="Bytedance Logo" style="height: 25px; margin-right: 8px; vertical-align: middle;"> <br>
+  2022.08~2023.03, Bytedance Data 
+</p>
 
-<div id="mobile-nav" class="side-nav sidenav">
+<h2 id="service">🎯 Service</h2>
+<ul class="compact-list">
+  <li>Conference Reviewer: CVPR'24, NeurIPS'24, ICLR'25<a href="https://iclr.cc/Conferences/2025/Reviewers">🏆</a>, CVPR'25, ICML'25, ICCV'25, NeurIPS'25, ICLR'26, CVPR'26</li>
+  <li>Teaching Assistant: <a href="https://www.lamda.nju.edu.cn/yehj/ml2023fall/ml2023.htm">Introduction to Machine Learning</a>. (For undergraduate students; Autumn, 2023)</li>
+</ul>
 
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">Allen Sun&#39;Blog</div>
-        <div class="logo-desc">
-            
-            Welcome to Allen&#39;Blog
-            
-        </div>
-    </div>
+<h2 id="contact">📮 Contact</h2>
 
+<ul>
+  <li><strong>Email</strong>: sunhl  <span style="user-select: none;"> (at) </span>  lamda.nju.edu.cn</li>
+  <li><strong>Address</strong>: Hai-Long Sun, National Key Laboratory for Novel Software Technology, Nanjing University, Xianlin Campus Mailbox 603, 163 Xianlin Avenue, Qixia District, Nanjing 210023, China.
+  (南京市栖霞区仙林大道163号, 南京大学仙林校区603信箱, 软件新技术国家重点实验室, 210023)</li>
+</ul>
+
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=BHsRMRg2AHNvwJhXa65Hb8xlDWkgjAvIhgOHzOqFw7I&co=5fb2ed&ct=ffffff&cmo=ff4d4d'></script>
+<br>
+
+<p align="center">
+<a href="https://github.com/sun-hailong" alt="GitHub"><img src="./assets/images/github.svg"></a> &nbsp;
+<a href="mailto:sunhl@lamda.nju.edu.cn" alt="Contact me"><img src="./assets/images/email.svg"></a> &nbsp;
+<a href="wechat-id:Allen_Sunnn（请注明来意）" alt="WeChat"><img src="./assets/images/wechat.svg"></a> 
+</p>
+
+<p><small>Many thanks to Yaoyao for sharing this <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">great theme.</a> </small></p>
+      
+      </section>
+      
+  
+      </div>
+    <script src="/assets/js/scale.fix.js"></script>
     
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                仍是少年
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "英雄是一时的, 但传奇是一世的",
-                            
-                                "Heros come and go, but legends are forever.",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + 2 + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/sun-hailong" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/sun-hailong" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:823760901@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=823760901" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 823760901" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
-    </div>
-
-    
-</div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
-
-<main class="content">
-
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;芜湖！
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            恭喜你又发现了一个隐藏在角落的弱鸡~
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/24/a-li-da-shu-ju-wen-jian-chu-li-bi-shi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Alibaba大数据文件处理笔试题">
-                            
-                            <span class="card-title">Alibaba大数据文件处理笔试题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                有10个文件，每个文件有1000万行，文件内容的每一行为一个自然数；需要，写一个程序，将所有数字排序，分为10个文件输出，如0号文件包含前1000万个数字，1号文件文件包含第1千万-2千万之间的数字，依次类推。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/" class="post-category">
-                                    笔试题
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/">
-                            <span class="chip bg-color">阿里巴巴</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/06/cao-zuo-xi-tong-mian-shi-ti/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="操作系统面试题">
-                            
-                            <span class="card-title">操作系统面试题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                记录操作系统面试八股文题目，以便今后复习
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%85%AB%E8%82%A1%E6%96%87/" class="post-category">
-                                    八股文
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                            <span class="chip bg-color">操作系统</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/06/c-mian-shi-ti/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C++面试题">
-                            
-                            <span class="card-title">C++面试题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                记录C++面试八股文题目，以便今后复习
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%85%AB%E8%82%A1%E6%96%87/" class="post-category">
-                                    八股文
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/C/">
-                            <span class="chip bg-color">C++</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/04/1-n-zhong-1-de-ge-shu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="从1到n整数中1出现的次数">
-                            
-                            <span class="card-title">从1到n整数中1出现的次数</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                学到一个特别巧妙的做法！
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98/" class="post-category">
-                                    算法题
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%89%91%E6%8C%87offer/">
-                            <span class="chip bg-color">剑指offer</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/02/xin-xi-shang/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="如何通俗理解信息熵">
-                            
-                            <span class="card-title">如何通俗理解信息熵</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                学习决策树相关知识时，对信息熵的一些理解
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E4%BF%A1%E6%81%AF%E7%86%B5/">
-                            <span class="chip bg-color">信息熵</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/02/27/config-files/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="云服务器的配置文件">
-                            
-                            <span class="card-title">云服务器的配置文件</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                祖传文件(.bashrc .tmux.conf .vimrc)
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/" class="post-category">
-                                    配置环境
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
-                            <span class="chip bg-color">配置文件</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/02/02/linux-git/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux-git">
-                            
-                            <span class="card-title">Linux-git</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                git教程
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/01/28/linux-ssh/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux-ssh">
-                            
-                            <span class="card-title">Linux-ssh</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ssh操作
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/01/27/linux-shell-yu-fa/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux-shell语法">
-                            
-                            <span class="card-title">Linux-shell语法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                shell语法
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/01/27/linux-tmux-he-vim/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Linux-tmux和vim">
-                            
-                            <span class="card-title">Linux-tmux和vim</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                tmux和vim的常用操作
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/11/25/yong-sui-ji-ti-du-xia-jiang-lai-you-hua-ren-sheng/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="用随机梯度下降来优化人生">
-                            
-                            <span class="card-title">用随机梯度下降来优化人生</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                最近看到李沐老师的文章，勉励一下自己。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                            <span class="chip bg-color">生活</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/11/17/suan-fa-ban-zi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="算法模板">
-                            
-                            <span class="card-title">算法模板</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                一些acm基础的算法模板
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
-                            <span class="chip bg-color">算法模板</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-        </div>
-    </article>
-
-</main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-    <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
-
-    <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
-        <div class="col s12 m8 l8 copy-right">
-	    
-	    Copyright &copy 2021-2021 <a href="https://hailong-sun.gitee.io/" target="_blank">Allen Sun </a>| Powered by 
-	    <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme
-	    <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank"> Matery</a>
-            
-            
-            <br>
-            
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.3k</span>
-            
-            
-            
-                
-            
-            
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
-            
-            <br>
-	    <span id="sitetime"></span> <br>
-            <!-- 运行天数提醒. -->
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/sun-hailong" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:823760901@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=823760901" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 823760901" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-    </div>
-</footer>
-
-<!--添加运行时间-->
-<div class="progress-bar"></div>
-<script language = javascript >
-    function siteTime() {
-        window.setTimeout("siteTime()", 1000);
-        var seconds = 1000;
-        var minutes = seconds * 60;
-        var hours = minutes * 60;
-        var days = hours * 24;
-        var years = days * 365;
-        var today = new Date();
-        var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth() + 1;
-        var todayDate = today.getDate();
-        var todayHour = today.getHours();
-        var todayMinute = today.getMinutes();
-        var todaySecond = today.getSeconds();
-        var t1 = Date.UTC(2021, 09, 01, 00, 00, 00); //北京时间2021-9-01 16:00:00 
-        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond); 
-        var diff = t2 - t1; var diffYears = Math.floor(diff / years); 
-        var diffDays = Math.floor((diff / days) - diffYears * 365); 
-        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours); 
-        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes); 
-        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds); document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"; 
-    } 
-	siteTime(); 
-</script>
-
-
-<script src="/js/prism/prism.js" async></script>
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
-$(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
+  // Function to detect Chinese characters and apply styling
+  document.addEventListener('DOMContentLoaded', function() {
+    // Chinese character Unicode ranges
+    const isChinese = function(text) {
+      const pattern = /[\u4e00-\u9fff\u3400-\u4dbf\u20000-\u2a6df\u2a700-\u2b73f\u2b740-\u2b81f\u2b820-\u2ceaf\uf900-\ufaff\u3300-\u33ff\ufe30-\ufe4f\uf900-\ufaff\uff00-\uffef\u2f800-\u2fa1f]/;
+      return pattern.test(text);
     };
-
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
-});
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    
+    // Apply styling to elements with Chinese text
+    const applyChineseStyle = function(element) {
+      if (element.nodeType === Node.TEXT_NODE) {
+        if (isChinese(element.nodeValue)) {
+          // Replace text node with a span containing the styled text
+          const span = document.createElement('span');
+          span.style.fontSize = '0.92em';
+          span.textContent = element.nodeValue;
+          element.parentNode.replaceChild(span, element);
         }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
+      } else if (element.nodeType === Node.ELEMENT_NODE) {
+        Array.from(element.childNodes).forEach(applyChineseStyle);
+      }
+    };
+    
+    // Process text in the document body
+    applyChineseStyle(document.body);
+  });
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
+  </body>
 
-    
-
-    
-
-    <!--腾讯兔小巢-->
-    
-    
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-
-</body>
-
+  
 </html>
